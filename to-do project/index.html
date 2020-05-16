@@ -7,15 +7,17 @@
     <title>To-Do</title>
 </head>
 <body>
-    <header>
+    <header class="heading">
 <h1 id="DateOfToday"></h1>     
 <h6 id="Time"></h6>
     </header>
 <main>
 <form>
-    <input type="text" placeholder="Enter your task" required>
-    <input type="date" required>
-    <input type="submit" value="Add Task">
+    <label for="task">Your Task:</label>
+    <input type="text" placeholder="Enter your task" id="task" tabindex="1" required>
+    <label for="date">Deadline:</label>
+    <input type="date" id="date" tabindex="2" required>
+    <input type="submit" value="Add Task" id="btn" tabindex="3">
 </form>
 
 
@@ -32,9 +34,9 @@
 </html>
 
 - an `h1` with the date of today that is updated everyday dynamically✅
-- a `form` with an `input` field thats required to not be empty for the task description.
-- user should be able to select a deadline date for the task which is also a required `input`.
-- user should be able to use the Tab key to jump from one input to the next one.
+- a `form` with an `input` field thats required to not be empty for the task description.✅
+- user should be able to select a deadline date for the task which is also a required `input`.✅
+- user should be able to use the Tab key to jump from one input to the next one.✅
 - a `button` that when clicked performs the action of adding a new `li` item to a todo list `ul`.
 - empty the input fields after adding the task to the list.
 - you will have a list of items that each item should display the title and deadline date of the task.
