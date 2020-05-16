@@ -39,3 +39,10 @@ body{
     justify-content: center;
     align-items: center;
 }
+.form-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
