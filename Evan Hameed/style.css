@@ -4,3 +4,10 @@
     margin: 0;
     box-sizing: border-box;
 }
+:root{
+
+   --lavendar-gray: #9a9eab;
+   --branch:#5d535e;
+   --berry:#ec96a4;
+   --yellow-feathers:#dfe166; 
+}
