@@ -4,6 +4,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Amatic SC', cursive;
+    
 }
 :root{
 
@@ -14,6 +15,8 @@
 }
 .navbar{
     height: 20vh;
+    background-color: var(--berry);
+    color: rgb(238, 238, 238);
     
 
 }
