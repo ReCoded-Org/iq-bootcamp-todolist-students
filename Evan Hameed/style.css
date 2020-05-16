@@ -46,3 +46,11 @@ body{
     min-height: 50vh;
     
 }
+  .form input[type=text]{
+    width: 18rem;
+    height: 3rem;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0rem 1rem 1rem 0rem;
+    border: none ;
+}
