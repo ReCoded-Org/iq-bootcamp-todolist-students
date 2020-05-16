@@ -13,6 +13,10 @@
    --berry:#ec96a4;
    --yellow-feathers:#dfe166; 
 }
+body{
+
+    background-color: var(--yellow-feathers) ;
+}
 .navbar{
     height: 20vh;
     background-color: var(--berry);
