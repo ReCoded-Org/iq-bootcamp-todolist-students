@@ -48,11 +48,11 @@ body{
     
 }
 .form{
-    width: 70%;
+    width: 90%;
 }
   .form input[type=text]{
     width: 100%;
-    height: 3rem;
+    height: 5rem;
     border-radius: 20px;
     padding: 10px;
     margin: 0rem 1rem 1rem 0rem;
@@ -63,7 +63,7 @@ body{
 }
 .form input[type=date]{
     width: 100%;
-    height: 3rem;
+    height: 5rem;
     border-radius: 20px;
     padding: 10px;
     margin: 0rem 1rem 1rem 0rem;
@@ -78,7 +78,7 @@ body{
     color: white;
     background:var(--berry);
     
-    border-radius: 10px;
+    border-radius: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 10px;
@@ -90,19 +90,22 @@ body{
     justify-content: center;
 }
 #list{
-    width: 70%;
+    width: 90%;
   
 }
 
 .listItem{
-
+    padding: 0rem 2rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 0.5rem;
-    height: 3rem;
+    height: 5rem;
     background-color: var(--lavendar-gray);
     border-radius: 5rem;
     color: white;
     font-size: 1.5rem;
+}
+.listItem:hover{
+    background-color: var(--branch);
 }
