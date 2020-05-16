@@ -3,3 +3,8 @@
 let currentDate = document.getElementById('currentDate');
 let date = new Date();
 currentDate.innerText ="Today : "+ date.toDateString();
+
+
+let todoButton=document.getElementById('todoBtn');
+let todo=document.getElementById('todo');
+let deadline=document.getElementById('deadline');
