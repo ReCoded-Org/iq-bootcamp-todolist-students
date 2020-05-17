@@ -10,10 +10,13 @@ let deadline=document.getElementById('deadline');
 let list=document.getElementById('list');
 let todo=document.getElementById('todo');
 let form=document.getElementById('myForm');
+let noTasksText=document.getElementById('luckyYou');
+let ulSection = document.getElementsByClassName('ulSection');
 
 
 todoButton.addEventListener('click',function(){
 if(todo &&todo.value &&deadline &&deadline.value){
+    noTasksText.innerText=" ohh now you have some"
     
     let listItem= document.createElement('li');
     let todoTitle=document.createElement('span');
