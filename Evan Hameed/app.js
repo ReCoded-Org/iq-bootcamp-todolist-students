@@ -13,19 +13,20 @@ let form=document.getElementById('myForm');
 
 
 todoButton.addEventListener('click',function(){
-    if(todo &&todo.value &&deadline &&deadline.value){
-let listItem= document.createElement('li');
-let todoTitle=document.createElement('span');
-let todoDeadline=document.createElement('span');
-listItem.classList.add('listItem');
-list.appendChild(listItem);
+if(todo &&todo.value &&deadline &&deadline.value){
+    
+    let listItem= document.createElement('li');
+    let todoTitle=document.createElement('span');
+    let todoDeadline=document.createElement('span');
+    listItem.classList.add('listItem');
+    list.appendChild(listItem);
 
-todoTitle.innerText= todo.value;
-listItem.appendChild(todoTitle);
-todoDeadline.innerText=deadline.value;
-listItem.appendChild(todoDeadline);
+    todoTitle.innerText= todo.value;
+    listItem.appendChild(todoTitle);
+    todoDeadline.innerText=deadline.value;
+    listItem.appendChild(todoDeadline);
 
-form.reset();
-    }
+    form.reset();
+     }
 
 });
