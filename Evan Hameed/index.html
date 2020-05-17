@@ -6,6 +6,18 @@
     <title>Todo App</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+    rel = "stylesheet">
+   <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+   <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+   <script>
+      $(function() {
+         $( "#deadline" ).datepicker({minDate:0});
+        
+      });
+   </script>
 </head>
 <body>
 
@@ -22,7 +34,7 @@
     <form action="#" class="form" id="myForm">
      <input type="text" placeholder="Enter your Todo here!" required id="todo" > 
      <br>
-     <input type="date" required id="deadline"> <br>
+     <input type="text" required id="deadline"> <br>
      <input type="submit" value="Todo" id="todoBtn"> 
     </form>
   
