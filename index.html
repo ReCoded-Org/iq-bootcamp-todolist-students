@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+    <title>deadline-times</title>
+   
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+ 
+</head>
+
+<html>
+    <body style="background-image: url(https://assets-global.website-files.com/5a690960b80baa0001e05b0f/5ca4b074e9c52631fc36f901_Schedule-Time-p-1080.png);">
+        <header class=" bg-dark text-white">
+        <h2 class="text-xl-center ">The date of today is</h2>
+        <h1 class="text-xl-center " id="header-date"></h1>
+        </header>
+        <body>
+         <main>
+              <!--input section-->
+
+              
+               <form action="#" id="forming" onsubmit="return mySubmitFunction(event)">
+                <div class="container-fluid ">
+                    <div class="row justify-content-xl-around align-items-start flex-wrap align-content-center">
+                    
+                <!--selecting thhe date of dead line-->
+                <div class="col-12 col-md-8 col-lg-3 order-1">
+                <div class="d-flex flex-column border pb-1 pt-3  bg-dark text-white">
+                        <label class="p-2" for="date-of-deadline">Please,select the date of dead-line:</label>
+                        <input class="p-2" type="date" id="date-of-deadline" name="date-of-deadline"  required>
+                </div>
+                </div>
+                <!--writing the discription about the deadline-->
+                <div class="col-12 col-md-8 col-lg-3 order-2">
+                <div  class="d-flex flex-column border pb-1 pt-3  bg-dark text-white">
+                        <label class="p-2" for="deadline-title">Write information about the dead-line:</label>
+                        <input class="p-2" type="text" id="deadline-title" name="deadline-title" required>
+                </div>
+                </div>
+                 <!--submition control -->
+                <div class="col-6 col-md-4 col-lg-2 order-3 mt-5">
+                    <input class="btn btn-primary" type="submit" id="date-of-deadline-function" onclick="date_submissions()">
+                </div>
+                </div>
+                </div>
+               </form> 
+              
+
+    
+           <!--output section-->
+               
+                   <div  class=" bg-dark text-white">
+                    <ol id="test"></ol>
+                   </div>
+      
+    
+         </main>
+         <footer>
+
+         </footer>
+
+    </body>
+    <script>
+        //this section for geting rhe date of today
+        let dateToday = new Date();
+        let x0= dateToday.getFullYear();
+        let x1= dateToday.getMonth()+1;
+        let x2= dateToday.getDate();
+        let x5="-"
+        document.getElementById("header-date").innerHTML = x0+"/"+x1+"/"+x2;
+        let x3=document.getElementById("date-of-deadline");
+        let x4=`${x0}${x5}0${x1}${x5}${x2}`;
+        x3.setAttribute("min", `${x4}`);
+         // this section is about getting the information from form element
+        
+   
+
+        //submiton-the-data
+        function date_submissions(){
+            let $deadLine_date=document.getElementById("date-of-deadline").value;
+            let $deadLine_disc=document.getElementById("deadline-title").value;
+            let $lists=document.getElementById("test");
+            let v=document.getElementById("test");
+            let new_meetings=document.createElement("li");
+            new_meetings.innerHTML= $deadLine_disc + " " + "at" + " " + $deadLine_date;
+            $lists.appendChild(new_meetings);
+        }
+
+        const preventing = document.getElementById('forming');
+preventing.addEventListener('submit', function(e) {
+  event.preventDefault();
+
+});
+        
+
+ 
+    </script>
+</html>
