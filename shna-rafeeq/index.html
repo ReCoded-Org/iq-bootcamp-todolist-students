@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./index.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+        <title>Document</title>
+    </head>
+<body >
+<header class="container-fluid header-color boxshadow">
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-2  offset-lg-2 offset-md-2 offset-sm-1 offset-xs-1 ">
+        <h1>Today</h1>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-1 ">
+        <h1 id="header"></h1>
+    </div>
+</div>
+</header>
+<main >
+ <section class="container-fluid">
+    <div class="row headerAnimation justify-content-center my-5">
+        <div class="col-md-8 col-lg-6">
+            <h1 id="f-h1" class=" h1-size text-center">Welcome to your Todo List.</h1>
+            <form action="" name="contact-form">
+                <div class="form-group">
+                    <label class="txt-size">Identify Todo :</label>
+                    <input  style="border-radius: 20px;" type="text" name="select-todo" placeholder="Enter your todo" class="form-control form-control-lg boxshadow" id="get-todo" > 
+                </div>
+                <div class="form-group ">
+                    <label class="txt-size">Select The Date :</label>
+                    <input style="border-radius: 20px;" type="date"  name="selecte-date"class="form-control form-control-lg boxshadow" id="get-date" >
+                </div>
+                <div class="form-group ">
+                    <input style="background-color: #2d5f5f; color: white; border-radius: 50px;" name="submit" type="button" value="AddTodo" class="form-control form-control-lg boxshadow  my-5 p-3 " onclick="newLiAdded();"  >
+                </div>
+            </form>
+        </div>
+    </div>
+ </section>
+ 
+ <section>
+    <div class="row justify-content-center ">
+       <div class=" col-md-3 col-lg-3  " >
+           <ul id="list-ul">
+            <p id="pul" class="txt-size">Set new Tasks Here</p>
+           </ul>
+       </div>
+    </div>
+ </section>
+</main>
+
+<script src="./index.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

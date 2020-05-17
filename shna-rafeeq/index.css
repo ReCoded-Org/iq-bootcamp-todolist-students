@@ -1,0 +1,58 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    max-width: 100%;
+    transition-timing-function: ease-in;
+    transition: 0.3s;
+}
+body{
+    color:white !important;
+    background-color:#a1b9b9 !important;
+    font-family: 'Indie Flower', cursive !important;
+}
+.header-color{
+    background-color:#2d5f5f;
+}
+.txt-size{
+    font-size: 30px;
+}
+.h1-size{
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.boxshadow{
+    box-shadow: 1px 1px  5px 5px rgb(92, 121, 121);
+    background-color: #2d5f5f;
+}
+.boxshadow:hover{
+   padding: 20px;
+}
+ul li{
+    box-shadow: 1px 1px  5px 5px rgb(92, 121, 121) !important;
+    background-color: #2d5f5f;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border: 1px solid white;
+}
+
+.headerAnimation{
+    animation-name: moveHead;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+
+  }
+
+@keyframes moveHead{
+    0% {
+        margin-left: 160%;
+        opacity: 0;
+    }
+    100% {
+        margin-left: 0;
+        opacity: 1;
+    }
+
+}
