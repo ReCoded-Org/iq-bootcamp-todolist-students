@@ -22,7 +22,13 @@ function addToList() {
     let deadlineDate = document.getElementById('date').value;
     let list = document.getElementById('list');
     let listItem = document.createElement('li');
-    let listText = taskName + "<br />" + deadlineDate;
+    if(taskName==""||deadlineDate=="")
+    {
+        listText="Nothing to do";
+    }
+    else{
+         listText = taskName + "<br />" + deadlineDate;
+    }   
     listItem.innerHTML = listText;
     list.appendChild(listItem);
     let form = document.getElementById('taskForm');
