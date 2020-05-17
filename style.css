@@ -1,0 +1,26 @@
+#input1{
+    
+    margin: 10px 0px;
+}
+
+h4,p{
+    margin: 0px;
+}
+main{
+    margin: 0px 10px;
+    background:rgb(207, 159, 87);
+    
+}
+.header{
+    background:rgb(43, 33, 53) ;
+    color: gray;
+}
+.div2:hover,li:hover{
+background: rgb(43, 33, 53);
+color:gray;
+}
+
+li{
+
+ color: white;
+}
