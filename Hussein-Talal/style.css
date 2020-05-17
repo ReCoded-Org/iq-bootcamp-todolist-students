@@ -15,6 +15,9 @@ header {
     margin-right: 3rem;
 }
 
-label {
-    /* margin-right: 2rem; */
+.horizontal-line {
+    height: 1px;
+    width: 85%;
+    margin: 3rem auto;
+    background-color: #dddddd;
 }
