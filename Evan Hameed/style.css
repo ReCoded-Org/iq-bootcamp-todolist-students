@@ -60,10 +60,14 @@ body{
     font-size: 1.5rem;
     outline-style: none;
     background-color: var(--lavendar-gray);
-    color: rgb(238, 238, 238);
+    color: black;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-family: 'Mukta', sans-serif;
    
+}
+.form input[type=text]:focus{
+    background-color: var(--indigo-ink);
+    color: white;
 }
 .form input[type=date]{
     width: 100%;
@@ -117,14 +121,21 @@ body{
     font-size: 1.5rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-family: 'Mukta', sans-serif;
+    transition-property: background;
+    transition-duration: .1s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
 }
+
 .listItem span{
     font-family: 'Mukta', sans-serif;
 }
 .listItem:hover{
     background-color: var(--blueberry);
 }
-
+#deadline{
+    font-family: 'Mukta', sans-serif;
+}
 @media screen and (max-width:550px){
 
  
