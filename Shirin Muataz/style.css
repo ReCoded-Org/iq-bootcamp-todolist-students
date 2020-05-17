@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: block;
+  margin-left: 15%;
+}
+header,
+section {
+  width: 80%;
+  height: 80px;
+}
+.header {
+  width: 100%;
+  background-color: pink;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#date {
+  font-size: 2rem;
+  font-weight: 500;
+}
