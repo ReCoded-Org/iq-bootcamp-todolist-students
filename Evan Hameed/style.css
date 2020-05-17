@@ -90,6 +90,8 @@ body{
 .ulSection{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 #list{
     width: 90%;
