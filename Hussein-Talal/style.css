@@ -8,4 +8,13 @@ header {
     height: 60px;
     background-color: #2b4996;
     color: white;
+    margin-bottom: 3rem;
+}
+
+.text-input {
+    margin-right: 3rem;
+}
+
+label {
+    /* margin-right: 2rem; */
 }
