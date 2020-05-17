@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="jumbotron big-banner">
 
 <head>
     <!-- Required meta tags -->
@@ -31,18 +31,21 @@
         </div>
     </header>
 
-    <section>
-        <div class="col-lg-8" class="card">
-            <div class="card-body">
-                <form style="background-color: blueviolet;">
-                    <label for="deadLine"> Select Deadline:</label>
-                    <input type="date" name="deadLine" dateformat="M d y" id="newTask-Date" required><br>
+    <section class="d-flex justify-content-center">
+        <div class="col-lg-10  ">
+            <div class="card-header">
+                <form class="color-white">
+                    <label for="deadLine"> Select a Deadline:</label>
+                    <input type="date" name="deadLine" dateformat="M d y" class="form-control" id="newTask-Date"
+                        required><br>
                     <label for="todo"> Enter your Task:</label>
-                    <input type="text" name="todo" placeholder="Enter Your To Do Task here" id="newTask" required>
-                    <button type="button" class="btn btn-primary" onclick="addTask()"> Add ToDo Task</button>
+                    <input type="text" name="todo" placeholder="Enter Your To Do Task here" class="form-control"
+                        id="newTask" required><br>
+                    <button type="button" class="btn btn-primary float-right" onclick="addTask()"> Add ToDo
+                        Task</button> <br>
             </div>
-            <div class="todo-List">
-                <ul id="ulmenu">
+            <div class="todo-List card-body">
+                <ul id="ulmenu" class="jumbotron big-banner2">
                 </ul>
             </div>
             </form>
