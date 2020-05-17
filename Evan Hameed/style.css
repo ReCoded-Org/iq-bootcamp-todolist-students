@@ -95,12 +95,12 @@ body{
 }
 
 .listItem{
-    padding: 0rem 2rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0.5rem;
-    height: 5rem;
+    min-height: 5rem;
     background-color: var(--lavendar-gray);
     border-radius: 5rem;
     color: white;
@@ -108,4 +108,28 @@ body{
 }
 .listItem:hover{
     background-color: var(--branch);
+}
+
+@media screen and (max-width:550px){
+
+ 
+    .form{
+        width: 90%;
+    }
+    #list{
+        width:90 %;}
+
+        .listItem{
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.3rem;
+            min-height: 3rem;
+            background-color: var(--lavendar-gray);
+            border-radius: 3rem;
+            color: white;
+            font-size: 0.9rem;
+        }    
+      
 }
