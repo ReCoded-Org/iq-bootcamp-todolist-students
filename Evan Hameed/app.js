@@ -16,7 +16,7 @@ let ulSection = document.getElementsByClassName('ulSection');
 
 todoButton.addEventListener('click',function(){
 if(todo &&todo.value &&deadline &&deadline.value){
-    noTasksText.innerText=" ohh now you have some"
+    noTasksText.innerText=" ohh now you have some !!"
     
     let listItem= document.createElement('li');
     let todoTitle=document.createElement('span');
