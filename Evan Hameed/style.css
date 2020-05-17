@@ -82,7 +82,7 @@ body{
 .form input[type="submit"]{
 
     width: 100%;
-    font-size: 20px;
+    font-size: 2rem;
     color: white;
     background:var(--blueberry);
     height: 5rem;
