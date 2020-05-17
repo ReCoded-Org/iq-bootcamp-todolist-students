@@ -32,10 +32,20 @@
     </header>
 
     <section>
-        <div>
-            <form>
-                <label for="deadLine"> Select Deadline:</label>
-                <input type="date" name="deadLine" dateformat="M d y"></form>
+        <div class="col-lg-8" class="card">
+            <div class="card-body">
+                <form style="background-color: blueviolet;">
+                    <label for="deadLine"> Select Deadline:</label>
+                    <input type="date" name="deadLine" dateformat="M d y" id="newTask-Date" required><br>
+                    <label for="todo"> Enter your Task:</label>
+                    <input type="text" name="todo" placeholder="Enter Your To Do Task here" id="newTask" required>
+                    <button type="button" class="btn btn-primary" onclick="addTask()"> Add ToDo Task</button>
+            </div>
+            <div class="todo-List">
+                <ul id="ulmenu">
+                </ul>
+            </div>
+            </form>
         </div>
     </section>
 
