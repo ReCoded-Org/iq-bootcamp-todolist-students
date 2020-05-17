@@ -11,9 +11,16 @@ header {
     margin-bottom: 3rem;
 }
 
-.text-input {
-    margin-right: 3rem;
+.form-control {
+    margin: .5rem 0;
 }
+
+@media only screen and (min-width : 768px){
+    #date {
+        margin-left: 1rem;
+    }
+}
+
 
 .horizontal-line {
     height: 1px;
