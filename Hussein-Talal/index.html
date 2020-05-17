@@ -10,26 +10,30 @@
     <header>
         <div class="container d-flex justify-content-between ">
             <h1>Today</h1>
-            <h1 id="date"></h1>
+            <h1 id="todayDate"></h1>
         </div>  
     </header>
 
     <main>
         <section class="container">
-            <form action="#" class="d-flex flex-row flex-wrap">
-                <input type="text" class="form-control col-12 col-md-8 col-lg-8"  name="text" id="text" placeholder="Add your task">
-                <input type="date" class="form-control col-12 col-md-3 col-lg-3"  name="date" id="date">
-                <button type="submit" class="form-control col-lg-2 col-md-2">Add note</button>
+            <p id="msg"></p>
+            <form action="" id="form" class="d-flex flex-row flex-wrap">
+                <input required type="text" class="form-control col-12 col-md-8 col-lg-8"  name="text" id="text" placeholder="Add your task" >
+                <input required type="date" class="form-control col-12 col-md-3 col-lg-3"  name="date" id="date" >
+                <input onclick="addTask()" type="submit" class="form-control col-lg-2 col-md-2" value="Add task">
             </form>
         </section>
 
-        <div class="container">
+        <div class="fluid-container">
             <div class="horizontal-line"></div>
         </div>
         
-        <section class="todo-list-items">
+        <section class="container">
+            <h6 id="noTasks">You got no tasks !!! keep it like that</h6>
             <div class="container">
-                
+                <ul class="todo-items">
+
+                </ul>
             </div>
         </section>
     </main>
