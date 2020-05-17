@@ -57,8 +57,10 @@ body{
     padding: 10px;
     margin: 0rem 1rem 1rem 0rem;
     border: none ;
-    font-size: 1rem;
+    font-size: 1.5rem;
     outline-style: none;
+    background-color: var(--lavendar-gray);
+    color: rgb(238, 238, 238);
    
 }
 .form input[type=date]{
