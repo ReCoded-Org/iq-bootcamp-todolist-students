@@ -9,18 +9,18 @@
 }
 :root{
 
-   --lavendar-gray: #9a9eab;
-   --branch:#5d535e;
-   --berry:#ec96a4;
-   --yellow-feathers:#dfe166; 
+  --midnight-blue:#1e1f26;
+  --indigo-ink:#283655;
+  --blueberry:#4d648d;
+  --sama2ee:#d0e1f9;
 }
 body{
 
-    background-color: var(--yellow-feathers) ;
+    background-color: var(--sama2ee) ;
 }
 .navbar{
     height: 20vh;
-    background-color: var(--berry);
+    background-color: var(--midnight-blue);
     color: rgb(238, 238, 238);
     display: flex;
     justify-content: center;
@@ -34,7 +34,7 @@ body{
 .todayDateSection{
 
     height: 10vh;
-    background-color: var(--branch);
+    background-color: var(--blueberry);
     color: rgb(238, 238, 238);
     display: flex;
     justify-content: center;
@@ -79,7 +79,7 @@ body{
     width: 100%;
     font-size: 20px;
     color: white;
-    background:var(--berry);
+    background:var(--blueberry);
     height: 5rem;
     border-radius: 20px;
     padding-top: 10px;
@@ -109,14 +109,14 @@ body{
     align-items: center;
     margin: 0.5rem;
     min-height: 5rem;
-    background-color: var(--lavendar-gray);
+    background-color: var(--indigo-ink);
     border-radius: 5rem;
     color: white;
     font-size: 1.5rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .listItem:hover{
-    background-color: var(--branch);
+    background-color: var(--blueberry);
 }
 
 @media screen and (max-width:550px){
@@ -126,19 +126,19 @@ body{
         width: 90%;
     }
     #list{
-        width:90 %;}
+        width:90%;}
 
         .listItem{
-            padding: 0.5rem 1rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin: 0.3rem;
+            margin: 0.5rem;
             min-height: 3rem;
-            background-color: var(--lavendar-gray);
-            border-radius: 3rem;
+            background-color: var(--indigo-ink);
+            border-radius: 5rem;
             color: white;
-            font-size: 0.9rem;
-        }    
-      
+            font-size: 1rem;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
 }
