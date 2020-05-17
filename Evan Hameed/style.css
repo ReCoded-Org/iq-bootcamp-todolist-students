@@ -61,6 +61,7 @@ body{
     outline-style: none;
     background-color: var(--lavendar-gray);
     color: rgb(238, 238, 238);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
    
 }
 .form input[type=date]{
@@ -86,6 +87,9 @@ body{
     padding-right: 10px;
     padding-left: 10px;
     outline-style: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+    cursor: pointer;
 }
 .ulSection{
     display: flex;
@@ -109,6 +113,7 @@ body{
     border-radius: 5rem;
     color: white;
     font-size: 1.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .listItem:hover{
     background-color: var(--branch);
