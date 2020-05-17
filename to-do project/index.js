@@ -22,13 +22,18 @@ function addToList() {
     let deadlineDate = document.getElementById('date').value;
     let list = document.getElementById('list');
     let listItem = document.createElement('li');
-    if(taskName==""||deadlineDate=="")
-    {
-        listText="Nothing to do";
+    if (taskName == "" || deadlineDate == "") {
+        {
+            if (taskName == "") { taskName.focus(); }
+        }
+        {
+            if (deadlineDate == "") { deadlineDate.focus(); }
+        }
     }
-    else{
-         listText = taskName + "<br />" + deadlineDate;
-    }   
+    else {
+        listText = taskName + "<br />" + deadlineDate;
+    }
+
     listItem.innerHTML = listText;
     list.appendChild(listItem);
     let form = document.getElementById('taskForm');
