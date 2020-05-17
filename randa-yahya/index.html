@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+      
+      
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      
+        <!-- Animate CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
+      <!--my style css-->
+      <link rel="stylesheet" href="style.css">
+
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="container col-sm-12 col-lg-12">
+        <header>
+    <div class="img-contect">
+        <h1>To DO-List</h1>
+        <h2>Today:</h2>
+    </div>
+</header>
+<div class="contect-form"></div>
+    <form id="todoform">
+        <label for="birthday">Select Deadline:</label>
+        <input type="date" id="Deadline" name="Deadline">
+        <input id="todoinput" type="text" class="input form-control"  placeholder="Enter your todo">
+        <button type="button" class=" btn btn-info" onclick="addNewToDo()">Add Todo</button>
+    
+    </form>
+    <ol id="todolist"></ol>
+</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
