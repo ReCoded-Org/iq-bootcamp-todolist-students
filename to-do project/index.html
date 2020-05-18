@@ -5,30 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <title>To-Do</title>
 </head>
 
 <body>
-    <header class="heading">
-        <h1 id="DateOfToday"></h1>
-        <h6 id="Time"></h6>
+    <header class="heading container-fluid d-flex flex-column text-center my-5">
+        <h1 id="DateOfToday" class=""></h1>
+        <h6 id="Time" class=""></h6>
     </header>
     <main>
-        
-        <form id="taskForm" method="get">
-            <label for="task">Your Task:</label>
-            <input type="text" placeholder="Enter your task" id="task" tabindex="1" required>
-            <br>
-            <label for="date">Deadline:</label>
-            <input type="date" id="date" tabindex="2" required>
-            <br>
-            <input type="submit" value="Add Task" id="btn" tabindex="3">
+        <form id="taskForm" method="get" class="container form-inline form-color">
+            <div class="col-md-4 form-group">
+                <label for="task">Your Task:</label>
+                <input type="text" class="form-control mx-3 my-3" placeholder="Enter your task" id="task"
+                    tabindex="1" required>
+            </div>
+                        <div class="col-md-4 form-group">
+                <label for="date">Deadline:</label>
+                <input type="date" class="form-control mx-3 my-3" id="date" tabindex="2" required>
+            </div>
+                        <div class="col-md-4 form-group">
+                <input type="submit" class="form-control  mx-3 my-3 btn-light btn-outline-dark" value="Add Task"
+                    id="btn" tabindex="3">
+            </div>
         </form>
-        <ul id=list>
+        <ul id="list" class="container bg-light my-3">
         </ul>
-
     </main>
-
     <script src="index.js"></script>
 </body>
 
