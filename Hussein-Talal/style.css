@@ -46,3 +46,7 @@ header {
     margin-bottom: 1rem;
     font-weight: bold;
 }
+
+.todo-item span {
+    display: block;
+}
