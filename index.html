@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link to style.css -->
+    <link rel="stylesheet" src="style.css">
+    <title>ToDo list</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Organize your life</h1>
+        </div>
+        <div>
+            <h1>Today</h1>
+            <h1 id = "ToDate"></h1>
+        </div>
+    </header>
+
+    <main>
+    <form>
+        <input type="text" id="text" name="to-do" placeholder="Enter your todo"  required>
+        <button id="addTodo" type="button" >Add Todo</button><br>
+        <label for="deadline" >Select Deadline: </label>
+        <input type="date" id="deadline" name="deadline" required>
+      </form>
+
+      <div>
+          <ul id="addedToDos">
+                
+          </ul>
+      </div>
+    </main>
+
+    <script src='script.js'></script>
+</body>
+</html>
