@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+*{
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+
+body {
+    margin: 0 auto;
+}
+.empty-status-img {
+    width: 50px;
+    height: auto;
+    transition: all 500ms;
+}
+.empty-status-img:hover {
+    transform: scale(1.1);
+
+}
+.empty-status  {
+    color: grey;
+    user-select: none;
+
+}
+.heading {
+    font-size: 2rem;
+    user-select: none;
+    
+}
