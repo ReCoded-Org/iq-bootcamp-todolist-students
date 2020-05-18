@@ -21,6 +21,12 @@ color:gray;
 }
 
 li{
-
+width:400px;
+height: 100px;
  color: white;
+}
+.mystyle{
+border-top:solid 3px rgb(43, 33, 53)  ;
+width:400px;
+height: 200px;
 }

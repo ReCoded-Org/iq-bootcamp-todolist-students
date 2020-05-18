@@ -14,13 +14,16 @@
             <h1>ToDay</h1>
             <h1 id='h'></h1>
             </div>
-            <form class="d-flex flex-column">
+            <form class="d-flex flex-column align-items-center">
                 <div>
                 <label for="input1">select deadline</label>
                 <input type="date" id="input1" name="datemin" required>
             </div>
-            <div>
+            <div >
+                <label for="input2">enter your task</label>
                 <input type="text"  id="input2" placeholder="enter your todo" name="todo" required>
+            </div>
+            <div>
                 <input type="submit" class="div2" value="add todo" onclick="makelist()">
             </div>
             </form>

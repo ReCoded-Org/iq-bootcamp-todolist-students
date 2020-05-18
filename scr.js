@@ -29,25 +29,20 @@ function makelist() {
  var element = document.getElementById("list");
  element.appendChild(tag1);
 console.log(tag1)
-
+    var tagdiv = document.createElement("div");
+        tagdiv.classList.add("mystyle");
              var tag2=document.createElement("h4");
               //var text1=document.createTextNode(document.getElementById("input2").value);
              tag2.innerHTML=document.getElementById("input2").value;
              
-             tag1.appendChild(tag2);
+             tagdiv.appendChild(tag2);
               
 
              var tag3=document.createElement("p");
               text2=document.createTextNode(document.getElementById("input1").value);
               tag3.appendChild(text2);
-              tag1.appendChild(tag3)
-              
-         
-              
- 
- 
-
-
+              tagdiv.appendChild(tag3);
+    tag1.appendChild(tagdiv)
 
  document.getElementById("input1").value='';
  document.getElementById("input2").value='';
