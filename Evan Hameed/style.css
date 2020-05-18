@@ -129,8 +129,9 @@ body{
     transition-duration: .1s;
     transition-timing-function: linear;
     transition-delay: 0s;
-    animation:swing-in-top-fwd 1s cubic-bezier(.175,.885,.32,1.275) both};
+    animation:swing-in-top-fwd 1s cubic-bezier(.175,.885,.32,1.275) both;
 }
+
 
 .listItem span{
     font-family: 'Mukta', sans-serif;
