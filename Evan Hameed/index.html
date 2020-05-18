@@ -12,6 +12,8 @@
     rel = "stylesheet">
    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+   <!--Aos animation -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
    <script>
       $(function() {
@@ -33,9 +35,9 @@
  <section class="form-section">
 
     <form action="#" class="form" id="myForm">
-     <input type="text" placeholder="Enter your Todo here!" required id="todo" autocomplete="off" tabindex="1" > 
+     <input type="text" placeholder="Enter your Todo here!" required id="todo" autocomplete="off" tabindex="1" data-aos="zoom-out-right" data-aos-duration="1200"> 
      <br>
-     <input type="text" required id="deadline" placeholder="deadline" tabindex="2"> <br>
+     <input type="text" required id="deadline" placeholder="deadline" tabindex="2" data-aos="zoom-out-left" data-aos-duration="1200"> <br>
      <input type="submit" value="Todo" id="todoBtn" tabindex="3"> 
     </form>
   
@@ -48,6 +50,10 @@
 <br>
 <br>
 
- <Script src="app.js"></Script>   
+ <Script src="app.js"></Script> 
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script>
+   AOS.init();
+ </script>  
 </body>
 </html>
