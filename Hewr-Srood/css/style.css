@@ -1,0 +1,282 @@
+:root {
+  --primary-color: rgba(0, 0, 0, 0.329);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  min-height: 100vh;
+  font-family: sans-serif;
+  font-weight: bolder;
+  padding: 1rem;
+}
+
+/* languages */
+nav ul {
+  list-style: none;
+  position: absolute;
+  top: 1rem;
+  left: -1rem;
+  width: 80px;
+  text-align: right;
+}
+
+nav ul li:nth-child(1) {
+  animation: nav-li-animate 1s ease;
+}
+
+nav ul li:nth-child(2) {
+  animation: nav-li-animate 1.5s ease;
+}
+
+nav ul li:nth-child(3) {
+  animation: nav-li-animate 2s ease;
+}
+
+nav ul li {
+  border: 1px solid var(--primary-color);
+  transition: margin 1s ease;
+  cursor: pointer;
+  border-radius: 10px;
+
+}
+
+nav ul li a {
+  display: block;
+  padding: 1rem;
+  width: 100%;
+  text-decoration: none !important;
+  color: black;
+}
+
+nav ul li:hover {
+  background: rgba(255, 255, 255, 0.288);
+  margin-right: -50px;
+}
+
+.todo-container {
+  margin-top: 20vh;
+}
+
+h1 {
+  font-size: 4rem !important;
+}
+
+h1,
+h2 {
+  animation: fade-top 1.3s ease;
+}
+
+form {
+  width: 100%;
+}
+
+input {
+  background: transparent;
+  padding: 0.8rem 6rem;
+  border-radius: 10px;
+  border: 1px solid var(--primary-color);
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.521);
+}
+
+label {
+  margin: 0 !important;
+}
+
+.task-input {
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 0.8 1rem;
+  animation: inputs-animate 2s ease;
+}
+
+.date-input {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  animation: inputs-animate 2s ease;
+}
+
+.btns-container {
+  animation: submit-animate 2s ease;
+}
+
+.submit-btn {
+  border: 1px solid var(--primary-color);
+}
+
+.checkbox-container {
+  width: 50px;
+  height: 50px;
+  margin-right: .5rem;
+  position: relative;
+
+  border-radius: 10px;
+  transition: background 1s ease;
+}
+
+.checkbox-container:hover {
+  background: rgba(0, 0, 0, 0.521);
+}
+
+.checkbox-container input {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-container input:checked~label {
+  background: var(--primary-color);
+}
+
+
+
+.checkbox-container label {
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+ul {
+  width: 50%;
+}
+
+.list-group-item {
+  background: transparent !important;
+}
+
+.list-animate {
+  animation: listanimate 1s ease;
+}
+
+.btn-animate {
+  animation: btn-animate .5s ease;
+}
+
+.task-deadline {
+  position: relative;
+}
+
+.task-deadline::after {
+  transform: skewX(30deg);
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 200%;
+  top: -12px;
+  background: var(--primary-color);
+  left: -10%;
+}
+
+/* media query */
+@media screen and (max-width: 992px) {
+  ul {
+    width: 90%;
+  }
+
+  .btns-container {
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 390px) {
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  .checkbox-container {
+    margin-right: .3rem;
+  }
+
+  .submit-btn {
+    margin-top: .5rem;
+  }
+
+}
+
+/* keyframes */
+@keyframes listanimate {
+  from {
+    transform: translateX(-500px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes submit-animate {
+  from {
+    transform: translateX(-100vw);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes inputs-animate {
+  from {
+    transform: translateX(100vw);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes nav-li-animate {
+  from {
+    transform: translateX(-6rem);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes btn-animate {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-top {
+  from {
+    transform: translatey(-500px);
+  }
+
+  to {
+    transform: translatey(0);
+  }
+}
