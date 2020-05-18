@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan Script' rel='stylesheet'>
+</head>
+
+</html>
+
+<body onload="time()">
+
+<header>
+    <nav class="d-flex flex-column justify-content-center align-items-center h2  nav-color mh-100"style="height: 80px;">❤️a todo list made by Yazen❤️</nav>
+    
+<h1 class="d-flex flex-column justify-content-center align-items-center">TODAY</h1>
+    <h2 class="d-flex flex-column justify-content-center align-items-center" id="timeanddate"></h2>
+</header>
+<section class="d-flex flex-column justify-content-center align-items-center h5">
+    <div>
+<label for="date" class="d-flex flex-column justify-content-center align-items-center h1">Select DeadLine:</label>
+<input class="deadline ml-4" type="date" id="date" name="date" class="d-flex flex-column justify-content-center align-items-center">
+<br>
+<label for="todo" class="d-flex flex-column justify-content-center align-items-center h1"></label>
+<input type="text" id="todo" name="todo" placeholder="Enter your todo" class="d-flex flex-column justify-content-center align-items-center ml-4">
+<br>
+<span>
+<button onclick="addtodo()" class="h1 button-position ml-5">Add todo</button>
+</span>
+</div>
+
+<ul id="myUL" class="d-flex flex-column justify-content-center align-items-center h3 col-md-2">
+    
+</ul>
+
+
+
+</section>
+<script src="java.js"></script>
+
+</body>
+
+
