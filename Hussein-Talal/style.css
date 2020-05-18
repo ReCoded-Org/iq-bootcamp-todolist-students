@@ -7,7 +7,7 @@
 
 header {
     height: 60px;
-    background-color: #2b4996;
+    background-color: #162447;
     color: white;
     margin-bottom: 3rem;
 }
@@ -36,8 +36,13 @@ header {
 #msg {
     color: red;
 }
-.todo-items li {
+.todo-item {
     /* height: 3rem; */
     width: 100%;
     border-radius: 5px;
+    height: auto;
+    background-color: #ec94a3;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
 }

@@ -31,7 +31,7 @@ function addTask(){
     else{
         document.getElementById('noTasks').textContent = `You have ${numberOfTasks} task/s`;
         const add = document.createElement('li');
-        add.innerHTML= `<li>${text.value}</li><span>Deadline : ${date.value}</span><br><br>`
+        add.innerHTML= `<div class ="todo-item"><li>${text.value}</li><span>Deadline : ${date.value}</span></div>`
         ul.appendChild(add);
         numberOfTasks++;
         form.reset();
