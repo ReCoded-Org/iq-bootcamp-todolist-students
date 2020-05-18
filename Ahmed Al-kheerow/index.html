@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tasky</title>
+</head>
+
+<body>
+    <h1 id="today">Today</h1><br>
+    <h1 id="today-date"></h1><br>
+    <form action="">
+        <label for="deadline" >Select Deadline: </label>
+        <input type="date" id="deadline" name="deadline" placeholder="--- dd yyyy" pattern="\d{4}" required><br>
+        <input type="text" id="todo" name="to-do" placeholder="Enter your todo"  required>
+        <button class="add-task" type="button" > Add Todo</button>
+        <!-- <input type="submit" value="Add todo"> -->
+      </form> 
+
+      <div>
+          <ul id="todo-tasks">
+
+          </ul>
+
+      </div>
+
+
+
+    
+</body>
+<script src="script.js"></script>
+</html>
