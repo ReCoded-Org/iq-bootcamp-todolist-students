@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1 id="current-day">Today</h1>
+    <h1 id="current-date"></h1>
+    <form  class="task-form">
+        <div>
+          <label for="deadline">Select Deadline</label>
+          <input type="date" name="deadline" id="deadline"  required >
+        </div>
+        <div>
+          <input type="text" name="description" id="description" placeholder="Enter your todo" required>
+          <button id="add-task"  onclick="addTask()" type="button" >Add Todo</button>
+
+        </div>
+      
+      </form>
+      <div id="no-tasks-message" >
+       
+        <h3>
+            No tasks to show
+        </h3>
+    </div>
+      <div >
+        <ul id="tasks-list">
+        </ul>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
