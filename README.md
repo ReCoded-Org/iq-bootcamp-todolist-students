@@ -32,7 +32,7 @@ These requirements will basically update each version and you will add to the wo
 - there should be a check button on each task item in the list and when the user click it, it should add a line-through on the task title (basically making this task checked).
 - pass the task as an object to add it to your task list.
 
-###### PS: if you are not storing tasks in array and you feel you are having problems checking (adding line-through over task title) the task, try to make the tasks as an array or just checkout how to render the tasks as an array of object.
+##### PS: if you are not storing tasks in array and you feel you are having problems checking (adding line-through over task title) the task, try to make the tasks as an array or just checkout how to render the tasks as an array of object.
 
 #### Version 1 Styling requirements (Homework)
 
