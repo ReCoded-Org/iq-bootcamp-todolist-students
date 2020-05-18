@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="todo.css">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+</head>
+<body onload="myFunction()">
+   
+<div class="text  animate__animated animate__pulse" >
+    <p>YOU HAVE TO PUSH YOURSELF.<br> no one else is going to do it for you </p>
+    <p>Tune yourself <br>. The circumstances and events are all lined up </p>
+    <p>You are only as powerful as<br> you are JOYFUL in the moment  </p>
+    <p> WORK HARD </p>
+</div>
+<form class="container animate__animated animate__bounceInUp">
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">My To Do List</h2>
+  <h1  id="datechanging"></h1>
+  <input tabindex="1" type="text" id="myInput" placeholder="start a task" required>
+  <label>Select the deadline </label>
+  <input tabindex="2"  type="date" id="input_date"  min="myFunction()" required>
+  <button  onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+  
+</ul>
+</form>
+<script>
+
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  let p =document.createElement('p');
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  li.appendChild(p);
+  let time= document.getElementById("input_date").value ;
+  if (inputValue === '') {
+    alert("You must write something!");
+  }
+  if(time=='')
+  {
+      alert(' you should enter a date ');
+  }
+   else {
+    document.getElementById("myUL").appendChild(li);
+    p.innerHTML = time;
+  }
+  document.getElementById("myInput").value = "";
+  document.getElementById("input_date").value="";
+
+
+ 
+  
+}
+
+function myFunction() {
+  var d = new Date();
+  var n = d.toLocaleDateString();
+  document.getElementById("datechanging").innerHTML = ` Today ${n}`;
+}
+
+</script>
+
+</body>
+</html>
