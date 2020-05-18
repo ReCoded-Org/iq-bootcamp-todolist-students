@@ -24,3 +24,4 @@ function addTask(event) {
     document.getElementById('description').value = '';
     document.getElementById('no-tasks-message').remove();
 }
+
