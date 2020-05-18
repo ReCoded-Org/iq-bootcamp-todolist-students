@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+  }
+  body{
+    background-color: rgb(247, 242, 242);
+  }
+  div#Today-text{
+    background-color: lightgreen;
+    display:flex;
+    justify-content:space-around ;
+    height:80px;
+  }
+  
+  h1{
+    text-transform: uppercase;
+  
+  }
+  
+  form#todo{
+   display: flex;
+   flex-direction: column;
+   justify-content:  center;
+   align-items: center;
+   height:80%;
+   margin-top:30px
+  
+  }
+  label{
+    font-size:30px;
+    margin-bottom:10px;
+  }
+  input{
+    margin:10px;
+    width:50%;
+    height:40px;
+  }
+  .input-div{
+    width:60%;
+    text-align: center;
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+    width:40%;
+    margin-left:50px;
+  
+  }
+  ul > li{
+    margin-bottom: 10px;
+    background-color:#ffd1b3;  ;
+    padding:10px;
+    font-size: 20px;
+    
+  }
+  #button{
+    background: linear-gradient(to right, rgba(34,193,195,1), rgba(253,240,45,1));
+    font-size:20px;
+    font-weight: bolder;
+    height:60px;
+    width:15%;
+  
+  }
+  #button:hover{
+    background: linear-gradient(to right,rgba(34,67,195,0.7), rgb(230, 217, 42), rgba(34,193,195,1));
+    cursor:pointer;
+    
+  }
+  p{
+    font-size:20px;
+  }
+  input#date{
+  text-align: center;}
