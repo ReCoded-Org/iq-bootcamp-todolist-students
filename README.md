@@ -42,3 +42,6 @@ Feel free to use whatever CSS framework or just CSS as long as it looks nice and
 #### Version 1 GIF Example
 
 ![gif-example](https://raw.githubusercontent.com/ReCoded-Org/iq-bootcamp-todolist-students/master/Example.gif)
+
+#### Version 2 GIF Example
+![v2-example](https://i.imgur.com/8olRBfh.gif)
