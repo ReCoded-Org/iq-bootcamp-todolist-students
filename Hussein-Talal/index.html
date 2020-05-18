@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
     <title>Todo List</title>
 </head>
 <body>
@@ -17,10 +18,10 @@
     <main>
         <section class="container">
             <p id="msg"></p>
-            <form action="" id="form" class="d-flex flex-row flex-wrap">
+            <form action="" id="form" class="d-flex flex-row flex-wrap ">
                 <input required type="text" class="form-control col-12 col-md-8 col-lg-8"  name="text" id="text" placeholder="Add your task" >
-                <input required type="date" class="form-control col-12 col-md-3 col-lg-3"  name="date" id="date" >
-                <input onclick="addTask()" type="submit" class="form-control col-lg-2 col-md-2" value="Add task">
+                <input required type="text" class="form-control col-12 col-md-3 col-lg-3"  name="date" id="date" onfocus="this.type = 'date'" onblur="this.type = 'text'" placeholder="Deadline">
+                <input onclick="addTask()" type="submit" class="form-control btn btn-primary col-lg-2 col-md-2" value="Add task">
             </form>
         </section>
 
