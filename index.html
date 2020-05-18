@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- link to style.css -->
-    <link rel="stylesheet" src="style.css">
+    <link rel="stylesheet" href="style.css">
     <title>ToDo list</title>
 </head>
-<body>
+<body class="container">
     <header>
         <div>
-            <h1>Organize your life</h1>
+            <h1 class="text-center m-5 text-white">Make your life easier!</h1>
         </div>
         <div>
-            <h1>Today</h1>
-            <h1 id = "ToDate"></h1>
+            <h1 class="m-3 text-white text-center">Today</h1>
+            <h1 id = "ToDate" class="text-right m-3 text-white text-center"></h1>
         </div>
     </header>
 
     <main>
-    <form>
-        <input type="text" id="text" name="to-do" placeholder="Enter your todo"  required>
-        <button id="addTodo" type="button" >Add Todo</button><br>
-        <label for="deadline" >Select Deadline: </label>
-        <input type="date" id="deadline" name="deadline" required>
-      </form>
+        <form class="row">
+            <div class="col">
+            <input type="text" id="text" class="text" name="to-do" placeholder="Enter your todo"  required><br>
+            <label for="deadline" class="text-white" >Select Deadline: </label>
+            <input type="date" id="deadline" name="deadline" required>
+            </div>
+            <div class="col text-right">
+            <button id="addTodo" class="btn-todo" type="button" >Add Todo</button>
+            </div>
+        </form>
 
-      <div>
-          <ul id="addedToDos">
+        <div>
+            <ul id="addedToDos" class="text-white text-center list-inline font-todo">
                 
-          </ul>
-      </div>
+            </ul>
+        </div>
     </main>
 
     <script src='script.js'></script>
