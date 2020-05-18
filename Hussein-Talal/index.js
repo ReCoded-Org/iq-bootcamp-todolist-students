@@ -7,7 +7,6 @@ const form = document.getElementById('form');
 let text = document.getElementById('text');
 const ul = document.querySelector('ul');
 let date = document.getElementById('date');
-let numberOfTasks = 1;
 const msg = document.getElementById('msg');
 
 //adding the date to the header
@@ -24,6 +23,7 @@ let today = year+'-'+month+'-'+day;
 date.setAttribute("min", today);
 
 //adding-task function
+let numberOfTasks = 1;
 function addTask(){
     if (text.value === '' || date.value === '') {
         msg.textContent = "Input the task and the date";
@@ -31,8 +31,7 @@ function addTask(){
     else{
         document.getElementById('noTasks').textContent = `You have ${numberOfTasks} task/s`;
         const add = document.createElement('li');
-        let textNode = document.createTextNode(text.value + " deadline :" + date.value);
-        add.appendChild(textNode);
+        add.innerHTML= `<li>${text.value}</li><span>Deadline : ${date.value}</span><br><br>`
         ul.appendChild(add);
         numberOfTasks++;
         form.reset();
