@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Today</h1>
+        <h1 id="today">today's date</h1>
+    </header>
+    <main>
+        <div class="form-container">
+            <form action="#">
+                <div class="input-container">
+                    <label for="todo-date">Select Deadline:</label>
+                    <input type="date" id="todo-date">
+                </div>
+                <div class="input-container enter-project">
+                    <input type="text" placeholder="Enter your todo" id="project">
+                    <button id="btn" onclick="showTodo()" class="btn">Add Todo</button>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="project-container">
+            <ul>
+                <li style="list-style-type: none; align-self: center; margin-left: 500px;">you are lucky, you have nothing to do  :)</li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
