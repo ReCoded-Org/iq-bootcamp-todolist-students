@@ -33,6 +33,7 @@ listItem.classList.add('listItem');
 list.appendChild(listItem);
 tasks.push(task);
 
+localStorage.setItem('myTasksList' , JSON.stringify(tasks));
 form.reset();
 
      }
