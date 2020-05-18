@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+	background-image: url('to-do.jpg');
+	background-size: cover;
+    box-sizing: border-box;
+}
+
+h1 {
+	color: #fff;
+	font-size: 3rem;
+	font-weight: 50;
+	text-align: center;
+	margin: 1rem 0 3rem; 
+	font-family: 'Hind', sans-serif;
+}
+
+.title{
+	color: rgb(230, 203, 82);
+	text-transform: uppercase;
+	font-weight: 800;
+}
+#time{
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 30;
+	text-align: left;
+	margin: 1rem 16rem 3rem; 
+	font-family: 'Hind', sans-serif;
+}
+label{
+	color: rgb(230, 203, 82);
+	font-size: 1rem;
+	font-weight: 30;
+	text-align: left;
+	margin: 1rem 16rem 1rem; 
+	font-family: 'Hind', sans-serif;
+}
