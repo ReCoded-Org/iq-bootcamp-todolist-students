@@ -1,0 +1,17 @@
+
+.pointer{
+    cursor: pointer !important;
+    font-size: 1.2em;
+}
+
+
+.done{
+    opacity: .5;
+}
+
+.done p{
+    text-decoration: line-through;
+}
+
+
+

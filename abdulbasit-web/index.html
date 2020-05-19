@@ -1,47 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>todo list</title>
     <!-- fontawesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <!-- min.css bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <!-- Compiled and minified CSS
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-    <!-- AOS css  -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- my style -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="bg-light">
     <header class="">
         <nav class="navbar navbar-expand-lg navbar-dark p-3 bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+                <a class="navbar-brand" href="#">Todo List</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#" id="year" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                  </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-          </nav>
+        </nav>
     </header>
 
     <main class="container my-5 ">
@@ -56,30 +46,70 @@
                     <div>
                         <h4><span id="task-counter"></span> Tasks</h4>
                     </div>
-
                 </div>
-                <section id="add-todo">
-                    <form action="" class="">
-                        <div class="form-group">
-                            <input type="text" class="form-control form-control-lg" id="input-task" placeholder="write your task">
+
+                <section id="add-todo" class="mt-4">
+                    <h4 class="mb-3 text-muted">Add your tasks</h4>
+                    <form action="" autocomplete="off">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" required id="input-task"
+                                        placeholder="write your task">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" onfocus="(this.type='date')" class="form-control form-control-lg" min="today" id="date-picker"
+                                    placeholder="write task dead line">
+                                </div>
+                            </div>
                         </div>
-                        
                         <div class="form-group ">
-                            <!-- <button class="btn btn-dark" id="btn-add">Add</button> -->
                             <i id="btn-add" class="fas fa-plus-circle text-pink fa-3x"></i>
                         </div>
                     </form>
                 </section>
-        
-                <section id="task-container" >
+
+                <section id="task-container" class="mt-5">
                     <ul class="list-group" id="task-list">
-                     
-                        <li class="list-group-item my-2 rounded-pill" data-aos="zoom-in">Dapibus ac facilisis in</li>
-                        <li class="list-group-item my-2 rounded-pill">Dapibus ac facilisis in</li>
+
+                        <li class="list-group-item my-2 rounded-pill pb-0  ">
+                            <div class="d-flex justify-content-between align-items-center done m-0">
+                                <div class="d-flex align-items-center ">
+                                    <i class="far fa-circle text-success mr-3 pointer"></i>
+                                    <p class="m-0 mb- ">Lorem ipsum .</p>
+                                </div>
+                                <div>
+                                    <i class="far fa-trash-alt text-danger  pointer"></i>
+                                </div>
+                            </div>
+                            <small class="mb-1 pl-3 ml-3">12/12/2020</small>
+                        </li>
+
+                        <li class="list-group-item my-2 rounded-pill pb-0  ">
+                            <div class="d-flex justify-content-between align-items-center m-0">
+                                <div class="d-flex align-items-center ">
+                                    <i class="far fa-circle  mr-3 pointer"></i>
+                                    <p class="m-0 mb- ">12/12/2020</p>
+                                </div>
+                                <div>
+                                    <i class="far fa-trash-alt text-danger  pointer"></i>
+                                </div>
+                            </div>
+                            <small class="mb-1 pl-3 ml-3">Lorem, ipsum dolor.</small>
+                        </li>
+
                     </ul>
                 </section>
 
-                <input type="" class="datepicker">
+
+
+
+
+
+
+
             </div>
         </div>
     </main>
@@ -96,21 +126,13 @@
 
 
 
-    
+
     <!-- min jquery  -->
     <script src="jquery-3.4.1.min.js"></script>
     <!-- min.js bootstraop  (min.js + propper.js)-->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Compiled and minified JavaScript
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
-    <!-- AOS script -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- my script  -->
     <script src="script.js"></script>
-    <script>
-        AOS.init();
-        // Get the current year for the copyright
-        $('#year').text(new Date().getFullYear());
-      </script>
 </body>
+
 </html>
