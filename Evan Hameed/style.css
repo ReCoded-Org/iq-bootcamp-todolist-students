@@ -79,6 +79,24 @@ body{
     font-size: 1rem;
     outline-style: none;
 }
+#priorities{
+    width: 100%;
+    font-size: 2rem;
+    background-color: var(--lavendar-gray);
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Mukta', sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    outline-style: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 0rem 1rem 1rem 0rem;
+    color: gray;
+
+}
 .form input[type="submit"]{
 
     width: 100%;
