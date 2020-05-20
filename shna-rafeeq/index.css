@@ -1,6 +1,4 @@
 *{
-    padding:0;
-    margin:0;
     box-sizing: border-box;
     max-width: 100%;
     transition-timing-function: ease-in;
@@ -15,7 +13,8 @@ body{
 }
 .header-color{
     background-color:#2d5f5f;
-   min-width: 100%;
+   overflow-x: hidden;
+  
 }
 .txt-size{
     font-size: 30px;
