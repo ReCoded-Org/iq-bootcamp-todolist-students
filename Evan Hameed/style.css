@@ -160,6 +160,16 @@ body{
 #deadline{
     font-family: 'Mukta', sans-serif;
 }
+.trashcan{
+    transition-property: transform;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+    cursor: pointer;
+}
+.trashcan:hover{
+transform: scale(1.3);
+}
 @media screen and (max-width:550px){
 
  
