@@ -22,8 +22,7 @@ function newLiAdded(){
     let priorities = document.getElementById("drop-list").value;
     let frm = document.getElementsByName('contact-form')[0];
     let li=document.createElement('li');
-    li.classList.add("check-line");
-    li.innerHTML = `<div> <input id="list-item-checkbox-${listItemId}" type="checkbox" onChange="checkboxChanged(${listItemId})" > <span id="list-item-${listItemId}">${gettingTodo} </span> ${getdate} ${priorities}</div> `;
+    li.innerHTML = `<div> <input id="list-item-checkbox-${listItemId}" type="checkbox" onChange="checkboxChanged(${listItemId})" > <span id="list-item-${listItemId}">${gettingTodo} ${getdate} ${priorities}</span> </div> `;
     let checkFilltext = document.forms["contact-form"]["select-todo"].value;
     let checkFillDtae = document.forms["contact-form"]["selecte-date"].value;
     if (checkFilltext == "" || checkFilltext == null || checkFillDtae == "" || checkFillDtae == null) {
@@ -45,8 +44,7 @@ function checkboxChanged(id){
     paragraph.style.textDecoration = "line-through";
   } else {
     paragraph.style.textDecoration = "none";
-  }
-  // 
+  } 
 }
 
 
