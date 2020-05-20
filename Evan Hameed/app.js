@@ -12,15 +12,20 @@ let todo=document.getElementById('todo');
 const form=document.getElementById('myForm');
 let noTasksText=document.getElementById('luckyYou');
 let ulSection = document.getElementsByClassName('ulSection');
+const priorities = document.getElementById('priorities');
+const firstPriority = document.getElementById('priority1');
+const secondPriority = document.getElementById('priority2');
+const thirdPriority = document.getElementById('priority3');
 
 let tasks = [];
 todoButton.addEventListener('click',function(e){
-if(todo &&todo.value &&deadline &&deadline.value){
+if(todo &&todo.value &&deadline &&deadline.value&&priorities&&priorities.value){
     noTasksText.innerText=" ohh now you have some !!"
 
     let task={
     Title: todo.value,
-    Deadline: deadline.value
+    Deadline: deadline.value,
+    Priority: priorities.value,
             };
 let listItem = document.createElement('li');
 
@@ -29,6 +34,20 @@ taskTitle.innerText = task.Title;
 
 let taskDeadline = document.createElement('span');
 taskDeadline.innerText= task.Deadline;
+
+let priority = document.createElement('span');
+if(task.Priority=='priority 1'){
+     priority.style.color="red";
+}
+if(task.Priority=='priority 2'){
+     priority.style.color="yellow";
+}
+if(task.Priority=='priority 3'){
+     priority.style.color="green";
+}
+
+priority.innerText=` (${task.Priority})`;
+taskDeadline.appendChild(priority);
 
 let TrashCanSpan=document.createElement('span');
 TrashCanSpan.innerHTML +='<img src="can.svg" alt="trash can"/>'
