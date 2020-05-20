@@ -23,19 +23,33 @@ if(todo &&todo.value &&deadline &&deadline.value){
     Deadline: deadline.value
             };
 let listItem = document.createElement('li');
+
 let taskTitle = document.createElement('span');
 taskTitle.innerText = task.Title;
+
 let taskDeadline = document.createElement('span');
 taskDeadline.innerText= task.Deadline;
+
+let TrashCanSpan=document.createElement('span');
+TrashCanSpan.innerHTML +='<img src="can.svg" alt="trash can"/>'
+
 listItem.appendChild(taskTitle);
 listItem.appendChild(taskDeadline);
+listItem.appendChild(TrashCanSpan);
+
+
 listItem.classList.add('listItem');
+
 list.appendChild(listItem);
 tasks.push(task);
+console.log(tasks);
 
 localStorage.setItem('myTasksList' , JSON.stringify(tasks));
 form.reset();
 
+TrashCanSpan.addEventListener('click',function(){
+     list.removeChild(listItem);;
+});
      }
 
 });
