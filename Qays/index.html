@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <!--Let browser know website is optimized for mobile-->
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tasks App</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import tailwind.css-->
+    <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
+
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -19,37 +21,97 @@
 </head>
 
 <body>
+    <div class="container ">
 
-    <h1 id="current-day">Today</h1>
-    <h1 id="current-date"></h1>
-    <form class="task-form">
-        <div>
-            <label for="deadline">Select Deadline</label>
-            <input type="date" name="deadline" id="deadline" required>
+        <div class="container">
+            <p class=" center-align"> <b>Organize and Never forget todo things</b></p>
+
+            <div class="row  block-underline">
+                <p id="current-day" class="col"> <b>Today:</b></p>
+
+                <p id="current-date" class=" col"></p>
+
+            </div>
         </div>
-        <div>
-            <input type="text" name="description" id="description" placeholder="Enter your todo" required>
-            <button id="add-task" onclick="addTask()" type="button">Add Todo</button>
+
+        <div class="container">
+
+            <form class="task-form">
+                <div class="row ">
+                    <div class="col s2 push-s10 no-padding">
+                        <label class="hide" for="deadline">Select Deadline</label>
+
+                        <input type="text" class="datepicker" name="deadline" id="deadline" placeholder="deadline"
+                            required>
+                    </div>
+                    <div class="col s10 pull-s2 no-padding">
+                        <input type="text" name="description" id="description" placeholder="Enter your todo" required>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <button id="add-task" class="btn rounded red" onclick="addTask()" type="button">Add
+                        Todo</button>
+                    <button id="cancel" class="waves-effect waves-teal btn-flat rounded" type="button">Cancel</button>
+
+                    <p>
+                        <label class="rounded">
+                            <input type="checkbox" class="filled-in rounded" checked="checked" />
+                            <span>Filled in</span>
+                        </label>
+                    </p>
+
+                  <p>
+                        <label>
+                          <input type="checkbox" />
+                          <span>Red</span>
+                        </label>
+                      </p>
+
+                    <div class="col right">
+                        <select class="browser-default z-depth-1 col" name="priority">
+                            <option value="1" selected>Priority 1</option>
+                            <option value="2">Priority 2</option>
+                            <option value="3">Priority 3</option>
+                        </select>
+                    </div>
+
+
+
+                    <!-- Dropdown Trigger -->
+                    <!-- <button id="priority-button" class='dropdown-trigger btn right' href='#'
+                        data-target='priority-dropdown'>¸ 1
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </button> -->
+
+                    <!-- Dropdown Structure -->
+                    <!-- <ul id='priority-dropdown' class='dropdown-content'>
+                        <li><a id="priority-1" class="priority-value" href="#!">Priority 1</a></li>
+                        <li><a id="priority-2" class="priority-value" href="#!">Priority 2</a></li>
+                        <li><a id="priority-3" class="priority-value" href="#!">Priority 3</a></li>
+                    </ul> -->
+                </div>
+            </form>
+        </div>
+
+        <div class="container">
+
+            <div id="no-tasks-message">
+
+                <h4>
+                    No tasks to show
+                </h4>
+            </div>
+            <div>
+                <ul id="tasks-list">
+                </ul>
+            </div>
 
         </div>
 
-    </form>
-    <div id="no-tasks-message">
-
-        <h4>
-            No tasks to show
-        </h4>
     </div>
-    <div>
-        <ul id="tasks-list">
-        </ul>
-    </div>
-
-
     <!--JavaScript at end of body for optimized loading-->
-
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </body>
 

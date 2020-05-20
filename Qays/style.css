@@ -1,0 +1,31 @@
+.no-padding {
+    padding: 0;
+  }
+
+
+.block-underline{
+    padding-bottom: 1rem;
+    border-bottom:1px solid #e0e0e0;
+}
+  .rounded{
+    border-radius: 9999px;
+  }
+
+.datepicker-date-display{
+    background-color: red;
+}
+  .datepicker-table td.is-today{
+      color:red;
+  }
+  .datepicker-table td.is-selected{
+    background-color: red;
+}
+
+.datepicker-table td.is-today.is-selected{
+    color:white;
+}
+
+.line-through{
+
+  text-decoration: line-through;
+}
