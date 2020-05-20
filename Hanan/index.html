@@ -6,16 +6,16 @@
         <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Nosifer&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./index.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <title>Document</title>
+        <title>📅 ToDo List</title>
     </head>
 <body>
 <!-- Nav -->
 <header class="container-fluid">
 <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-12  offset-lg-2 offset-md-2 ">
+    <div class="col-5 text-center" >
         <h1>Today</h1>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-12">
+    <div class="col-7 text-center">
         <h1 id="headerH1"></h1>
     </div>
 </div>
@@ -33,9 +33,17 @@
                 </div>
                 <div class="form-group " style="margin-left: 17px;">
                     <label style="margin-top:20px;" class="text-right">Select DeadLine:</label>
-                    <input type="date"  name="selecteDate"class="form-control form-control-lg form-control-new boxShadow"  id="select-date" required>
+                    <input type="text" placeholder="Enter DeadLine" onfocus="(this.type='date')" onblur="(this.type='text')"  name="selecteDate"class="form-control form-control-lg form-control-new boxShadow"  id="select-date" required>
                 </div>
-                <div class="form-group col-sm-6 col-md-8 col-lg-4 offset-sm-2 offset-md-2 offset-lg-4 " style="margin-top: 50px; margin-bottom: 80px;">
+                <div class="form-group " style="margin-left: 17px;">
+                    <label style="margin-top:20px;" class="text-right">Determine Priority:</label>
+                    <select id="add-priorities" name="add-priorities" class="form-control form-control-lg form-control-new boxShadow">
+                        <option value="priority 1">priority 1</option>
+                        <option value="priority 2">priority 2</option>
+                        <option value="priority 3">priority 3</option>
+                      </select>
+                </div>
+                <div class="form-group col-lg-4 col-md-6 col-sm-3 offset-lg-4 offset-md-3 offset-sm-2" style="margin-top: 50px; margin-bottom: 80px;">
                     <input type="button" value="Add ToDo" name="add-button" class="form-control form-control-lg form-control-new boxShadow" style="background-color: rgb(41, 41, 73) !important; color: white;" onclick="newLi()" >
                 </div>
             </form>
