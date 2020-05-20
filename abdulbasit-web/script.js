@@ -5,17 +5,22 @@ const ul = document.querySelector("#task-list");
 const taskCount = document.querySelector("#task-counter");
 const datePicker = document.querySelector("#date-picker");
 
-
+if(ul.childElementCount==0){
+  const h3 = document.createElement("h3");
+  h3.textContent = "You dont have nay task yet ";
+  ul.appendChild(h3);
+}
 
 btnAdd.addEventListener("click", (e) => {
   e.preventDefault();
   const todo = input.value;
   const deadline = datePicker.value;
+
   //check if input is empty
   if (todo.length > 0) {
     const task = document.createElement("li");
-    task.className = 
-      "list-group-item my-2 rounded-pill";
+    task.className = "list-group-item my-2 rounded-pill";
+
     task.innerHTML = `<div class="d-flex justify-content-between align-items-center ">
         <div class="d-flex align-items-center ">
             <i class="far fa-circle mr-3 pointer" ></i>
@@ -39,7 +44,8 @@ btnAdd.addEventListener("click", (e) => {
 
     //count tasks
     taskCount.textContent = `${ul.childElementCount}`;
-    //delete task function
+
+    //delete task event listener
     deleteIcon.addEventListener("click" , ()=>{
         task.remove();
     });
@@ -77,7 +83,7 @@ const monthNames = [
   "December",
 ];
 
-time.textContent = `${date.getHours()}:${date.getMinutes()}`;
+time.textContent = `${date.getUTCHours()+3}:${date.getUTCMinutes()}`;
 day.textContent = `${days[date.getDay()]}, ${date.getDate()}th`;
 month.textContent = `${monthNames[date.getMonth()]}`;
 
@@ -85,16 +91,14 @@ $(document).ready(function () {
   $(input).hide();
   $(datePicker).hide();
   $(btnAdd).click(() => {
+    $("ul>h3").remove();
     $(input).fadeIn("slow");
     $(datePicker).fadeIn("slow");
   });
-
-  $(btnDelete).click(()=>{
-    console.log("work");
-  });
 });
 
-//set min for datepicker
+
+//set min value for datepicker
 var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth()+1;
