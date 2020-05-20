@@ -51,7 +51,7 @@ taskDeadline.appendChild(priority);
 
 let TrashCanSpan=document.createElement('span');
 TrashCanSpan.innerHTML +='<img src="can.svg" alt="trash can"/>'
-
+TrashCanSpan.classList.add('trashcan');
 listItem.appendChild(taskTitle);
 listItem.appendChild(taskDeadline);
 listItem.appendChild(TrashCanSpan);
