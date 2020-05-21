@@ -38,3 +38,6 @@ header h4 {
     margin-top: 8px
 }
 
+.secondary-content {
+    cursor: pointer;
+}

@@ -37,7 +37,7 @@ let numberOfTasks = 0;
 let numberOfDeleted = 0;
 const tasks = [];
 function addTask(){
-    if (text.value === '' || date.value === '') {
+    if (text.value === '' || date.value === '' || priority.value ==='') {
         msg.textContent = "Input the task and the date";
     }
     else{
