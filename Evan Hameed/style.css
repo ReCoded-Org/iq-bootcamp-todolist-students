@@ -79,6 +79,11 @@ body{
     font-size: 1rem;
     outline-style: none;
 }
+#checkbox{
+
+    border-radius: 50%;
+    margin-left: 10px;
+}
 #priorities{
     width: 100%;
     font-size: 2rem;
