@@ -5,7 +5,7 @@ let month = (new Date().getMonth() + 1);
 let year = new Date().getFullYear();
 const form = document.getElementById('form');
 const text = document.getElementById('text');
-const priority = document.getElementById('priority');
+const priority = document.getElementById('priorityChoose');
 const submit = document.getElementById('submit');
 const date = document.getElementById('date');
 const msg = document.getElementById('msg');
@@ -43,13 +43,31 @@ function addTask(){
 }
 
 function taskPrint (taskObj){
-    const li = document.createElement('li');
-        const span = document.createElement('span');
-        span.innerText = "deadline : " + taskObj.deadline;
-        li.className = "collection-item";
-        li.innerText = taskObj.task;
-        li.appendChild(span);
+        const li = document.createElement('li');
         ul.appendChild(li);
+        li.innerHTML = "<div class='col s8'><span class='task'></span><span class='deadline'></span></div><div class='col s2 secondary' ><span class='priority' class='badge red new '></span></div><div class='col s2 secondary'><a class='secondary-content'><i class='material-icons'>delete</i></a></div>"
+        li.classList = "collection-item row";
+        // const span = document.createElement('span');
+        // const div = document.createElement('div');
+        // const iconBtn = document.createElement('a');
+        // const icon = document.createElement('i');
+        const task = document.getElementsByClassName('task')[numberOfTasks-1];
+        const deadline = document.getElementsByClassName('deadline')[numberOfTasks-1];
+        const priority = document.getElementsByClassName('priority')[numberOfTasks-1];
+        task.innerText = taskObj.task;
+        deadline.innerText = taskObj.deadline;
+        priority.innerText = taskObj.priority;
+        //span.innerText = "deadline : " + taskObj.deadline;
+        //li.className = "collection-item";
+        //li.innerText = taskObj.task;
+        // icon.innerText = "delete";
+        // icon.className = "material-icons";
+        // iconBtn.className = "secondary-content";
+        // iconBtn.appendChild(icon);
+        // div.appendChild(iconBtn);
+        // li.appendChild(span);
+       
+        //li.appendChild(div);
 }
 console.log(tasks);
 console.log(priority.value);
