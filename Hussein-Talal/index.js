@@ -21,56 +21,50 @@ function dateFormater (dateString){
 
 
 //adding-task function
-let numberOfTasks = 1;
+let numberOfTasks = 0;
+let numberOfDeleted = 0;
 const tasks = [];
 function addTask(){
     if (text.value === '' || date.value === '') {
         msg.textContent = "Input the task and the date";
     }
     else{
+        numberOfTasks++;
         const taskObj = {
             task : text.value,
             deadline : date.value,
             priority : priority.value
         }
         tasks.push(taskObj);
-        document.getElementById('noTasks').textContent = `You have ${numberOfTasks} task/s`;
+        document.getElementById('noTasks').textContent = `You have ${numberOfTasks-numberOfDeleted} task/s`;
         taskPrint(taskObj);
-        numberOfTasks++;
         form.reset();
         msg.textContent = '';
     }    
 }
 
+function deleteTask (id){
+    numberOfDeleted++;
+    const li = document.getElementById(`${id}`);
+    li.remove();
+}
 function taskPrint (taskObj){
         const li = document.createElement('li');
         ul.appendChild(li);
-        li.innerHTML = "<div class='col s8'><span class='task'></span><span class='deadline'></span></div><div class='col s2 secondary' ><span class='priority' class='badge red new '></span></div><div class='col s2 secondary'><a class='secondary-content'><i class='material-icons'>delete</i></a></div>"
+        li.innerHTML = "<div class='col s8'><span class='task'></span><span class='deadline'></span></div><div class='col s2 secondary' ><span class='priority badge red new'></span></div><div class='col s2 secondary'><a onclick='deleteTask(this.parentNode.parentNode.id)' class='secondary-content'><i class='material-icons'>delete</i></a></div>"
         li.classList = "collection-item row";
-        // const span = document.createElement('span');
-        // const div = document.createElement('div');
-        // const iconBtn = document.createElement('a');
-        // const icon = document.createElement('i');
-        const task = document.getElementsByClassName('task')[numberOfTasks-1];
-        const deadline = document.getElementsByClassName('deadline')[numberOfTasks-1];
-        const priority = document.getElementsByClassName('priority')[numberOfTasks-1];
+        li.setAttribute("id",numberOfTasks-numberOfDeleted);
+
+        const task = document.getElementsByClassName('task')[numberOfTasks-1-numberOfDeleted];
+        const deadline = document.getElementsByClassName('deadline')[numberOfTasks-1-numberOfDeleted];
+        const priority = document.getElementsByClassName('priority')[numberOfTasks-1-numberOfDeleted];
+        console.log(task);
+        
         task.innerText = taskObj.task;
         deadline.innerText = taskObj.deadline;
         priority.innerText = taskObj.priority;
-        //span.innerText = "deadline : " + taskObj.deadline;
-        //li.className = "collection-item";
-        //li.innerText = taskObj.task;
-        // icon.innerText = "delete";
-        // icon.className = "material-icons";
-        // iconBtn.className = "secondary-content";
-        // iconBtn.appendChild(icon);
-        // div.appendChild(iconBtn);
-        // li.appendChild(span);
-       
-        //li.appendChild(div);
+    
 }
-console.log(tasks);
-console.log(priority.value);
 
 submit.addEventListener('click', (e)=>{
     e.preventDefault();
