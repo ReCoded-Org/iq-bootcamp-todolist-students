@@ -56,12 +56,12 @@ function drawArray() {
         let task = document.createElement('li');
         let lineThrough = taskObject.done ? "line-through":"";
         let checked =  taskObject.done?"checked":"";
-        task.innerHTML = `<p>
+        task.innerHTML = `
         <label class="rounded">
             <input type="checkbox" class="filled-in rounded"  onclick="changeState(${i})" ${checked} />
-            <span>Filled in</span>
+            <span><div class=${lineThrough}>${description}</div><div>${deadline}</div></span>
         </label>
-    </p><div class=${lineThrough}>${description}</div><div>${deadline}</div>`;
+    `;
         let tasksList = document.getElementById('tasks-list');
         tasksList.appendChild(task);
         document.getElementById('deadline').value = '';
