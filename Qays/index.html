@@ -23,20 +23,19 @@
 <body>
     <div class="container ">
 
-        <div class="container">
+        <div class="container ">
             <p class=" center-align"> <b>Organize and Never forget todo things</b></p>
 
             <div class="row  block-underline">
                 <p id="current-day" class="col"> <b>Today:</b></p>
 
-                <p id="current-date" class=" col"></p>
+                <p id="current-date" class="col"></p>
 
             </div>
         </div>
 
         <div class="container">
-
-            <form class="task-form">
+            <form id="task-form" class="hide">
                 <div class="row ">
                     <div class="col s2 push-s10 no-padding">
                         <label class="hide" for="deadline">Select Deadline</label>
@@ -52,57 +51,32 @@
                 <div class="row">
                     <button id="add-task" class="btn rounded red" onclick="addTask()" type="button">Add
                         Todo</button>
-                    <button id="cancel" class="waves-effect waves-teal btn-flat rounded" type="button">Cancel</button>
+                    <button id="cancel" class="waves-effect waves-teal btn-flat rounded" onclick="hideForm()" type="button">Cancel</button>
 
-                    <p>
-                        <label class="rounded">
-                            <input type="checkbox" class="filled-in rounded" checked="checked" />
-                            <span>Filled in</span>
-                        </label>
-                    </p>
-
-                  <p>
-                        <label>
-                          <input type="checkbox" />
-                          <span>Red</span>
-                        </label>
-                      </p>
+                
 
                     <div class="col right">
-                        <select class="browser-default z-depth-1 col" name="priority">
+                        <select class="browser-default z-depth-1 col" name="priority" id="priority-selector">
                             <option value="1" selected>Priority 1</option>
                             <option value="2">Priority 2</option>
                             <option value="3">Priority 3</option>
                         </select>
                     </div>
-
-
-
-                    <!-- Dropdown Trigger -->
-                    <!-- <button id="priority-button" class='dropdown-trigger btn right' href='#'
-                        data-target='priority-dropdown'>¸ 1
-                        <i class="material-icons right">arrow_drop_down</i>
-                    </button> -->
-
-                    <!-- Dropdown Structure -->
-                    <!-- <ul id='priority-dropdown' class='dropdown-content'>
-                        <li><a id="priority-1" class="priority-value" href="#!">Priority 1</a></li>
-                        <li><a id="priority-2" class="priority-value" href="#!">Priority 2</a></li>
-                        <li><a id="priority-3" class="priority-value" href="#!">Priority 3</a></li>
-                    </ul> -->
                 </div>
             </form>
+
+            <button id="show-form-button" class="btn rounded red" onclick="showForm()" type="button">Add Todo +</button>
         </div>
 
-        <div class="container">
+        <div class="container row">
 
-            <div id="no-tasks-message">
+            <div class="col s12" id="no-tasks-message">
 
                 <h4>
                     No tasks to show
                 </h4>
             </div>
-            <div>
+            <div class="col s12">
                 <ul id="tasks-list">
                 </ul>
             </div>
