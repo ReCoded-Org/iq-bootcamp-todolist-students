@@ -3,44 +3,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+       <!-- Compiled and minified CSS -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+       <!-- Compiled and minified JavaScript -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+       <link href="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.min.css" rel="stylesheet">
+       <script src="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
     <title>Todo List</title>
 </head>
 <body>
     <header>
-        <div class="container d-flex justify-content-between ">
-            <h1>Today</h1>
-            <h1 id="todayDate"></h1>
+        <div class="container">
+            <div class="row">
+                <h4 id="todayDate"></h>
+            </div>
         </div>  
     </header>
 
     <main>
         <section class="container">
             <p id="msg"></p>
-            <form action="" id="form" class="d-flex flex-row flex-wrap ">
-                <input required type="text" class="form-control col-12 col-md-8 col-lg-8"  name="text" id="text" placeholder="Add your task" >
-                <input required type="text" class="form-control col-12 col-md-3 col-lg-3"  name="date" id="date" onfocus="this.type = 'date'" onblur="this.type = 'text'" placeholder="Deadline">
-                <input onclick="addTask()" type="submit" class="form-control btn btn-primary col-lg-2 col-md-2" value="Add task">
-            </form>
+            <div class="row">
+                <form action="" id="form">
+                    <div class="row">
+                        <div class="input-field col s12 m12 ">
+                            <input id="text" type="text" required>
+                            <label for="text">Add your task</label>
+                        </div>
+                        <div class="input-field col s12 m4">
+                            <input id="date" type="text" class="datepicker" required>
+                            <label for="date">Deadline</label>
+                        </div>
+                        <div class="input-field col s12 m2">
+                            <select class="select">      
+                                <option value="" disabled selected>select</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <label>priority</label>  
+                        </div>
+                    </div>
+                    <!-- <input required type="text" class="input-field col s12 m8 l8"  name="text" id="text" placeholder="Add your task" >
+                    <input required type="text" class="input-field col s12 m4 l4"  name="date" id="date" onfocus="this.type = 'date'" onblur="this.type = 'text'" placeholder="Deadline"> -->
+                    <div class="row">
+                        <button id="submit" onclick="addTask()"  class = "btn waves-effect waves-teal">Add task</button>
+                    </div>
+                    
+                </form>
+            </div>
         </section>
 
-        <div class="fluid-container">
+        <div class="container">
             <div class="horizontal-line"></div>
         </div>
         
         <section class="container">
             <h6 id="noTasks">You got no tasks !!! keep it like that</h6>
-            <div class="container">
-                <ul class="todo-items">
-
+            
+                <ul class="todo-items col s12 collection">
+                    
                 </ul>
-            </div>
+            
         </section>
     </main>
 <script src="index.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

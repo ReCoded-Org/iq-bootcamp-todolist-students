@@ -6,25 +6,18 @@
 }
 
 header {
-    height: 60px;
-    background-color: #162447;
-    color: white;
-    margin-bottom: 3rem;
+    padding-top: 2rem;
 }
-
-.form-control {
-    margin: .5rem 0;
+span {
+    display: block;
 }
-
-@media only screen and (min-width : 768px){
-    #date {
-        margin-left: 1rem;
-    }
+header h4 {
+    font-size: 1rem;
+    margin-top:.8rem;
 }
-
 
 .horizontal-line {
-    height: 2px;
+    height: 1px;
     width: 70%;
     margin: 3rem auto;
     background-color: #dddddd;
@@ -36,8 +29,8 @@ header {
 #msg {
     color: red;
 }
-.todo-item {
-    /* height: 3rem; */
+/* .todo-item {
+    height: 3rem; 
     width: 100%;
     border-radius: 5px;
     height: auto;
@@ -45,7 +38,7 @@ header {
     padding: 1rem;
     margin-bottom: 1rem;
     font-weight: bold;
-}
+} */
 
 .todo-item span {
     display: block;
