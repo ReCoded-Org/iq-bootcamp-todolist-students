@@ -1,9 +1,11 @@
 
 // setting the Current date we see up in our webpage
 let currentDate = document.getElementById('currentDate');
-let date = new Date();
-currentDate.innerText ="Today : "+ date.toDateString();
-
+const tarikh=new Date();
+let yy= new Intl.DateTimeFormat('en',{year:'numeric'}).format(tarikh);
+let mm= new Intl.DateTimeFormat('en',{month:'short'}).format(tarikh);
+let dd= new Intl.DateTimeFormat('en',{day:'2-digit'}).format(tarikh);
+currentDate.innerText=` today is : ${mm} ${dd}, ${yy}`;
 
 const todoButton=document.getElementById('todoBtn');
 let deadline=document.getElementById('deadline');
@@ -39,7 +41,11 @@ inputCheck.setAttribute('value','checkedTask');
 
 
 let taskDeadline = document.createElement('span');
-taskDeadline.innerText= task.Deadline;
+ let d=new Date(task.Deadline);
+ let yyy= new Intl.DateTimeFormat('en',{year:'numeric'}).format(d);
+let mmm= new Intl.DateTimeFormat('en',{month:'short'}).format(d);
+let ddd= new Intl.DateTimeFormat('en',{day:'2-digit'}).format(d);
+taskDeadline.innerText=` ${mmm} ${ddd}, ${yyy}`;
 
 
 
