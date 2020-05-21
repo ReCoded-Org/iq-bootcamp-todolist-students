@@ -19,7 +19,7 @@ const thirdPriority = document.getElementById('priority3');
 
 let tasks = [];
 todoButton.addEventListener('click',function(e){
-if(todo &&todo.value &&deadline &&deadline.value&&priorities&&priorities.value){
+if(todo &&todo.value &&deadline &&deadline.value){
     noTasksText.innerText=" ohh now you have some !!"
 
     let task={
@@ -32,8 +32,16 @@ let listItem = document.createElement('li');
 let taskTitle = document.createElement('span');
 taskTitle.innerText = task.Title;
 
+let inputCheck =document.createElement('input');
+inputCheck.setAttribute('type','checkbox');
+inputCheck.setAttribute('id','checkbox');
+inputCheck.setAttribute('value','checkedTask');
+
+
 let taskDeadline = document.createElement('span');
 taskDeadline.innerText= task.Deadline;
+
+
 
 let priority = document.createElement('span');
 if(task.Priority=='priority 1'){
@@ -55,6 +63,8 @@ TrashCanSpan.classList.add('trashcan');
 listItem.appendChild(taskTitle);
 listItem.appendChild(taskDeadline);
 listItem.appendChild(TrashCanSpan);
+listItem.appendChild(inputCheck);
+
 
 
 listItem.classList.add('listItem');
@@ -69,6 +79,16 @@ form.reset();
 TrashCanSpan.addEventListener('click',function(){
      list.removeChild(listItem);;
 });
+
+inputCheck.addEventListener('click',function(){
+
+if(inputCheck.checked){
+     taskTitle.style.textDecoration='line-through';
+}else{
+     taskTitle.style.textDecoration='none';
+}
+})
+
      }
 
 });
