@@ -1,4 +1,4 @@
-window.addEventListener("load", getdate());
+window.addEventListener("DOMContentLoaded", getdate());
 function getdate() {
     let today = new Date();
     let d = String(today.getDate());
@@ -13,7 +13,7 @@ function getdate() {
     today = y + '/' + m + '/' + d;
     document.getElementById('DateOfToday').innerText = today;
 }
-window.addEventListener("load", Time());
+window.addEventListener("DOMContentLoaded", Time());
 function Time() {
     let time = new Date();
     let t = time.toLocaleTimeString();
@@ -21,7 +21,7 @@ function Time() {
     let run = setTimeout(Time, 1000);
 }
 
-window.addEventListener("load", daterestrict);
+window.addEventListener("DOMContentLoaded", daterestrict);
 function daterestrict() {
     let deadlineDate = document.getElementById('date');
     let today = new Date();
@@ -43,10 +43,17 @@ function daterestrict() {
 let btn = document.getElementById('btn'); //get button
 btn.addEventListener('click', addToList);
 function addToList() {
+    hiddenElemetns= document.getElementsByClassName('hide');
+    for(let i=0; i<hiddenElemetns.length; i++)
+  {
+      hiddenElemetns[i].style.display = "block"; 
+  }
     let taskName = document.getElementById('task').value;
     let deadlineDate = document.getElementById('date').value;
     let list = document.getElementById('list');
     let listItem = document.createElement('li');
+    var e = document.getElementById("exampleFormControlSelect1");
+var userChoice = e.options[e.selectedIndex].text;
     if (taskName == "" || deadlineDate == "") {
         {
             if (taskName == "") { taskName.focus(); }
@@ -56,10 +63,30 @@ function addToList() {
         }
     }
     else {
-        listText = taskName + "<br />" + deadlineDate;
+        listText = taskName + "<br />" + deadlineDate + "&nbsp &nbsp &nbsp &nbsp &nbsp" + userChoice;
     }
+   list.innerText=null;
     listItem.innerHTML = listText;
     list.appendChild(listItem);
     let form = document.getElementById('taskForm');
     form.reset();
 }
+window.addEventListener("DOMContentLoaded", hide);
+function hide(){
+  hiddenElemetns= document.getElementsByClassName('hide');
+  for(let i=0; i<hiddenElemetns.length; i++)
+{
+    hiddenElemetns[i].style.display = "none"; 
+}
+}
+
+document.querySelectorAll('ul').forEach(item => {
+    item.addEventListener('click', event => {
+      //handle click
+      if(item.style.textDecoration == "none"){
+      item.style.textDecoration= "line-through";}
+      else{
+        item.style.textDecoration= "none"
+      }
+    })
+  });

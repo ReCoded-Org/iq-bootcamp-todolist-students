@@ -1,7 +1,10 @@
 .form-color{
-    background-color: rgb(223, 117, 179);
-margin: auto;
+
 }
 li{
     margin-left: 10px;
+    list-style: none;
+}
+b{
+    font-size: 32px;
 }

@@ -15,22 +15,40 @@
         <h6 id="Time" class=""></h6>
     </header>
     <main>
-        <form id="taskForm" method="get" class="container form-inline form-color">
-            <div class="col-md-4 form-group">
-                <label for="task">Your Task:</label>
-                <input type="text" class="form-control mx-3 my-3" placeholder="Enter your task" id="task"
-                    tabindex="1" required>
+        <form id="taskForm" method="get" class="d-flex flex-column form-color bg-light">
+            <div class="form-row d-flex justify-content-around">
+                <div class="col-md-4 form-group hide">
+                    <label for="task"></label>
+                    <input type="text" class="form-control mx-2 my-2" placeholder="Enter your task" id="task"
+                        tabindex="1" required>
+                </div>
+                <div class="col-md-4 form-group hide">
+                    <label for="date"></label>
+                    <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
+                        class="form-control mx-2 my-2" id="date" placeholder="Deadline" tabindex="2" required>
+                </div>
+                <div class="form-group hide">
+                    <label for="exampleFormControlSelect1"></label>
+                    <select class="form-control mx-2 my-2 " id="exampleFormControlSelect1">
+                        <option>Priority 1</option>
+                        <option>Priority 2</option>
+                        <option>Priority 3</option>
+                    </select>
+                </div>
             </div>
-                        <div class="col-md-4 form-group">
-                <label for="date">Deadline:</label>
-                <input type="date" class="form-control mx-3 my-3" id="date" tabindex="2" required>
-            </div>
-                        <div class="col-md-4 form-group">
-                <input type="submit" class="form-control  mx-3 my-3 btn-light btn-outline-dark" value="Add Task"
+            <div class="form-row">
+            <div class="form-group">
+                <input type="submit" class="form-control mx-3 my-3 btn-light btn-outline-dark" value="Add Task"
                     id="btn" tabindex="3">
             </div>
+            <div class="form-group hide">
+                <button type="button" class="form-control mx-3 my-3 btn-light btn-outline-dark" onclick="hide()">Cancel</button>
+            </div>
+          
+        </div>
         </form>
         <ul id="list" class="container bg-light my-3">
+           <b>Nothing to show</b> 
         </ul>
     </main>
     <script src="index.js"></script>
