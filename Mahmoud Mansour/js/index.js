@@ -5,7 +5,7 @@ function Today (){
     let day = String(updatedDate.getDate()).padStart(2, '0');
     let month = String(updatedDate.getMonth() + 1).padStart(2, '0');
     let year = updatedDate.getFullYear();
-    updatedDate = month + '/' + day + '/' + year;
+    updatedDate = `${day} ${month}, ${year}`
     todayH1.innerText = updatedDate;
 }
 Today();
@@ -17,7 +17,6 @@ function addItem (){
     let deadLineValue = document.getElementById("todo-deadline").value;
     let deadlineView = document.createElement('p')
     let emptyStatus = document.getElementById('no-tasks');
-   
     listItem.style.listStyle = 'none'
     listItem.style.borderBottom = '1px solid #eee'
     listItem.style.fontSize = '1.6rem'
