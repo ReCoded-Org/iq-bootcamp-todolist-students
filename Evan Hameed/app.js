@@ -1,11 +1,15 @@
 
 // setting the Current date we see up in our webpage
+
 let currentDate = document.getElementById('currentDate');
 const tarikh=new Date();
 let yy= new Intl.DateTimeFormat('en',{year:'numeric'}).format(tarikh);
 let mm= new Intl.DateTimeFormat('en',{month:'short'}).format(tarikh);
 let dd= new Intl.DateTimeFormat('en',{day:'2-digit'}).format(tarikh);
 currentDate.innerText=` today is : ${mm} ${dd}, ${yy}`;
+
+
+// Grabing the elements we need from HTML
 
 const todoButton=document.getElementById('todoBtn');
 let deadline=document.getElementById('deadline');
@@ -20,6 +24,8 @@ const secondPriority = document.getElementById('priority2');
 const thirdPriority = document.getElementById('priority3');
 
 let tasks = [];
+
+
 todoButton.addEventListener('click',function(e){
 if(todo &&todo.value &&deadline &&deadline.value){
     noTasksText.innerText=" ohh now you have some !!"
