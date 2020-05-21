@@ -29,17 +29,12 @@ header h4 {
 #msg {
     color: red;
 }
-/* .todo-item {
-    height: 3rem; 
-    width: 100%;
-    border-radius: 5px;
-    height: auto;
-    background-color: #ec94a3;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-} */
 
-.todo-item span {
+.todo-items span {
     display: block;
 }
+
+.secondary {
+    margin-top: 8px
+}
+
