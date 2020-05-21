@@ -24,6 +24,16 @@ function dateFormater (dateString){
 let numberOfTasks = 0;
 let numberOfDeleted = 0;
 const tasks = [];
+
+function updateTaskIndecator(){
+    const tasksIndecator = document.getElementById('noTasks');
+    if(numberOfTasks-numberOfDeleted != 0){
+        tasksIndecator.textContent = `You have ${numberOfTasks-numberOfDeleted} task/s`;
+    }
+    else {
+        tasksIndecator.textContent = `You got no tasks !!! keep it like that`;
+    }
+}
 function addTask(){
     if (text.value === '' || date.value === '') {
         msg.textContent = "Input the task and the date";
@@ -36,10 +46,10 @@ function addTask(){
             priority : priority.value
         }
         tasks.push(taskObj);
-        document.getElementById('noTasks').textContent = `You have ${numberOfTasks-numberOfDeleted} task/s`;
         taskPrint(taskObj);
         form.reset();
         msg.textContent = '';
+        updateTaskIndecator();
     }    
 }
 
@@ -47,6 +57,7 @@ function deleteTask (id){
     numberOfDeleted++;
     const li = document.getElementById(`${id}`);
     li.remove();
+    updateTaskIndecator();
 }
 function taskPrint (taskObj){
         const li = document.createElement('li');
@@ -58,8 +69,6 @@ function taskPrint (taskObj){
         const task = document.getElementsByClassName('task')[numberOfTasks-1-numberOfDeleted];
         const deadline = document.getElementsByClassName('deadline')[numberOfTasks-1-numberOfDeleted];
         const priority = document.getElementsByClassName('priority')[numberOfTasks-1-numberOfDeleted];
-        console.log(task);
-        
         task.innerText = taskObj.task;
         deadline.innerText = taskObj.deadline;
         priority.innerText = taskObj.priority;
