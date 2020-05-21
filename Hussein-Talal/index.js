@@ -19,21 +19,23 @@ function dateFormater (dateString){
     return dateFormated ;
 }
 
+//function to update number of tasks 
+function updateTaskIndecator(){
+    let totalTasks = numberOfTasks-numberOfDeleted;
+    const tasksIndecator = document.getElementById('noTasks');
+    if(numberOfTasks-numberOfDeleted != 0){
+        tasksIndecator.textContent = `You have ${totalTasks} task/s`;
+    }
+    else {
+        tasksIndecator.textContent = `You got no tasks !!! keep it like that`;
+    }
+
+}
 
 //adding-task function
 let numberOfTasks = 0;
 let numberOfDeleted = 0;
 const tasks = [];
-
-function updateTaskIndecator(){
-    const tasksIndecator = document.getElementById('noTasks');
-    if(numberOfTasks-numberOfDeleted != 0){
-        tasksIndecator.textContent = `You have ${numberOfTasks-numberOfDeleted} task/s`;
-    }
-    else {
-        tasksIndecator.textContent = `You got no tasks !!! keep it like that`;
-    }
-}
 function addTask(){
     if (text.value === '' || date.value === '') {
         msg.textContent = "Input the task and the date";
@@ -53,11 +55,20 @@ function addTask(){
     }    
 }
 
+function updateTasksID (){
+    const li = document.getElementsByClassName('collection-item');
+    for(let i=1 ; i<= tasks.length ; i++){
+        li[i-1].setAttribute("id",i);
+    }
+}
+
 function deleteTask (id){
     numberOfDeleted++;
     const li = document.getElementById(`${id}`);
     li.remove();
+    tasks.splice(id-1,1);
     updateTaskIndecator();
+    updateTasksID();
 }
 function taskPrint (taskObj){
         const li = document.createElement('li');
