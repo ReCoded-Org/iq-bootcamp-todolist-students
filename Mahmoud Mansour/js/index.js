@@ -9,7 +9,12 @@ function Today (){
     todayH1.innerText = updatedDate;
 }
 Today();
-
+let ulList ;
+let listItem;
+let checker;
+let deadlineView;
+let priortyView;
+console.log(ulList);
 let todo = [];
 function addTask () {
 
@@ -25,21 +30,41 @@ function addTask () {
     };
    
     todo.push(todos);
+    
     console.log(todo);
-    let ulList = document.getElementById('list');
-    const listItem = document.createElement("li");
-    const deadlineView = document.createElement("p");
-    const priortyView = document.createElement("p")
+     ulList = document.getElementById('list');
+     listItem = document.createElement("li");
+     checker = document.createElement('input');
+     deadlineView = document.createElement("p");
+     priortyView = document.createElement("p")
+     console.log(ulList);
+    
+    checker.type = "checkbox";
+    checker.value = 1;
     ulList.appendChild(listItem);
-    listItem.appendChild(deadlineView);
-    listItem.appendChild(priortyView);
+  
     for (let i = 0; i < todo.length; i++){
         let getTodo = todo[i];
-        console.log(getTodo);
+       
         listItem.innerText = getTodo.task;
         deadlineView.innerText= getTodo.deadline;
-        console.log(deadlineView);
+        if(getTodo.priorty === "high priorty"){
+            priortyView.style.color = "red";
+        } else if (getTodo.priorty === "med priorty") {
+            priortyView.style.color = "orange";
+
+        } else {
+            priortyView.style.color = "green";
+        }
         priortyView.innerText = getTodo.priorty;
         console.log(priortyView);
+     
+
     }
+    localStorage.setItem('todoList', JSON.stringify(todo));
+    listItem.appendChild(checker);
+    listItem.appendChild(deadlineView);
+    listItem.appendChild(priortyView);
+    listItem.style.listStyle = "none"
+   
 }

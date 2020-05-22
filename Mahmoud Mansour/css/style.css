@@ -28,3 +28,14 @@ body {
     user-select: none;
     
 }
+#list {
+    display: flex;
+    flex-flow: column wrap;
+    
+}
+#list li p {
+    margin: 0;
+    font-size: 0.8rem;
+    
+    
+}
