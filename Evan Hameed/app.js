@@ -35,7 +35,7 @@ function addTask(){
           Deadline: deadline.value,
           Priority: priorities.value,
                   };
-       
+     tasks.push(task);
                   
       let listItem = document.createElement('li');
       let collectedSpan =document.createElement('span');
@@ -98,8 +98,8 @@ function addTask(){
       listItem.classList.add('listItem');
       
       list.appendChild(listItem);
-      tasks.push(task);
-      console.log(tasks);
+      
+      
       
       localStorage.setItem('myTasksList' , JSON.stringify(tasks));
       form.reset();
