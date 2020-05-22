@@ -41,3 +41,7 @@ header h4 {
 .secondary-content {
     cursor: pointer;
 }
+
+.check-task {
+    margin-top: 9px;
+}

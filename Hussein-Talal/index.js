@@ -73,7 +73,7 @@ function deleteTask (id){
 function taskPrint (taskObj){
         const li = document.createElement('li');
         ul.appendChild(li);
-        li.innerHTML = "<div class='col s8'><span class='task'></span><span class='deadline'></span></div><div class='col s2 secondary' ><span class='priority badge red new'></span></div><div class='col s2 secondary'><a onclick='deleteTask(this.parentNode.parentNode.id)' class='secondary-content'><i class='material-icons'>delete</i></a></div>"
+        li.innerHTML = "<label class='col s1 check-task'><input class='task-check' onclick='isChecked(this.parentNode.parentNode.id)' type='checkbox'><span></span></label><div class='col s7'><span class='task'></span><span class='deadline'></span></div><div class='col s2 secondary' ><span class='priority badge red new'></span></div><div class='col s2 secondary'><a onclick='deleteTask(this.parentNode.parentNode.id)' class='secondary-content'><i class='material-icons'>delete</i></a></div>"
         li.classList = "collection-item row";
         li.setAttribute("id",numberOfTasks-numberOfDeleted);
 
@@ -84,6 +84,17 @@ function taskPrint (taskObj){
         deadline.innerText = taskObj.deadline;
         priority.innerText = taskObj.priority;
     
+}
+
+function isChecked(id){
+    const checkbox = document.getElementsByClassName('task-check')[id-1];
+    const task = document.getElementsByClassName('task')[id-1];
+    if(checkbox.checked){
+        task.style.textDecoration= "line-through";
+    }
+    else{
+        task.style.textDecoration= "none";
+    }
 }
 
 submit.addEventListener('click', (e)=>{
