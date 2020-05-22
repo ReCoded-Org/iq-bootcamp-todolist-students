@@ -36,10 +36,17 @@ function addTask(){
           Priority: priorities.value,
                   };
       let listItem = document.createElement('li');
-
+      let collectedSpan =document.createElement('span');
+      collectedSpan.classList.add('collectedSpan')
+      let titleDate=document.createElement('span');
+      titleDate.classList.add('titleDate');
+      
       let taskTitle = document.createElement('span');
       taskTitle.innerText = task.Title;
       
+      titleDate.appendChild(taskTitle);
+      
+
       let inputCheck =document.createElement('input');
       inputCheck.setAttribute('type','checkbox');
       inputCheck.setAttribute('id','checkbox');
@@ -47,13 +54,14 @@ function addTask(){
       
       
       let taskDeadline = document.createElement('span');
+      taskDeadline.classList.add('taskDeadline');
        let d=new Date(task.Deadline);
        let yyy= new Intl.DateTimeFormat('en',{year:'numeric'}).format(d);
       let mmm= new Intl.DateTimeFormat('en',{month:'short'}).format(d);
       let ddd= new Intl.DateTimeFormat('en',{day:'2-digit'}).format(d);
       taskDeadline.innerText=` ${mmm} ${ddd}, ${yyy}`;
       
-      
+     titleDate.appendChild(taskDeadline);
       
       let priority = document.createElement('span');
       if(task.Priority=='priority 1'){
@@ -69,13 +77,14 @@ function addTask(){
       priority.innerText=` (${task.Priority})`;
       taskDeadline.appendChild(priority);
       
+      collectedSpan.appendChild(inputCheck);
+      collectedSpan.appendChild(titleDate);
       let TrashCanSpan=document.createElement('span');
       TrashCanSpan.innerHTML +='<img src="can.svg" alt="trash can"/>'
       TrashCanSpan.classList.add('trashcan');
-      listItem.appendChild(taskTitle);
-      listItem.appendChild(taskDeadline);
+
+      listItem.appendChild(collectedSpan);
       listItem.appendChild(TrashCanSpan);
-      listItem.appendChild(inputCheck);
       
       
       
