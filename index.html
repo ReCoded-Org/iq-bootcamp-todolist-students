@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<head>
+    <title>deadline-times</title>
+   
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+ 
+</head>
+
+<html>
+    <body style="background-image: url(https://assets-global.website-files.com/5a690960b80baa0001e05b0f/5ca4b074e9c52631fc36f901_Schedule-Time-p-1080.png);">
+        <header class=" bg-dark text-white">
+        <h2 class="text-xl-center ">The date of today is</h2>
+        <h1 class="text-xl-center " id="header-date"></h1>
+        </header>
+        <body>
+         <main>
+              <!--input section-->
+
+              
+               <form action="#" id="forming" onsubmit="return mySubmitFunction(event)">
+                <div class="container-fluid ">
+                    <div class="row justify-content-xl-around align-items-start flex-wrap align-content-center">
+                    
+                <!--selecting thhe date of dead line-->
+                <div class="col-12 col-md-8 col-lg-3 order-1">
+                <div class="d-flex flex-column border pb-1 pt-3  bg-dark text-white">
+                        <label class="p-2" for="date-of-deadline">Please,select the date of dead-line:</label>
+                        <input class="p-2" type="date" id="date-of-deadline" name="date-of-deadline"   required>
+                </div>
+                </div>
+                <!--writing the discription about the deadline-->
+                <div class="col-12 col-md-8 col-lg-3 order-2">
+                <div  class="d-flex flex-column border pb-1 pt-3  bg-dark text-white">
+                        <label class="p-2" for="deadline-title">Write information about the dead-line:</label>
+                        <input class="p-2" type="text" id="deadline-title" name="deadline-title" required>
+                     
+                        
+                </div>
+                </div>
+                <!--select the prority-->
+                <div>
+
+                    <label for="cars">select the priorety:</label>
+                    <select name="cars" id="cars">
+                      <option value="not-important">not-important</option>
+                      <option value="important">important</option>
+                      <option value="very-important">very-important</option>
+                      <option value="prety-important">prety-important</option>
+                    </select>
+                    
+
+                </div>
+               
+                 <!--submition control -->
+                <div class="col-6 col-md-4 col-lg-2 order-3 mt-5">
+                    <input class="btn btn-primary" type="submit" id="date-of-deadline-function" onclick="date_submissions()">
+                </div>
+                </div>
+                </div>
+               </form> 
+              
+
+    
+           <!--output section-->
+                    <div class="container">
+                   <div  class="row bg-dark ">
+                    <div class="col-6">
+                        <h4>Deadlines list</h4>
+                    <input class="btn btn-primary" type="submit" id="deleting-elemments" onclick="delet_item()" value="delete">
+                    <input class="btn btn-primary" type="submit" id="check-elemments" onclick="check_item()" value="check">
+                    <ol id="test"></ol>
+                   </div>
+                   <div class="col-6">
+                       <h4>Deleted deadlines</h4>
+                       <input class="btn btn-primary" type="submit" id="return_the_deleted_items" onclick="retrun_them()" value="show">
+                       <ol id="return_the_deleted_items_ol"></ol>
+                   </div>
+                   </div>
+                   </div>
+                
+                   
+      
+    
+         </main>
+         <footer>
+
+         </footer>
+
+    </body>
+    <script>
+        //this section for geting rhe date of today
+        let dateToday = new Date();
+        let x0= dateToday.getFullYear();
+        let x1= dateToday.getMonth()+1;
+        let x2= dateToday.getDate();
+        let x5="-"
+        document.getElementById("header-date").innerHTML = x0+"/"+x1+"/"+x2;
+        let x3=document.getElementById("date-of-deadline");
+        let x4=`${x0}${x5}0${x1}${x5}${x2}`;
+        x3.setAttribute("min", `${x4}`);
+        let dead_lines_deleted=[];
+        
+        
+         function delet_item()
+    {
+let calling_checkbox=document.querySelectorAll("input[type='checkbox']");
+let calling_lis=document.querySelectorAll("li[name='item_list']")
+let li_length =calling_checkbox.length;
+for(let z=0;z<li_length;z++)
+    {
+    if (calling_checkbox[z].checked==true)
+    {
+ dead_lines_deleted.push(calling_lis[z])
+calling_lis[z].remove()
+
+    }
+    }
+    };
+
+
+    function check_item()
+    {
+let calling_checkbox=document.querySelectorAll("input[type='checkbox']");
+let calling_lis=document.querySelectorAll("li[name='item_list']")
+let li_length =calling_checkbox.length;
+for(let z=0;z<li_length;z++)
+    {
+    if (calling_checkbox[z].checked==true)
+    {
+calling_lis[z].style.textDecoration ="line-through";
+    }
+    }
+    }
+ 
+
+        //submiton-the-data
+        function date_submissions(){
+            let $deadLine_date=document.getElementById("date-of-deadline").value;
+            let $deadLine_disc=document.getElementById("deadline-title").value;
+            let $lists=document.getElementById("test");
+            let small_container=document.createElement("div");
+            small_container.setAttribute("name","itmes_div");
+            let delet_span=document.createElement("input");
+            delet_span.setAttribute("type","checkbox");
+            let new_meetings=document.createElement("p");
+            function selected_the_prioriety()
+                    {
+                let select_value=document.getElementById("cars").value
+                if (select_value=="not-important")
+                    {
+                    new_meetings.style.color = "green";
+                    }
+                    else if (select_value=='important')
+                    {
+                        new_meetings.style.color = "orange";
+                    }
+                    else if (select_value=='very-important')
+                    {
+                        new_meetings.style.color = "yellow";
+                    }
+                    else if (select_value=="prety-important")
+                    {
+                        new_meetings.style.color = "red";
+                    }
+                    else
+                    {
+                        new_meetings.style.color = "white";
+                    }
+                    }
+                
+                selected_the_prioriety() 
+            
+            let new_list_item=document.createElement("li");
+            new_list_item.setAttribute("name","item_list");
+            small_container.appendChild(delet_span);
+            new_meetings.innerHTML= $deadLine_disc + " " + "at" + " " + $deadLine_date;
+            small_container.appendChild(new_meetings);
+            new_list_item.appendChild(small_container);
+            $lists.appendChild(new_list_item);
+       }
+     
+    function retrun_them(){
+        
+        for (let counter=0;counter< dead_lines_deleted.length;counter++){
+            let $deleted_item=document.createElement("li");
+            $deleted_item.appendChild(dead_lines_deleted[counter]);
+            document.getElementById("return_the_deleted_items_ol").appendChild($deleted_item);
+        }
+        dead_lines_deleted=[];
+        }
+
+
+        const preventing = document.getElementById('forming');
+preventing.addEventListener('submit', function(e) {
+  event.preventDefault();
+
+});
+
+ 
+    </script>
+</html>
