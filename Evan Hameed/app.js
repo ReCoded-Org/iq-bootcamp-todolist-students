@@ -35,6 +35,8 @@ function addTask(){
           Deadline: deadline.value,
           Priority: priorities.value,
                   };
+       
+                  
       let listItem = document.createElement('li');
       let collectedSpan =document.createElement('span');
       collectedSpan.classList.add('collectedSpan')
@@ -54,12 +56,17 @@ function addTask(){
       
       
       let taskDeadline = document.createElement('span');
+      tasks.deadline
       taskDeadline.classList.add('taskDeadline');
-       let d=new Date(task.Deadline);
-       let yyy= new Intl.DateTimeFormat('en',{year:'numeric'}).format(d);
-      let mmm= new Intl.DateTimeFormat('en',{month:'short'}).format(d);
-      let ddd= new Intl.DateTimeFormat('en',{day:'2-digit'}).format(d);
-      taskDeadline.innerText=` ${mmm} ${ddd}, ${yyy}`;
+     let inputedDate=new Date(task.Deadline);
+     let yyy= new Intl.DateTimeFormat('en',{year:'numeric'}).format(inputedDate);
+     let mmm= new Intl.DateTimeFormat('en',{month:'short'}).format(inputedDate);
+     let ddd= new Intl.DateTimeFormat('en',{day:'2-digit'}).format(inputedDate);
+     taskDeadline.innerText=` ${mmm} ${ddd}, ${yyy}`;
+     
+     if(tarikh>inputedDate){
+          taskDeadline.classList.add('pastDate');
+     }
       
      titleDate.appendChild(taskDeadline);
       
