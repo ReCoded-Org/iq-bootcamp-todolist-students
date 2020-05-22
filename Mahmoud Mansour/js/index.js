@@ -1,15 +1,3 @@
-let todo = [];
-const unList = document.getElementById('list');
-const listItem = document.createElement('li');
-
-const taskValue = document.getElementById("todo-input").value;
-const deadlineValue = document.getElementById("todo-deadline").value;
-const priortyValue = document.getElementById("Priorties").value;
-const form = document.getElementById("task-form");
-const add = document.getElementById("addBtn");
-
-
-
 function Today (){
     let dateH1 = document.getElementById('header');
     let todayH1 = document.getElementById('today');
@@ -22,17 +10,36 @@ function Today (){
 }
 Today();
 
+let todo = [];
+function addTask () {
 
-
-function addItem (task,deadline,priorty){
-    const todos = {
-        task,
-        deadline,
-        priorty,
-        checked: false,
-        id: Date.now()
+ 
+    let todos = {
+        id: Date.now(),
+        task:document.getElementById("todo-input").value,
+        checked:false,
+        deadline:document.getElementById("todo-deadline").value,
+        priorty: document.getElementById("Priorties").value,
+        
+        
     };
+   
     todo.push(todos);
     console.log(todo);
+    let ulList = document.getElementById('list');
+    const listItem = document.createElement("li");
+    const deadlineView = document.createElement("p");
+    const priortyView = document.createElement("p")
+    ulList.appendChild(listItem);
+    listItem.appendChild(deadlineView);
+    listItem.appendChild(priortyView);
+    for (let i = 0; i < todo.length; i++){
+        let getTodo = todo[i];
+        console.log(getTodo);
+        listItem.innerText = getTodo.task;
+        deadlineView.innerText= getTodo.deadline;
+        console.log(deadlineView);
+        priortyView.innerText = getTodo.priorty;
+        console.log(priortyView);
     }
-  
+}
