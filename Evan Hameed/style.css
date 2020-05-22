@@ -169,6 +169,11 @@ body{
 }
 .taskDeadline{
     font-size: 1rem;
+    padding: 4px;
+    border-radius: 5px;
+}
+.pastDate{
+    background-color: rgb(228, 150, 150);
 }
 .listItem span{
     font-family: 'Mukta', sans-serif;
