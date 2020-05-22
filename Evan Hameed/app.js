@@ -88,18 +88,22 @@ console.log(tasks);
 localStorage.setItem('myTasksList' , JSON.stringify(tasks));
 form.reset();
 
-TrashCanSpan.addEventListener('click',function(){
-     list.removeChild(listItem);;
-});
-
-inputCheck.addEventListener('click',function(){
-
-if(inputCheck.checked){
-     taskTitle.style.textDecoration='line-through';
-}else{
-     taskTitle.style.textDecoration='none';
+function removeTask(){
+     list.removeChild(listItem);
 }
-})
+
+TrashCanSpan.addEventListener('click',removeTask)
+
+
+
+function checkTask(){
+     if(inputCheck.checked){
+          taskTitle.style.textDecoration='line-through';
+     }else{
+          taskTitle.style.textDecoration='none';
+     }
+}
+inputCheck.addEventListener('click',checkTask)
 
      }
 
