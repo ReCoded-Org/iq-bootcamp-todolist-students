@@ -75,9 +75,29 @@ p {
     margin-right: 5%;
 }
 
+.add-and-cancel-btns {
+    width: 100%;
+    justify-content: space-between !important;
+    margin-bottom: 0 !important;
+}
+
+.add-todo-btn {
+    width: 70%;
+}
+
+.cancel-btn {
+    width: 29%;
+    background-color: #EBEBEB !important;
+}
+
+.cancel-btn:hover {
+    background-color: #E3E4E6 !important;
+}
+
 .display-5 {
     font-size: 1.1rem !important;
     word-break: break-all;
+    color: #000
 }
 
 .todo-container {
@@ -123,6 +143,7 @@ p {
     border: none;
     outline: none !important;
     font-size: 1.1rem;
+    color: #212529;
 }
 
 .completed-btn {
@@ -136,6 +157,18 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #212529;
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    font-size: 1.13rem;
+    color: #212529;
+}
+
+.edit-btn:focus {
+    outline: none !important;
 }
 
 .fill-out-field {
