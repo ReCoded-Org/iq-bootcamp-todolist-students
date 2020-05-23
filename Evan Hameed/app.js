@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 });
 
+/*
 function renderTasks(taskObj) {
 
 
@@ -116,6 +117,7 @@ function renderTasks(taskObj) {
 
 
 }
+*/
 function saveToLocalStorage() {
   localStorage.setItem("myTasksList", JSON.stringify(tasks));
 }
