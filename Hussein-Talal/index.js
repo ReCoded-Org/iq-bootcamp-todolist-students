@@ -1,4 +1,4 @@
-//declaring the variables
+//declaring the global variables
 const todayDate = document.getElementById('todayDate');
 let day = new Date().getDate();
 let month = (new Date().getMonth() + 1);
@@ -12,14 +12,13 @@ const msg = document.getElementById('msg');
 const ul = document.querySelector('ul');
 
 //adding the date to the header
-
-todayDate.textContent = dateFormater(new Date().toDateString().split(" "));
+todayDate.textContent = dateFormater(new Date().toDateString().split(" "));     //global
 function dateFormater (dateString){
     const dateFormated = dateString[0]+" "+dateString[1]+ " "+dateString[2] +","+dateString[3]
     return dateFormated ;
 }
 
-//function to update number of tasks
+//function to update the number of tasks displayed
 function updateTaskIndecator(){
     let totalTasks = numberOfTasks-numberOfDeleted;
     const tasksIndecator = document.getElementById('noTasks');
@@ -33,9 +32,9 @@ function updateTaskIndecator(){
 }
 
 //adding-task function
-let numberOfTasks = 0;
-let numberOfDeleted = 0;
-const tasks = [];
+let numberOfTasks = 0;    //global
+let numberOfDeleted = 0;    //global
+const tasks = [];       //global
 function addTask(){
     if (text.value === '' || date.value === '' || priority.value ==='') {
         msg.textContent = "Input the task and the date";
@@ -55,7 +54,7 @@ function addTask(){
         addToLocal(taskObj);
     }
 }
-
+//function to update tasks list IDs with each action
 function updateTasksID (){
     const li = document.getElementsByClassName('collection-item');
     for(let i=1 ; i<= tasks.length ; i++){
@@ -71,13 +70,14 @@ function deleteTask (id){
     updateTaskIndecator();
     updateTasksID();
 }
+
+//function accepts task as an object and display it 
 function taskPrint (taskObj){
         const li = document.createElement('li');
         ul.appendChild(li);
         li.innerHTML = "<label class='col s1 check-task'><input class='task-check' onclick='isChecked(this.parentNode.parentNode.id)' type='checkbox'><span></span></label><div class='col s7'><span class='task'></span><span class='deadline'></span></div><div class='col s2 secondary' ><span class='priority badge red accent-2 '></span></div><div class='col s2 secondary'><a onclick='deleteTask(this.parentNode.parentNode.id)' class='secondary-content'><i class='material-icons red-text'>delete</i></a></div>"
         li.classList = "collection-item row";
         li.setAttribute("id",numberOfTasks-numberOfDeleted);
-        
         const task = document.getElementsByClassName('task')[numberOfTasks-1-numberOfDeleted];
         const deadline = document.getElementsByClassName('deadline')[numberOfTasks-1-numberOfDeleted];
         const priority = document.getElementsByClassName('priority')[numberOfTasks-1-numberOfDeleted];
@@ -86,6 +86,7 @@ function taskPrint (taskObj){
         priority.innerText = taskObj.priority;
 }
 
+//checks if the checkBox beside the task is checked or not
 function isChecked(id){
     const checkbox = document.getElementsByClassName('task-check')[id-1];
     const task = document.getElementsByClassName('task')[id-1];
@@ -102,11 +103,13 @@ submit.addEventListener('click', (e)=>{
     e.preventDefault();
 })
 
+//adds the task to the local storage 
 function addToLocal(taskObj){
     const taskString = JSON.stringify(taskObj);
     localStorage.setItem("task"+localStorage.length,taskString);
 }
 
+//displays the tasks stored in local storage after reloding the page
 function printLocalStorage(){
     for(let i=0 ; i<localStorage.length; i++){
         const task = JSON.parse(localStorage.getItem("task"+(i)))
