@@ -1,3 +1,5 @@
+
+let todo = JSON.parse(localStorage.getItem("todoList")) ??[] ;
 function Today (){
     let dateH1 = document.getElementById('header');
     let todayH1 = document.getElementById('today');
@@ -9,20 +11,16 @@ function Today (){
     todayH1.innerText = updatedDate;
 }
 Today();
-let ulList ;
-let listItem;
-let checker;
-let deadlineView;
-let priortyView;
-console.log(ulList);
-let todo = [];
+const form = document.getElementById('task-form');
+console.log(todo)
+
+
+
 function addTask () {
 
- 
     let todos = {
-        id: Date.now(),
+        
         task:document.getElementById("todo-input").value,
-        checked:false,
         deadline:document.getElementById("todo-deadline").value,
         priorty: document.getElementById("Priorties").value,
         
@@ -30,24 +28,39 @@ function addTask () {
     };
    
     todo.push(todos);
-    
-    console.log(todo);
-     ulList = document.getElementById('list');
-     listItem = document.createElement("li");
-     checker = document.createElement('input');
-     deadlineView = document.createElement("p");
-     priortyView = document.createElement("p")
-     console.log(ulList);
+    let ulList = document.getElementById('list');
+    let emptyStatus = document.getElementById("no-tasks");
+    let listItem = document.createElement("li");
+    let checker = document.createElement('input');
+    let deadlineView = document.createElement("p");
+    let priortyView = document.createElement("p")
+    // local storage
+     localStorage.setItem('todoList', JSON.stringify(todo));
+     
+
     
     checker.type = "checkbox";
     checker.value = 1;
+   
     ulList.appendChild(listItem);
   
+
     for (let i = 0; i < todo.length; i++){
         let getTodo = todo[i];
+        
+        console.log(getTodo.task);
+        console.log(getTodo.deadline);
+        console.log(getTodo.priorty);
+       
+
        
         listItem.innerText = getTodo.task;
+        if (listItem !== ""){
+            emptyStatus.style.display = "none";
+        }
+        
         deadlineView.innerText= getTodo.deadline;
+
         if(getTodo.priorty === "high priorty"){
             priortyView.style.color = "red";
         } else if (getTodo.priorty === "med priorty") {
@@ -56,15 +69,36 @@ function addTask () {
         } else {
             priortyView.style.color = "green";
         }
-        priortyView.innerText = getTodo.priorty;
-        console.log(priortyView);
-     
+        priortyView.innerText = getTodo.priorty;     
 
     }
-    localStorage.setItem('todoList', JSON.stringify(todo));
-    listItem.appendChild(checker);
+
+    
     listItem.appendChild(deadlineView);
     listItem.appendChild(priortyView);
+    listItem.appendChild(checker);
     listItem.style.listStyle = "none"
-   
+    function taskChecker () {
+        checker.addEventListener('change', function(e){
+    
+            if(checker.checked){
+                listItem.style.textDecoration = "line-through";
+            } else {
+                listItem.style.textDecoration = "none";
+            }
+        });
+        
+    }
+    taskChecker();
+    
+
+}
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+    addTask();
+});
+
+
+function taskRemover (){
+
 }
