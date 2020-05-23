@@ -102,7 +102,4 @@ form.addEventListener('submit', function(e){
     addTask();
 });
 
-
-function taskRemover (){
-
 }
