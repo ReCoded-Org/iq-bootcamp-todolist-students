@@ -175,6 +175,11 @@ p {
     border: solid 1.2px #FF3232 !important;
 }
 
+.date-overdue {
+    background-color: #ffc6c4;
+    border-radius: 5px;
+}
+
 @media screen and (max-width: 1190px){
 
     .main-section {
