@@ -74,7 +74,7 @@ function deleteTask (id){
 function taskPrint (taskObj){
         const li = document.createElement('li');
         ul.appendChild(li);
-        li.innerHTML = "<label class='col s1 check-task'><input class='task-check' onclick='isChecked(this.parentNode.parentNode.id)' type='checkbox'><span></span></label><div class='col s7'><span class='task'></span><span class='deadline'></span></div><div class='col s2 secondary' ><span class='priority badge red new'></span></div><div class='col s2 secondary'><a onclick='deleteTask(this.parentNode.parentNode.id)' class='secondary-content'><i class='material-icons'>delete</i></a></div>"
+        li.innerHTML = "<label class='col s1 check-task'><input class='task-check' onclick='isChecked(this.parentNode.parentNode.id)' type='checkbox'><span></span></label><div class='col s7'><span class='task'></span><span class='deadline'></span></div><div class='col s2 secondary' ><span class='priority badge red accent-2 '></span></div><div class='col s2 secondary'><a onclick='deleteTask(this.parentNode.parentNode.id)' class='secondary-content'><i class='material-icons red-text'>delete</i></a></div>"
         li.classList = "collection-item row";
         li.setAttribute("id",numberOfTasks-numberOfDeleted);
         

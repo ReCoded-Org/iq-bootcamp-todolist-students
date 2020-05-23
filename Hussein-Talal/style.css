@@ -5,12 +5,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
-header {
-    padding-top: 2rem;
-}
-span {
+
+/* span {
     display: block;
-}
+} */
 header h4 {
     font-size: 1rem;
     margin-top:.8rem;
@@ -44,4 +42,27 @@ header h4 {
 
 .check-task {
     margin-top: 9px;
+}
+
+.nav-wrapper {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0 auto;
+}
+
+.date {
+    display: flex;
+    flex-direction: row;
+    padding-right: .5rem;
+    margin-top: 3rem;
+    margin-bottom: -1rem;
+}
+
+.date h4 {
+    font-size: 1rem;
+}
+span.priority {
+    border-radius: 3px;
+    width: 6rem;
+    color: white !important;
 }

@@ -7,8 +7,8 @@
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
        <!-- Compiled and minified JavaScript -->
        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-       <link href="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.min.css" rel="stylesheet">
-       <script src="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.js"></script>
+       <!-- <link href="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.min.css" rel="stylesheet">
+       <script src="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.js"></script> -->
 
        <!-- material icons -->
        <link rel = "stylesheet"href = "https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -17,15 +17,16 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="row">
-                <h4 id="todayDate"></h>
-            </div>
-        </div>  
+        <nav class="deep-purple darken-2">
+            <div class="nav-wrapper  center-align">Never forget to do things</div>
+        </nav>
     </header>
 
     <main>
         <section class="container">
+            <div class="row date">
+                <h4>Today : </h4><h4 id="todayDate"></h>
+            </div>
             <p id="msg"></p>
             <div class="row">
                 <form action="" id="form">
@@ -49,7 +50,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <button id="submit" class = "btn waves-effect waves-teal red z-depth-3"><i class="material-icons left">add</i> Add task</button>
+                        <button id="submit" class = "btn waves-effect deep-purple accent-2 z-depth-3"><i class="material-icons left">add</i> Add task</button>
                     </div>
                     
                 </form>
