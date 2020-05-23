@@ -1,65 +1,53 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
-*{
-    font-family: 'Quicksand', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+* {
+  font-family: "Quicksand", sans-serif;
 }
-
-
 
 body {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 .empty-status-img {
-    width: 50px;
-    height: auto;
-    transition: all 500ms;
+  width: 50px;
+  height: auto;
+  transition: all 500ms;
 }
 .empty-status-img:hover {
-    transform: scale(1.1);
-
+  transform: scale(1.1);
 }
-.empty-status  {
-    color: grey;
-    user-select: none;
-
+.empty-status {
+  color: grey;
+  user-select: none;
 }
 .heading {
-    font-size: 2rem;
-    user-select: none;
-    
+  font-size: 2rem;
+  user-select: none;
 }
 #list {
-    display: flex;
-    flex-flow: column wrap;
-    
+  display: flex;
+  flex-flow: column wrap;
 }
 #list li p {
-    margin: 0;
-    padding: 0;
-    font-size: 0.8rem;
-    
-    
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
 }
-#list li  {
-    border-bottom: 1px #ddd solid;
-    display: flex;
-    justify-content: space-between;
+#list li {
+  border-bottom: 1px #ddd solid;
+  display: flex;
+  justify-content: space-between;
 }
 .todo-task {
-    border: 0;
-    box-shadow: 0px 0px 5px 0px #aaa;
-    
+  border: 0;
+  box-shadow: 0px 0px 5px 0px #aaa;
 }
 .date-picker {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-shadow: 0px 0px 5px 0px #aaa;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-shadow: 0px 0px 5px 0px #aaa;
 }
 .priorty-selector {
-    border: 0;
-    background: #fff;
-    box-shadow: 0px 0px 5px 0px #aaa;
-
-    
+  border: 0;
+  background: #fff;
+  box-shadow: 0px 0px 5px 0px #aaa;
 }
