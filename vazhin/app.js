@@ -9,7 +9,6 @@ const addBtn = document.querySelector(".btn");
 const cancelBtn = document.querySelector(".cancel-btn");
 const noTasks = document.querySelector(".tasks-empty");
 let arrOfTasks = [];
-// arrOfTasks = JSON.parse(localStorage.getItem('all-tasks'));
 let inEditMode = false;
 let indexOfInEditTask;
 priorityInput.value = "";
@@ -26,18 +25,28 @@ function addTodo(event) {
     event.preventDefault();
 
     if (taskText.value === "") {
+
         taskText.classList.add("fill-out-field");
         taskText.placeholder = "add a task";
         return;
     }
-    else if (deadlineInput.value === "") {
-        taskText.placeholder = "coding... 👩‍💻";
+    else if (priorityInput.value === "") {
+
         taskText.classList.remove("fill-out-field");
+        priorityInput.classList.add("fill-out-field");
+        priorityInput.placeholder = "select priority";
+        return;
+    }
+    else if (deadlineInput.value === "") {
+
+        priorityInput.classList.remove("fill-out-field");
         deadlineInput.classList.add("fill-out-field");
         deadlineInput.placeholder = "enter a deadline";
         return;
     }
     else {
+        taskText.placeholder = "coding... 👩‍💻";
+        priorityInput.placeholder = '';
         deadlineInput.placeholder = '';
         deadlineInput.classList.remove("fill-out-field");
 
@@ -62,12 +71,16 @@ function addTodo(event) {
 
 function updateTasksInList() {
 
-    // localStorage.setItem('all-tasks',JSON.stringify(arrOfTasks));
-
     let previousTasks = document.querySelectorAll(".todo-list div");
     for (let i = 0; i < previousTasks.length; i++) {
         previousTasks[i].remove();
     }
+
+    function compare(a, b) {
+        return a.priority - b.priority;
+    }
+
+    arrOfTasks.sort(compare);
 
     for (let i = 0; i < arrOfTasks.length; i++) {
 
@@ -181,6 +194,7 @@ function updateTasksInList() {
                 return;
             }
             else if (completedBtnClicked == true) {
+
                 task.innerHTML = `task: ${arrOfTasks[i].task}`;
                 completedBtn.innerHTML = '<i></i>';
                 document.querySelector('.motivating').remove();
@@ -253,7 +267,7 @@ $(document).ready(function () {
     })
 })
 
-// updateTasksInList()
+
 
 
 

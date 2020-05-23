@@ -187,13 +187,10 @@ p {
     }
     .wrapper-main-all {
         flex-direction: column;
-        height: auto;
     }
+    .todo-list,
     .todo-container {
         height: auto;
-    }
-    .todo-list {
-        max-height: auto;
     }
     .display-3,
     .todo-form {
