@@ -6,6 +6,22 @@
 
 }
 
+input[type=text]:not(.browser-default){
+  margin: 0;
+  border-bottom: 0;
+  box-shadow: 0 0 0 0 ;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]){
+  border-bottom: 0;
+    box-shadow: 0 0 0 0 ;
+}
+.input-underline-red{
+  border-bottom:1px solid red;
+
+}
+
+
 .block-underline{
     padding-bottom: 1rem;
     border-bottom:1px solid #e0e0e0;
@@ -39,4 +55,9 @@
 .line-through{
 
   text-decoration: line-through;
+}
+
+[type="checkbox"].filled-in:checked+span:not(.lever):after {
+  border: red;
+    background-color: red;
 }
