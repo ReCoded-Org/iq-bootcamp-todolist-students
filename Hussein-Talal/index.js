@@ -13,13 +13,13 @@ const ul = document.querySelector('ul');
 
 //adding the date to the header
 
-todayDate.textContent = dateFormater(new Date().toDateString().split(" ")); 
+todayDate.textContent = dateFormater(new Date().toDateString().split(" "));
 function dateFormater (dateString){
-    const dateFormated = dateString[0]+" "+dateString[1]+ " "+dateString[2] +","+dateString[3] 
+    const dateFormated = dateString[0]+" "+dateString[1]+ " "+dateString[2] +","+dateString[3]
     return dateFormated ;
 }
 
-//function to update number of tasks 
+//function to update number of tasks
 function updateTaskIndecator(){
     let totalTasks = numberOfTasks-numberOfDeleted;
     const tasksIndecator = document.getElementById('noTasks');
@@ -52,7 +52,7 @@ function addTask(){
         form.reset();
         msg.textContent = '';
         updateTaskIndecator();
-    }    
+    }
 }
 
 function updateTasksID (){
@@ -83,7 +83,6 @@ function taskPrint (taskObj){
         task.innerText = taskObj.task;
         deadline.innerText = taskObj.deadline;
         priority.innerText = taskObj.priority;
-    
 }
 
 function isChecked(id){
@@ -97,14 +96,12 @@ function isChecked(id){
     }
 }
 
-submit.addEventListener('click', (e)=>{
-    e.preventDefault();
+submit.addEventListener('click', ()=>{
+    addTask();
 })
 
 
-
-
-//initializing materialize components 
+//initializing materialize components
 const calendar = document.querySelector('.datepicker');
 M.Datepicker.init(calendar,{
     minDate: new Date()
