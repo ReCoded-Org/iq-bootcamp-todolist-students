@@ -26,6 +26,8 @@ const thirdPriority = document.getElementById('priority3');
 let tasks = [];
 
 
+
+
 function addTask(){
      if(todo &&todo.value &&deadline &&deadline.value){
           noTasksText.innerText=" ohh now you have some !!"
@@ -36,7 +38,13 @@ function addTask(){
           Priority: priorities.value,
                   };
      tasks.push(task);
-                  
+     
+     function saveToLocalStorage(){
+                localStorage.setItem('myTasksList' , JSON.stringify(tasks));
+
+     }
+     saveToLocalStorage();
+     
       let listItem = document.createElement('li');
       let collectedSpan =document.createElement('span');
       collectedSpan.classList.add('collectedSpan')
@@ -101,7 +109,7 @@ function addTask(){
       
       
       
-      localStorage.setItem('myTasksList' , JSON.stringify(tasks));
+
       form.reset();
       
       function removeTask(){
