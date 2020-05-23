@@ -5,7 +5,6 @@ d = n.getDate();
 document.getElementById("ToDate")
 .innerHTML = m + "/" + d +"/" + y;
 
-
 document.getElementById("addTodo").addEventListener('click', function(toDoEvent) {
     let text = document.getElementById("text").value;
     let deadline = document.getElementById("deadline").value;
@@ -14,13 +13,13 @@ document.getElementById("addTodo").addEventListener('click', function(toDoEvent)
         alert("Add a ToDo!");
     }
 
-    else { 
+    else {
+        
         let newToDo = document.createElement('li');
         newToDo.innerHTML = `<div>${text}</div><div>${deadline}</div>`;
         addedToDos.appendChild(newToDo);
 
         text = document.getElementById('text').value ='';
         deadline = document.getElementById('deadline').value ='';
-        
     }
 });
