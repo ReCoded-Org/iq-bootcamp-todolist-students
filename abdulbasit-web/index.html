@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo list</title>
+    <link rel="icon" href="https://image.flaticon.com/icons/svg/148/148982.svg">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- min.css bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- my style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-light">
+    <header class="">
+        <nav class="navbar navbar-expand-lg navbar-dark p-3 bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">Todo List</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5 ">
+        <h3 class="text-center">A better Way to Organize  Your daily task</h3>
+        <div class="row  justify-content-center p-4">
+            <div class="col-md-8 ">
+                <!-- time set  -->
+                <div class="info d-flex justify-content-center  ">
+                    <div class="date text-center">
+                        <h5>Today is: <span id="day"></span> <span id="month"></span></h5>
+                        <h5 id="time">12:12px</h5>
+                        <h5 class="text-warning" id="day"></h5>
+                        <h5 class="text-muted" id="month"></h5>
+                    </div>
+                </div>
+
+                <section id="add-todo" class="mt-4">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="mb-3 text-muted">Add your tasks</h4>
+                        <h4 class="text-muted"><span id="task-counter" class="badge badge-primary badge-pill">0</span> Tasks</h4>
+                    </div>
+                    <form action="" autocomplete="off">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" required id="input-task"
+                                        placeholder="write your task">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" onfocus="(this.type='date')" class="form-control form-control-lg" min="today" id="date-picker"
+                                    placeholder="write task dead line">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group ">
+                                    <i id="btn-add" class="fas fa-plus-circle text-pink fa-3x"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <select  id="set-priority" class="form-control form-control-lg">
+                                        <option value="" disabled>Set Priority</option>
+                                        <option value="High Priority">High Priority</option>
+                                        <option value="Medium Priority">Medium Priority</option>
+                                        <option value="Low Priority">Low Priority</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </section>
+
+                <section id="task-container" class="mt-5">
+                    <ul class="list-group" id="task-list">
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <!-- min jquery  -->
+    <script src="jquery-3.4.1.min.js"></script>
+    <!-- min.js bootstraop  (min.js + propper.js)-->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- my script  -->
+    <script src="script.js"></script>
+</body>
+
+</html>
+

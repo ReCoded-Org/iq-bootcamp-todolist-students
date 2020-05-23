@@ -1,0 +1,22 @@
+h5{
+    /* color: #baadd4; */
+    /* color: #c3abe6; */
+    /* color: #a647ad; */
+    /* color: #c46fca; */
+    /* color: #595eb7; */
+    /* color: #7959b3; */
+    /* color: #baadd4; */
+    color: #9b79ce;
+}
+
+.red{
+    color: red;
+}
+
+.done{
+    opacity: .7;
+}
+
+.p{
+    text-decoration: line-through;
+}
