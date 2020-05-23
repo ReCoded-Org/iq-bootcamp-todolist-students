@@ -8,6 +8,7 @@ body{
     height: 100%;
 	background-image: url('to-do.jpg');
 	background-size: cover;
+	background-repeat: no-repeat;
     box-sizing: border-box;
 }
 
@@ -30,7 +31,7 @@ h1 {
 	font-size: 1rem;
 	font-weight: 30;
 	text-align: left;
-	margin: 1rem 16rem 3rem; 
+	margin: 1rem 20rem 3rem; 
 	font-family: 'Hind', sans-serif;
 }
 label{
@@ -38,75 +39,63 @@ label{
 	font-size: 1rem;
 	font-weight: 30;
 	text-align: left;
-	margin: 1rem 16rem 1rem; 
+	margin: 1rem 20rem 1rem; 
 	font-family: 'Hind', sans-serif;
 }
-.inputDiv{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.input{
-    padding: 0.5rem 1rem;
-    outline: none;
-    border: none;
+.add-item{
+	background-color: #fff;
     height: 50px;
     border-radius: 25px;
-    width: 350px;
-    margin: 0.25rem;
+    width: 400px;
+    margin-left: 15rem;
     transition: .5s;
-    font-size: 1.15rem;
 }
-
-.add{
-	outline: none;
-    border: none;
+.add-item1{
+	background-color: #fff;
     height: 50px;
     border-radius: 25px;
-    width: 50px;
-    background-color: rgb(230, 203, 82);
-    color: white;
-    cursor: pointer;
+    width: 200px;
+    margin-left: 4rem;
     transition: .5s;
-    margin: 0.25rem;
 }
-
-.add:hover{
-	opacity: 0.7;
-	box-shadow:rgb(238, 218, 128) ;
-}
-
-.container{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	margin-top: 2rem;
-}
-
-.item{
-	padding: 0.5rem;
-	border-bottom: 4px solid #fff;
-	margin-bottom: 1.5rem;
-}
-
-.item_input{
-	background: none;
-	outline: none;
-	border: none;
+.text{
 	color: #fff;
-	font-size: 1.4rem;
-	width: 245px;
+	font-size: 3rem;
 }
 
+ul > li{
+	text-align: center;
+	color: #fff;
+	font-size: 1.5rem;
+	padding-bottom: 13px;
+	padding-top: 20px;
+	border-bottom: 1px solid #fff;
+
+}
+.datepicker-date-display{
+    background-color: rgb(230, 203, 82);
+} 
+.btn{
+	border-radius: 15px;
+	margin-left: 15rem;
+	background-color: rgb(230, 203, 82);
+}
+.btn:hover{
+background-color: rgb(230, 203, 82);
+}
+.btn:focus{
+	background-color: rgb(230, 203, 82);
+}
+.priority-list{
+	background-color: rgb(230, 203, 82);
+}
 .edit{
 	background: none;
 	outline: none;
 	border: none;
 	color: rgb(230, 203, 82);
 	font-size: 1.4rem;
+	padding-left: 18rem;
 	font-family: 'Hind', sans-serif;
 	margin: 0 1rem;
 	cursor: pointer;
@@ -115,8 +104,13 @@ label{
 	background: none;
 	outline: none;
 	border: none;
-	color: #fff;
+	color: red;
+	padding-left: 12rem;
 	font-size: 1.4rem;
 	font-family: 'Hind', sans-serif;
 	cursor: pointer;
+}
+.check{
+	cursor: pointer;
+	
 }
