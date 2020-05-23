@@ -4,6 +4,7 @@
         <title>To do tasks</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
 
 </head>
     <body>
@@ -15,12 +16,45 @@
 
             </div>
             <div class="form-div">
-          <form id="todo">
-              <label for="date">Select Deadline:</label>
-              <div class="input-div"><i class="fa fa-calendar"></i><input type="date" id="date"  required></div>
-            <div class="input-div"><i class="fa fa-tasks"></i><input type="text" id="task" name="task"  required></div>
-              <input type="button" id="button" value="Add">
-          </form>
+                <div class="bootstrap-iso" style="background-color: #f2f2f7;">
+                    <div class="container-fluid">
+                     <div class="row">
+                      <div class="col-md-12 col-sm-6 col-xs-12 " style="background-color: #f2f2f7;">
+                        <form id="todo" class="form-horizontal">
+                            <label >Select Deadline:</label>
+                            <div class="form-group">
+                                      
+                                <div class="col-md-12 col-sm-10">
+                                 <div class="input-group" style="display: block;">
+                                  
+                                    <i for="date"  class="fa fa-calendar" style="font-size:20px"><input type="text" class="form-control input-class" id="date" name="date" placeholder="Deadline" required ></i>
+                                    <i for="task" class="fa fa-tasks" style="font-size:20px"><input type="text" class="form-control input-class" id="task" name="task" placeholder="Task"   required></i>
+
+                                </div>
+                                </div>
+                               </div>
+                            
+                         
+                               <div class="input-group">
+
+                          <input type="button" id="button" value="Add">
+                          <input type="button" id="cancel" value="Cancel">
+                        </div>
+
+                            <label for="priorities">
+                                <select id="priorities" name="priorities">
+                                    <option value="Priorety 1">Priorety 1</option>
+                                    <option value="Priorety 2">Priorety 2</option>
+                                    <option value="Priorety 3">Priorety 3</option>
+              
+                                </select>
+                            </label>
+                        </form>
+                        
+                      </div>
+                     </div>
+                    </div>
+                   </div>
           
           <ul id="list">
 
@@ -29,6 +63,13 @@
         <footer>
 
         </footer>
-        <script src="index.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+<script src="index.js"></script>
+
     </body>
 </html>

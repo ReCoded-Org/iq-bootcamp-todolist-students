@@ -1,72 +1,139 @@
 *{
-    box-sizing: border-box;
-  }
-  body{
-    background-color: rgb(247, 242, 242);
-  }
-  div#Today-text{
-    background-color: lightgreen;
-    display:flex;
-    justify-content:space-around ;
-    height:80px;
-  }
+  box-sizing: border-box;
+}
+body{
+  background-color: rgb(247, 242, 242);
+}
+div#Today-text{
+  background-color: lightgreen;
+  display:flex;
+  justify-content:space-around ;
+  height:80px;
+}
+
+h1{
+  text-transform: uppercase;
+
+}
+
+form#todo{
+ display: flex;
+ flex-direction: column;
+ justify-content:  center;
+ align-items: center;
+ height:80%;
+ margin-top:30px
+
+}
+label{
+  font-size:30px;
+  margin-bottom:10px;
+}
+input.input-class{
+  margin:10px;
+  width:50%;
+  height:40px;
+  margin-bottom:30px
+}
+.input-div{
+  width:60%;
+  text-align: center;
+}
+ul{
+  display: flex;
+  flex-direction: column;
+  width:50%;
+  margin-left:50px;
+
+}
+ul > li{
+  margin-bottom: 10px;
+  background-color:rgb(248, 245, 245);  
+  border:1px solid green;
+  padding:2px;
+  padding-left:5px;
+  font-size: 20px;
+list-style:none;
+
+ 
+}
+#button{
+  background: linear-gradient(to right, rgba(34,193,195,1), rgba(253,240,45,1));
+  font-size:20px;
+  font-weight: bolder;
+  height:60px;
+  width:180px;
+  margin-bottom:20px;
+  margin: 10px;
+
+}
+#button:hover{
+  background: linear-gradient(to right,rgba(34,67,195,0.7), rgb(230, 217, 42), rgba(34,193,195,1));
+  cursor:pointer;
   
-  h1{
-    text-transform: uppercase;
-  
-  }
-  
-  form#todo{
-   display: flex;
-   flex-direction: column;
-   justify-content:  center;
-   align-items: center;
-   height:80%;
-   margin-top:30px
-  
-  }
-  label{
-    font-size:30px;
-    margin-bottom:10px;
-  }
-  input{
-    margin:10px;
-    width:50%;
-    height:40px;
-  }
-  .input-div{
-    width:60%;
-    text-align: center;
-  }
-  ul{
-    display: flex;
-    flex-direction: column;
-    width:40%;
-    margin-left:50px;
-  
-  }
-  ul > li{
-    margin-bottom: 10px;
-    background-color:#ffd1b3;  ;
-    padding:10px;
-    font-size: 20px;
-    
-  }
-  #button{
-    background: linear-gradient(to right, rgba(34,193,195,1), rgba(253,240,45,1));
-    font-size:20px;
-    font-weight: bolder;
-    height:60px;
-    width:15%;
-  
-  }
-  #button:hover{
-    background: linear-gradient(to right,rgba(34,67,195,0.7), rgb(230, 217, 42), rgba(34,193,195,1));
-    cursor:pointer;
-    
-  }
-  p{
-    font-size:20px;
-  }
-  input#date{
-  text-align: center;}
+}
+p{
+  font-size:20px;
+}
+input#date{
+text-align: center;}
+#checking{
+  background-color: green;
+  width:20px;
+  height:20px;
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.LabelCheck{
+  background-color: rgb(245, 250, 248);
+  border: 1px solid green;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+position: absolute;
+
+}
+
+.divCheck{
+ position: relative;
+
+height:10px
+
+}
+
+
+#BtnDelete{
+ float:right;
+ color:black;
+ background-color:rgb(241, 238, 238);
+ border:1px solid gray;
+ height:30px;
+ width:100px;
+ cursor: pointer;
+}
+#cancel,#priorities{
+ color:black;
+ background-color:rgb(241, 238, 238);
+ border:1px solid gray;
+ height:40px;
+ width:180px;
+ cursor: pointer;
+ margin-bottom: 40px;
+}
+
+#priorities{
+  font-size:12px ;
+}
+#BtnDelete:hover, #cancel:hover, #priorities:hover{
+  font-size:20px ;
+}
+.DateandProperty{
+display: flex;
+justify-content: space-between;}
+
+.divPropertyandbutton{
+ display: flex;
+ justify-content: space-between;
+}
