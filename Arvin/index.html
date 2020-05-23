@@ -1,27 +1,59 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>TODO List</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<title>to do list</title>
+	 <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	 <link type="text/css" rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        media="screen,projection">
+    <link type="text/css" rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1><span class="title">Todo</span> List</h1>
+     <h1><span class="title">Todo</span> List</h1>
     <br>
     <label>TODAY:</label><p id="time"></p>
-    <div class="inputDiv">
-           <input  type="text" class="input"  id="txt" placeholder="Enter your ToDo ...." required>
-           <input  type="date" class="input" id="datte">
-    	   <button class="add"><i class="fas fa-plus"></i></button>
-    </div>
-    <div class="container">
-    </div>
-    <script src='main.js'></script>
-    
+
+      <div class="container">
+            <form action="" name="todo-form">
+                <div class="row">
+                	 <div class="col add-item ">
+                        <input type="text"  id="todoText" placeholder="Enter your ToDo ...." required>
+                    </div> 
+                    <div class="col add-item1">
+                        <input type="text" class="datepicker" id="todoDate" placeholder="deadline"   required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="select-pr right">
+                        <select class="browser-default " id="todoPriority">
+                            <option value="Priority 1" selected>Priority 1</option>
+                            <option value=" Priority2">Priority 2</option>
+                            <option value=" Priority 3">Priority 3</option>
+                        </select>
+                    </div>
+                    <div  class="btn" onclick="addToDo()" >Add Todo</div>
+                </div>
+            </form>
+        </div>
+
+        <div class="container ">
+
+            <div class="col s12">
+                <ul id="todoList">
+                </ul>
+            </div>
+
+        </div>
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
