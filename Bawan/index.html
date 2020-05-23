@@ -6,35 +6,37 @@
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="myDIV" class="header">
-
-  <h1 >Today </h1>
-
-  <h1 id="datetime"></h1>
-
-  <span><h2 id="task">Task</h2></span> 
  
-  <input type="text" id="myInput" placeholder=" Add your Task ..." class="in">
-  
+<div id="myDIV" class="header">
+  <h1 >Today </h1>
+  <h1 id="datetime"></h1>
+  <span><h2 id="task">Task</h2></span> 
+  <input type="text" id="myInput" placeholder=" Add your Task ..." class="in" required>
   <br>
-  
+
+
   <div class="dedRow">
    <span><h2 id="today">Deadline</h2></span> 
- 
-  <input type="text" placeholder="Chose your deadline .."
-        onfocus="(this.type='date')"
-        onblur="(this.type='text')" id="date" > 
+  <input type="date"  id="date" required > 
  </div>
+
+
+ <span><h2 id="today">Priority</h2></span> 
+ <select name="priority" id="todo-priority-input" class="select-css">
+    <option value="Priority 1">Priority 1</option>
+    <option value="Priority 2">Priority 2</option>
+    <option value="Priority 3">Priority 3</option>
+  </select>
  <br>
+
 <div onclick="newElement() " class="addBtn">Add</div>
 </div>
+<h3 id="noTaskLabel" >their is no task  <img src="image/emoji.png"></h3>
 
 <ul id="myUL">
-
 </ul>
 
 <script src="javascript.js">
-
 </script>
 
 </body>
