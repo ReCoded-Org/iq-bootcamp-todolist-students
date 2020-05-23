@@ -1,5 +1,5 @@
 
-let todo = JSON.parse(localStorage.getItem("todoList")) ??[] ;
+let todo = JSON.parse(localStorage.getItem("todoList")) ??[];
 console.log(todo)
 function Today (){
     let dateH1 = document.getElementById('header');
@@ -24,13 +24,11 @@ function intalizeTasks (){
         
         
     };
-    console.log(todos)
-    todo.push(todos)
-    console.log(todos)
+    todo.push(todos);
 
     localStorage.setItem('todoList', JSON.stringify(todo));
-    for(let i = 0; i < todos.length; i++){
-        let taskList = todos[i];
+    for(let i = 0; i < todo.length; i++){
+        let taskList = todo[i];
         console.log(taskList);
         addTask(taskList);
 
