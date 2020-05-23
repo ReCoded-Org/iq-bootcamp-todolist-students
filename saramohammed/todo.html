@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="todo.css">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+
+  />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+</head>
+<body onload="myFunction()">
+   
+
+<form class="container animate__animated animate__bounceInUp">
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">My To Do List</h2>
+  <h1  id="datechanging"></h1>
+  <input tabindex="1" type="text" id="myInput"  class="form-control" placeholder="start a task" required>
+  <label>Select the deadline </label>
+    <input tabindex="2" type="text" class="datepicker" id="input_date">
+  <div class="box">
+    <select class="browser-default z-depth-1 col" name="priority" id="priority-selector">
+      <option  id="priority1"  selected>Priority 1</option>
+      <option  class="priority2" >Priority 2</option>
+      <option class="priority3" >Priority 3</option>
+  </select>
+    <button  onclick="newElement()" class="addBtn btn btn-primary ">Add</span>
+    <button  onclick="clearTasks()" class="clear btn btn-primary ">clear Tasks</span>
+  </div>
+  
+   
+</div>
+ 
+<h4 class="text">there isnt any tasks yet</h4>
+<ul id="myUL">
+  
+  
+</ul>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  
+  span.className = "close";
+  
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+function newElement() {
+  let li = document.createElement("li");
+  let inputValue = document.getElementById("myInput").value;
+  let p =document.createElement('p');
+  let priority1 =document.getElementById('priority1');
+  
+  let t = document.createTextNode(inputValue);
+  let priority=document.getElementById("priority-selector").value;
+  
+  li.appendChild(t);
+  li.appendChild(p);
+  
+  let taskArray=[];
+  let time= document.getElementById("input_date").value ;
+
+   
+  
+  if (inputValue ==='') {
+    alert("You must write something!");
+  }
+  else
+  if(time=='')
+  {
+      alert(' you should enter a date ');
+  }
+   else {
+
+    document.getElementById("myUL").appendChild(li);
+    
+    p.innerHTML =` ${time} <span>${priority}</span>`;
+    
+    //passing the task and its details as an object 
+    let taskObect ={
+      theTodo :inputValue,
+      theDeadLine:time,
+      thePriority:priority
+    };
+    console.log(taskObect);
+
+    //the objects in array 
+      taskArray.push(taskObect);
+      
+  }
+  document.getElementById("myInput").value = "";
+  document.getElementById("input_date").value="";
+  
+  
+  let span = document.createElement("SPAN");
+ 
+  span.className = "fa fa-trash-o close";
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      let div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+
+ 
+  
+}
+
+
+let list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+function myFunction() {
+  let d = new Date();
+  const strArray=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  document.getElementById("datechanging").innerHTML = ` Today ${strArray[d.getMonth()]} ${d.getDate()}`;
+  
+}
+
+//datepicker using materialized 
+const calender =document.querySelector('.datepicker')
+M.Datepicker.init(calender,{
+  autoClose: true,
+    minDate: new Date(),
+  format:'mmmm,dd,yyyy'
+});
+
+
+//function for removing and clear t
+     function clearTasks(){
+      const ul = document.querySelector('ul');
+
+while (ul.firstChild) {
+ ul.removeChild(ul.firstChild)
+}
+  }
+
+
+</script>
+
+ 
+</body>
+</html>
