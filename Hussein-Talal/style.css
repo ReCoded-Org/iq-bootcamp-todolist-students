@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* span {
+    display: block;
+} */
+header h4 {
+    font-size: 1rem;
+    margin-top:.8rem;
+}
+
+.horizontal-line {
+    height: 1px;
+    width: 70%;
+    margin: 3rem auto;
+    background-color: #dddddd;
+}
+
+.todo-items {
+    list-style: none;
+}
+#msg {
+    color: red;
+}
+
+.todo-items span {
+    display: block;
+}
+
+.secondary {
+    margin-top: 8px
+}
+
+.secondary-content {
+    cursor: pointer;
+}
+
+.check-task {
+    margin-top: 9px;
+}
+
+.nav-wrapper {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0 auto;
+}
+
+.date {
+    display: flex;
+    flex-direction: row;
+    padding-right: .5rem;
+    margin-top: 3rem;
+    margin-bottom: -1rem;
+}
+
+.date h4 {
+    font-size: 1rem;
+}
+span.priority {
+    border-radius: 3px;
+    width: 6rem;
+    color: white !important;
+}
