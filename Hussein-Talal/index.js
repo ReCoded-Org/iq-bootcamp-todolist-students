@@ -52,6 +52,7 @@ function addTask(){
         form.reset();
         msg.textContent = '';
         updateTaskIndecator();
+        addToLocal(taskObj);
     }
 }
 
@@ -76,7 +77,7 @@ function taskPrint (taskObj){
         li.innerHTML = "<label class='col s1 check-task'><input class='task-check' onclick='isChecked(this.parentNode.parentNode.id)' type='checkbox'><span></span></label><div class='col s7'><span class='task'></span><span class='deadline'></span></div><div class='col s2 secondary' ><span class='priority badge red new'></span></div><div class='col s2 secondary'><a onclick='deleteTask(this.parentNode.parentNode.id)' class='secondary-content'><i class='material-icons'>delete</i></a></div>"
         li.classList = "collection-item row";
         li.setAttribute("id",numberOfTasks-numberOfDeleted);
-
+        
         const task = document.getElementsByClassName('task')[numberOfTasks-1-numberOfDeleted];
         const deadline = document.getElementsByClassName('deadline')[numberOfTasks-1-numberOfDeleted];
         const priority = document.getElementsByClassName('priority')[numberOfTasks-1-numberOfDeleted];
@@ -96,10 +97,27 @@ function isChecked(id){
     }
 }
 
-submit.addEventListener('click', ()=>{
+submit.addEventListener('click', (e)=>{
     addTask();
+    e.preventDefault();
 })
 
+function addToLocal(taskObj){
+    const taskString = JSON.stringify(taskObj);
+    localStorage.setItem("task"+localStorage.length,taskString);
+}
+
+function printLocalStorage(){
+    for(let i=0 ; i<localStorage.length; i++){
+        const task = JSON.parse(localStorage.getItem("task"+(i)))
+        console.log(task);
+        numberOfTasks++;
+        tasks.push(task);
+        updateTaskIndecator();
+        taskPrint(task);
+    }
+}
+printLocalStorage();
 
 //initializing materialize components
 const calendar = document.querySelector('.datepicker');
