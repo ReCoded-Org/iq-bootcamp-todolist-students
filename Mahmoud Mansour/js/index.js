@@ -7,7 +7,7 @@ function Today (){
     let day = String(updatedDate.getDate()).padStart(2, '0');
     let month = String(updatedDate.getMonth() + 1).padStart(2, '0');
     let year = updatedDate.getFullYear();
-    updatedDate = `${day} ${month}, ${year}`
+    updatedDate = month + '/' + day + '/' + year;
     todayH1.innerText = updatedDate;
 }
 Today();
@@ -15,9 +15,6 @@ const form = document.getElementById('task-form');
 console.log(todo)
 
 
-
-
-function addItem (){
 
 function addTask () {
 
@@ -40,7 +37,6 @@ function addTask () {
     // local storage
      localStorage.setItem('todoList', JSON.stringify(todo));
      
-
 
     
     checker.type = "checkbox";
@@ -101,5 +97,8 @@ form.addEventListener('submit', function(e){
     e.preventDefault();
     addTask();
 });
+
+
+function taskRemover (){
 
 }
