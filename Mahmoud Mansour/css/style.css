@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+* {
+  font-family: "Quicksand", sans-serif;
+   
+}
+
+body {
+  margin: 0 auto;
+  
+ 
+}
+.dark-body {
+  background: #1b1b2f;
+  color: #e43f5a;
+  transition: all 500ms;
+}
+.add-btn {
+  border: 0;
+  box-shadow: 0px 0px 5px 0px #aaa;
+  transition: all 500ms;
+}
+  .add-btn:hover{
+    box-shadow: 0px 0px 15px 0px #aaa;}
+    
+  
+.empty-status-img {
+  width: 50px;
+  height: auto;
+  transition: all 500ms;
+  border-radius: 50%;
+}
+.empty-status-img:hover {
+  transform: scale(1.1);
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px 0px #3a86ff;
+
+}
+.empty-status {
+  color: grey;
+  user-select: none;
+}
+
+.heading {
+  font-size: 2rem;
+  user-select: none;
+}
+#list {
+  display: flex;
+  flex-flow: column wrap;
+}
+#list li p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+}
+#list li {
+  border-bottom: 1px #ddd solid;
+  display: flex;
+  justify-content: space-between;
+}
+.todo-task {
+  border: 0;
+  box-shadow: 0px 0px 5px 0px #aaa;
+}
+.todo-task:focus{
+  box-shadow: 0px 0px 15px 0px #aaa;
+
+}
+.date-picker {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-shadow: 0px 0px 5px 0px #aaa;
+}
+.date-picker:focus{
+  box-shadow: 0px 0px 15px 0px #aaa;
+
+}
+.priorty-selector {
+  border: 0;
+  background: #fff;
+  box-shadow: 0px 0px 5px 0px #aaa;
+}
+.priorty-selector:focus{
+  box-shadow: 0px 0px 15px 0px #aaa;
+
+}
