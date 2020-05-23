@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
     <link rel="stylesheet" href="./style.css">
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -37,7 +38,7 @@
     <section class="d-flex justify-content-center">
         <div class="col-lg-10">
             <div class="card-header">
-                <form>
+                <form id="form">
                     <label for="deadLine"> Select a Deadline:</label>
                     <input type="date" name="deadLine" dateformat="M d y" class="form-control" id="newTask-Date"
                         required>
@@ -45,8 +46,16 @@
                     <label for=" todo"> Enter your Task:</label>
                     <input type="text" name="todo" placeholder="Enter Your To Do Task here" class="form-control"
                         id="newTask" required><br>
-                    <button type="button" class="btn btn-primary float-right" onclick="addTask()"> Add ToDo
-                        Task</button><br><br>
+                    <div>
+                        <select class="selectpicker show-tick btn btn-primary">
+                            <option>priority 1</option>
+                            <option>priority 2</option>
+                            <option>priority 3</option>
+                        </select>
+
+                        <button type="button" class="btn btn-primary float-right" onclick="addTask()"> Add ToDo
+                            Task</button><br><br>
+                    </div>
             </div>
             <div class="todo-List card-body">
                 <ul id="ulmenu" class="jumbotron big-banner2">
