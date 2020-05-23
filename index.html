@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 10px;
+  min-width: 250px;
+  background: linear-gradient(to right, pink, #d3dddd )!important;
+}
+ul li {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 40px 12px 40px;
+  color: white;
+  font-size: 20px;
+}
+.checkk{
+  text-decoration: line-through;
+}
+hr {
+  border-top: 3px solid #bbb;
+}
+ul li:hover {
+  background: white;
+  color: black;
+}
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input {
+  margin-bottom:10px ;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1.5px solid black;
+  background-color: non;
+
+  
+}
+
+h2{
+    color: white;
+}
+.addBtn {
+  padding: 10px;
+  border: 1.5px solid white;
+  width: 50px;
+
+  color: white;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+.addBtn:hover {
+  background-color: #6E48AA;
+}
+</style>
+</head>
+<body>
+
+<div id="myDIV" class="header">
+  <h2 style="margin:30px">To Do List by Zainab Azzam</h2>
+  <input type="text" id="myInput" placeholder="Task">
+  <input type="date" id="timeInput"  name="datemax" min="2020-05-24" ><br>
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+  
+</ul>
+
+
+
+
+
+
+<script>
+
+ 
+
+
+
+
+
+function newElement() {
+  var li = document.createElement("li");
+  
+  var ptworkinfo=document.createElement("input");
+    ptworkinfo.type="checkbox";
+    var x = document.createElement("IMG");
+  x.setAttribute("src", "https://cdn1.iconfinder.com/data/icons/color-bold-style/21/56-512.png");
+  x.setAttribute("width", "25");
+  x.setAttribute("height", "25");
+
+
+  
+  var inputVal = document.getElementById("myInput").value;
+  var inputValue2 = document.getElementById("timeInput").value;
+  
+  
+  var text2 = document.createElement("p");
+  text2='  on : '
+  var t = document.createTextNode(inputVal);
+  var m = document.createTextNode(inputValue2);
+  
+
+
+var text22 = document.createTextNode(text2);
+
+
+  li.appendChild(ptworkinfo);
+  li.appendChild(t);
+  li.appendChild(text22);
+  li.appendChild(m);
+  li.appendChild(x);
+  
+   
+
+ 
+  
+  if (inputValue2 === '' && inputVal === '' ) {
+    alert("Please specify a task and deadline!");
+  }
+  else if (inputVal === '' ) {
+    alert("Please add a new Task!");
+  } 
+  else if (inputValue2 === '' ) {
+    alert("Please specify the deadline!");
+  }
+  else {
+  document.getElementById("myUL").appendChild(li);
+  document.getElementById("myInput").value = "";
+  document.getElementById("timeInput").value = "";
+
+  x.addEventListener('click', function(){
+    
+  document.getElementById("myUL").removeChild(li);
+  })
+  ptworkinfo.addEventListener('click', function() {
+    if (ptworkinfo.checked){
+
+      li.classList.add("checkk");
+
+    }
+    else{
+      li.classList.remove("checkk");
+    }
+    
+    
+  
+  })
+ 
+
+    
+  }
+ 
+  }
+</script>
+
+</body>
+</html>
