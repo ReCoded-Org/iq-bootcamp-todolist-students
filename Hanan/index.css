@@ -39,6 +39,25 @@ label{
       border-radius: 20px;
       border: 1px solid white;
   }
+ .remove{
+  font-size: 50px;
+     color: white;
+     float: right;
+     margin-top: -115px;
+     background-color:rgb(41, 41, 73) ;
+     border: none;
+     border-radius: 50%;
+     width: 50px;
+  }
+  .remove:hover{
+     color: red;
+
+  }
+  @media screen and (max-width: 360px){
+    .remove{
+      margin-top: -160px;
+      }
+    }
   /* animation */
   .headerAnimation{
     animation-name: moveHead;
