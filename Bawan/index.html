@@ -6,20 +6,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
- 
+ <!-- header of todo -->
 <div id="myDIV" class="header">
+  <!--today label and current month and day-->
   <h1 >Today </h1>
   <h1 id="datetime"></h1>
+  <!--task label and it is input-->
   <span><h2 id="task">Task</h2></span> 
   <input type="text" id="myInput" placeholder=" Add your Task ..." class="in" required>
   <br>
 
-
+<!--deadline label and picking it-->
   <div class="dedRow">
    <span><h2 id="today">Deadline</h2></span> 
   <input type="date"  id="date" required > 
  </div>
-
+<!--selecting priority-->
 
  <span><h2 id="today">Priority</h2></span> 
  <select name="priority" id="todo-priority-input" class="select-css">
@@ -29,10 +31,13 @@
   </select>
  <br>
 
+ <!--add button to ad list item and appending task, deadline and priority-->
 <div onclick="newElement() " class="addBtn">Add</div>
 </div>
+<!--appear when rheir is no task-->
 <h3 id="noTaskLabel" >their is no task  <img src="image/emoji.png"></h3>
 
+<!--the list that we add items to it-->
 <ul id="myUL">
 </ul>
 
