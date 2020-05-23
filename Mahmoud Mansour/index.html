@@ -25,6 +25,7 @@
 
     <div class="form-container d-flex justify-content-center mt-5">
         <form id="task-form">
+<<<<<<< HEAD
             <div class="form-group">
               <div class="row">
             <label for="todo-input"></label>
@@ -39,12 +40,29 @@
             <button class="btn btn-primary" type="submit" id="addBtn" tabindex="4" onclick="addItem();">Add Task</button>
         </div>
         </div>
+=======
+            
+              <div class="row">
+            <label for="todo-input"></label>
+            <input class="todo-task col-lg-12 mb-2" type="text" name="todo-input" id="todo-input"
+             placeholder="Write your todo here" required tabindex="1" autocomplete="off" >
+            <label for="todo-deadline"></label>
+            <input class="date-picker" type="text" name="todo-deadline" id="todo-deadline" tabindex="2" placeholder="Deadline" onfocus="(this.type='date')"required>
+            <select class="priorty-selector" name="Priorties" id="Priorties" tabindex="3" required>
+                <option value="high priorty">High</option>
+                <option value="med priorty">Med</option>
+                <option value="low priorty">Low</option>
+            </select>
+            <button class="btn btn-primary" type="submit" id="addBtn" tabindex="4">Add Task</button>
+        </div>
+        
+>>>>>>> newThings
         </form>
     </div>
 <div class="mt-5 ml-5">
     <div class="todo-list">
         <ul id="list">
-
+            
         </ul>
     </div>
 </div>

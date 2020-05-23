@@ -28,3 +28,38 @@ body {
     user-select: none;
     
 }
+#list {
+    display: flex;
+    flex-flow: column wrap;
+    
+}
+#list li p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+    
+    
+}
+#list li  {
+    border-bottom: 1px #ddd solid;
+    display: flex;
+    justify-content: space-between;
+}
+.todo-task {
+    border: 0;
+    box-shadow: 0px 0px 5px 0px #aaa;
+    
+}
+.date-picker {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-shadow: 0px 0px 5px 0px #aaa;
+}
+.priorty-selector {
+    border: 0;
+    background: #fff;
+    box-shadow: 0px 0px 5px 0px #aaa;
+
+    
+}
