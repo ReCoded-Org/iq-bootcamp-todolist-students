@@ -1,25 +1,29 @@
-window.addEventListener("DOMContentLoaded", getdate());
-function getdate() {
-    let today = new Date();
-    let d = String(today.getDate());
-    let m = String(today.getMonth() + 1); //months start with 0
-    let y = String(today.getFullYear());
-    if (d < 10) {
-        d = `0${d}`;
+window.addEventListener("DOMContentLoaded", TimeAndDate());
+function TimeAndDate() {
+    function getdate() {
+        let today = new Date();
+        let d = String(today.getDate());
+        let m = String(today.getMonth() + 1); //months start with 0
+        let y = String(today.getFullYear());
+        if (d < 10) {
+            d = `0${d}`;
+        }
+        if (m < 10) {
+            m = `0${m}`;
+        }
+        today = y + '/' + m + '/' + d;
+        document.getElementById('DateOfToday').innerText = today;
     }
-    if (m < 10) {
-        m = `0${m}`;
+    function Time() {
+        let time = new Date();
+        let t = time.toLocaleTimeString();
+        document.getElementById('Time').innerText = t;
+        let run = setTimeout(Time, 1000);
     }
-    today = y + '/' + m + '/' + d;
-    document.getElementById('DateOfToday').innerText = today;
+    getdate();
+    Time();
 }
-window.addEventListener("DOMContentLoaded", Time());
-function Time() {
-    let time = new Date();
-    let t = time.toLocaleTimeString();
-    document.getElementById('Time').innerText = t;
-    let run = setTimeout(Time, 1000);
-}
+
 document.getElementById("taskForm").addEventListener("click", function (event) {
     event.preventDefault()
 });
@@ -72,13 +76,17 @@ function addToList() {
         listItem.setAttribute('id', `listItem${listID}`);
         //  listItem.setAttribute('class', );
         let span = `<div class=" row">
-        <label class="radio-inline"><input type="radio"></label> 
+        <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="check${listID}" onclick="markAsChecked(${listID})">
+  <label class="form-check-label" for="check">
+  </label>
+</div>
         <div class="col-md-5">
         ${nameOfTask} <br>
          ${taskDeadline}
           ${taskPriority}</div>
-        <div class="col-md-6 text-right "><i class="fa fa-trash-o" class="" onclick="remove(${listID})" style="font-size:40px;"></i></div>
-        <hr></div>`;
+        <div class="col-md-6 text-right"><i class="fa fa-trash-o" onclick="remove(${listID})" style="font-size:40px;"></i>
+        </div> <hr></div>`;
         listItem.innerHTML = span;
         let list = document.getElementById('list');
         list.appendChild(listItem);
@@ -90,9 +98,21 @@ function addToList() {
     }
 }
 function remove(i) {
-    let list = document.getElementById('list');
-    $(`#${i}`).remove();
+    $(`#listItem${i}`).remove();
 }
+function markAsChecked(i) {
+    let buttons = document.getElementsByClassName('form-check-input');
+    let checkval = buttons[i].checked;
+    if (checkval == true) {
+        $(`#listItem${i}`).css("text-decoration", "line-through");
+    }
+    else {
+
+        $(`#listItem${i}`).css("text-decoration", "none");
+    }
+}
+
+
 window.addEventListener("DOMContentLoaded", hide);
 function hide() {
     hiddenElemetns = document.getElementsByClassName('hide');
@@ -102,15 +122,4 @@ function hide() {
         hiddenElemetns[i].style.display = "none"
     }
 }
-document.querySelectorAll('li').forEach(item => {
-    item.addEventListener('click', event => {
-        //handle click
-        if (item.style.textDecoration == "none") {
-            item.style.textDecoration = "line-through";
-        }
-        else {
-            item.style.textDecoration = "none"
-        }
-    })
-});
 
