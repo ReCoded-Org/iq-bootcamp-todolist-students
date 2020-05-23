@@ -3,73 +3,75 @@
     max-width: 100%;
     transition-timing-function: ease-in;
     transition: 0.3s;
-}
-body{
-    
+  }
+  body{
     color:white !important;
     background-color:#a1b9b9 !important;
-    font-family: 'Indie Flower', cursive !important;
-    
-}
-.header-color{
+    font-family: 'Indie Flower', cursive !important; 
+  }
+  .header-color{
     background-color:#2d5f5f;
-   overflow-x: hidden;
-  
-}
-.txt-size{
+    overflow-x: hidden;
+  }
+  .txt-size{
     font-size: 30px;
-}
-.h1-size{
+  }
+  .h1-size{
     font-size: 40px;
     margin-bottom: 30px;
     margin-top: 50px;
-}
-.boxshadow-field{
+  }
+  .boxshadow-field{
     box-shadow: 1px 1px  5px 5px rgb(92, 121, 121);
     background-color: #2d5f5f;
-}
-.boxshadow-field:hover{
+  }
+  .boxshadow-field:hover{
     background-color: rgb(240, 230, 230);
- }
-.boxshadow{
+  }
+  .boxshadow{
     box-shadow: 1px 1px  5px 5px rgb(92, 121, 121);
-}
-ul li{
+  }
+  ul li{
     box-shadow: 1px 1px  5px 5px rgb(92, 121, 121) !important;
     background-color: #2d5f5f;
     border-radius: 15px;
     margin-bottom: 15px;
     border: 1px solid white;
     list-style-type: none;
-    text-align: center;
     font-size: 30px;
-   
-}
-ul li:hover{
-    background-color: #466b6b !important;
-}
-.btn-hover:hover{
+    padding: 20px;
+  }
+  .btn-hover:hover{
     background-color: #466b6b !important;
     cursor: pointer !important;
     }
-.priority{
+  .priority{
     border-radius: 10px;
-    padding: 8px;
+    padding: 10px;
     text-align: center;
     box-shadow: 1px 1px  5px 5px rgb(92, 121, 121) !important;
-}
-.priority:hover{
-background-color: rgb(240, 230, 230);
-}
-.headerAnimation{
+  }
+  .priority:hover{
+  background-color: rgb(240, 230, 230);
+  }
+  .recycle{
+    float: right;
+    margin-top: -40px;
+    border-radius: 45px;
+    border: none;
+    cursor: pointer;
+  }
+  .checkBox{
+    cursor: pointer;
+  }
+  
+  .headerAnimation{
     animation-name: moveHead;
     animation-duration: 1.5s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in-out;
-
   }
-
-@keyframes moveHead{
+  @keyframes moveHead{
     0% {
         margin-left: 160%;
         opacity: 0;
@@ -78,5 +80,6 @@ background-color: rgb(240, 230, 230);
         margin-left: 0;
         opacity: 1;
     }
-
-}
+  }
+  
+  
