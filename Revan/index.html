@@ -5,37 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
 
 <body>
-    <header>
-        <h1>Today</h1>
-        <h1 id="today">today's date</h1>
+    <header class="container d-flex  justify-content-center">
+        <div class="today d-flex justify-content-center ">
+            <h1 id="today">:)</h1>
+        </div>
     </header>
-    <main>
-        <div class="form-container">
-            <form action="#">
-                <div class="input-container">
-                    <label for="todo-date">Select Deadline:</label>
-                    <input type="date" id="todo-date">
-                </div>
-                <div class="input-container enter-project">
-                    <input type="text" placeholder="Enter your todo" id="project">
-                    <button id="btn" onclick="showTodo()" class="btn">Add Todo</button>
-                </div>
-
-            </form>
-        </div>
-
-        <div class="project-container">
-            <ul>
-                <li style="list-style-type: none; align-self: center; margin-left: 500px;">you are lucky, you have nothing to do  :)</li>
+    <main class="d-flex flex-column align-items-center justify-content-end">
+        <section class="todo container-fluid d-flex flex-column justify-content-between align-items-center">
+            <ul class="todo-list ">
             </ul>
+            <div class="button">
+                <button data-modal-target="#project-discription-container" class="btn btn-warning">Add Project</button>
+            </div>
+        </section>
+        <div class="project-discription-container d-flex flex-column" id="project-discription-container">
+            <div class="header">
+                <div class="title">
+                    <h1>Add your project</h1>
+                </div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <form class="project-discription" id="form">
+                <div class="row">
+                    <div class="col-5">
+                        <input type="text" placeholder="project Name" class="form-control" id="project-name">
+                    </div>
+                    <div class="col-5 ml-4 ">
+                        <input type="text"  placeholder="enter a deadline" class="form-control" id="deadline" onblur="this.type='text'" onfocus="this.type='date'">
+                    </div>
+                    <div class="col-5  d-flex flex-column mt-2">
+                        <div id="discription-btn">
+                            <input type="button" class="btn  btn-warning  discription-btn form-control" value="Discription">
+                        </div>
+                        
+                        <div class="discription-container form-control">
+                            <textarea name="project-discription" id="project-discription" cols="37" rows="10"
+                                placeholder="add discription to your project" class="discription w-100"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-5  ml-4 mt-2">
+                        <select name="priorty" id="priorty" class="form-control red" onchange="changeBackgound()">
+                            <option value="red" class="red">1 urgent and important</option>
+                            <option value="green" class="green">2 not urgent but important</option>
+                            <option value="yellow" class="yellow">3 urgent but not important</option>
+                            <option value="blue" class="blue">4 not urgent and not important</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+            <div class="addButton d-flex justify-content-center center w-100">
+                <button class="btn btn-warning mx-5">Add</button>
+            </div>
         </div>
+        <div id="overlay"></div>
     </main>
-
-    <script src="./script/script.js"></script>
+    <script defer src="./script/script.js"></script>
 </body>
 
 </html>
