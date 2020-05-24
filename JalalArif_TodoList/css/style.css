@@ -1,0 +1,147 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(140deg,#0a3c53,#2d373d);
+    color: white;
+    font-family: 'Poppins',sans-serif;
+    min-height:100vh;
+}
+
+header{
+    background-image: url(../img/bg.jpg);
+    font-size:1.4rem;
+    flex-direction: column;
+    color: lightskyblue;
+}
+
+header h4{
+    border-bottom: 0.5px solid lightskyblue;
+    color: rgb(228, 228, 228);
+    
+}
+
+header{
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+header,main{
+    min-height: 20vh;
+    /* display:  flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+form input,
+form button{
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border: none;
+    background-color: white;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+form input{
+    width:60vw;
+    height:4vh;
+   
+}
+
+form input:focus{
+    background-color: #d0e1f9;
+    color:white;
+}
+
+form button{
+    font-size: 3.5rem;
+    padding: 1.1rem;
+    transition: ease 0.5s;
+}
+
+form button:hover{
+   background-color: lightslategrey;
+   color: lightyellow;
+   transition: ease 0.5s;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form .div-inputs{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.todo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+
+}
+
+.todo-list{
+    min-width: 55%;
+    list-style: none;
+}
+
+.todo{
+    margin:0.5rem;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+    
+}
+
+.todo li{
+    flex:1;
+}
+
+.trash-btn,
+.complete-btn{
+    background-color: #ff6f47;
+    color: white;
+    border:none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.complete-btn{
+    background: rgb(73,204,73);
+}
+
+.todo-item{
+    padding:0rem 0.5rem ;
+    font-size: 1rem;
+}
+
+.fa-trash,
+.fa-check{
+    pointer-events: none;
+}
+
+.completed{
+    text-decoration:line-through;
+    color: gray;
+}
+
+.fall{
+    transform: translate(8rem) rotateZ(20deg);
+    opacity: 0;
+}
