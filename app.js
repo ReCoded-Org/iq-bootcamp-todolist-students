@@ -1,56 +1,91 @@
-//Seelectors
-const todoInput = document.querySelector(".todo-input");
-const todoButton = document.querySelector(".todo-button");
-const todoList = document.querySelector(".todo-list");
+let makeTodo = document.querySelector(".new"),
+  input = document.querySelector(".input"),
+  ul = document.querySelector("ul"),
+  todoInput = document.querySelector(".todo-input"),
+  cancel = document.querySelector(".cancel"),
+  ok = document.querySelector(".ok"),
+  date = document.querySelector(".date"),
+  today = new Date().toLocaleDateString();
 
-//Event Listeners
-todoButton.addEventListener("click", addTodo);
-todoList.addEventListener("click", deleteCheck);
+date.textContent = today;
 
-//Functions
-function addTodo(event) {
-  //prevent form from submitting
-  event.preventDefault();
-  //create Todo Div
-  const todoDiv = document.createElement("div");
-  todoDiv.classList.add("todo");
-  //create li
-  const newTodo = document.createElement("li");
-  newTodo.innerText = todoInput.value;
-  newTodo.classList.add("todo-item");
-  todoDiv.appendChild(newTodo);
-
-  //Completed mark Button
-  const completedButton = document.createElement("button");
-  completedButton.innerHTML = '<i class=" fas fa-check"></i>';
-  completedButton.classList.add("complete-btn");
-  todoDiv.appendChild(completedButton);
-
-  //Completed trash Button
-  const trashButton = document.createElement("button");
-  trashButton.innerHTML = '<i class=" fas fa-trash"></i>';
-  trashButton.classList.add("trash-btn");
-  todoDiv.appendChild(trashButton);
-
-  //Append to list
-  todoList.appendChild(todoDiv);
-
-  //clear todo Input value
+cancel.addEventListener("click", function (e) {
+  e.preventDefault();
+  input.classList.add("hide");
+  makeTodo.classList.remove("hide");
   todoInput.value = "";
+});
+//select date
+
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".datepicker");
+  var instances = M.Datepicker.init(elems, options);
+});
+
+makeTodo.addEventListener("click", function (e) {
+  e.preventDefault();
+  input.classList.remove("hide");
+  makeTodo.classList.add("hide");
+});
+
+ok.addEventListener("click", function (e) {
+  if (todoInput.value != "") {
+    e.preventDefault();
+    const li = document.createElement("li");
+
+    const doneBtn = document.createElement("input");
+    doneBtn.type = "checkbox";
+    doneBtn.classList.add("done");
+
+    const text = document.createElement("p");
+    text.classList.add("text");
+    text.textContent = todoInput.value;
+
+    const delBtn = document.createElement("div");
+    delBtn.classList.add("del");
+
+    ul.appendChild(li).append(doneBtn, text, delBtn);
+    letsDone(doneBtn);
+    listenDeleteTodo(delBtn);
+
+    makeTodo.classList.remove("hide");
+    input.classList.add("hide");
+    todoInput.value = "";
+  }
+});
+
+function letsDone(element) {
+  element.addEventListener("click", function () {
+    if (
+      element.parentElement.children[1].style.textDecoration != "line-through"
+    ) {
+      element.parentElement.children[1].style.textDecoration = "line-through";
+    } else {
+      element.parentElement.children[1].style.textDecoration = "";
+    }
+  });
 }
-function deleteCheck(e) {
-  const item = e.target;
-  //for deleting todo
-  if (item.classList[0] === "trash-btn") {
-    const todo = item.parentElement;
-    //Animation
-    todo.classList.add("fall");
-    todo.addEventListener("transitionend", function () {
-      todo.remove();
-    });
-  }
-  if (item.classList[0] === "complete-btn") {
-    const todo = item.parentElement;
-    todo.classList.toggle("completed");
-  }
+
+function listenDeleteTodo(element) {
+  element.addEventListener("click", function (e) {
+    e.preventDefault();
+    element.parentElement.remove();
+  });
+}
+
+let body = document.querySelector("body"),
+  backgrounds = ["white"],
+  dot = document.querySelectorAll(".dot");
+
+body.style.backgroundColor = backgrounds[0];
+dot[0].classList.add("dot-active");
+
+for (let i = 0; i < dot.length; i++) {
+  dot[i].addEventListener("click", function () {
+    for (let j = 0; j < dot.length; j++) {
+      dot[j].classList.remove("dot-active");
+    }
+    dot[i].classList.add("dot-active");
+    body.style.backgroundColor = backgrounds[i];
+  });
 }
