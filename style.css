@@ -12,12 +12,15 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-.green {
+.white-color {
     color: white;
 }
-.blue {
+.blue-color {
     color: #117a8b;
     font-size: 60px;
+}
+.today-font {
+    font-size: 25px;
 }
 .btn-todo {
     line-height: 40px;
@@ -34,14 +37,29 @@
     background-color: rgba(41,76,255,0.01);
     border: 3px solid white;
 }
+.btn-clear {
+    line-height: 40px;
+    padding: 0px 20px 0px;
+    font-size: 18px;
+    border-radius: 15px;
+    background-color: rgba(41,76,255,0.01);
+    color: white;
+    border: 3px solid transparent;
+    border: 3px solid #117a8b;
+    transition: 0.3s all ease-in-out;
+}
+.btn-clear:hover {
+    background-color: rgba(41,76,255,0.01);
+    border: 3px solid red;
+}
 .text {
     width: 100%;
     border:none;
     border-radius: 15px;
     padding: 10px;
 }
-.deadline {
-    border: none;
+.priority {
+    border:none;
     border-radius: 15px;
     padding: 10px;
 }
@@ -99,4 +117,7 @@
 .item i.rem:hover{
     color:#af0000;
     cursor: pointer;
+}
+.white-background {
+    background-color: white;
 }

@@ -6,6 +6,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="./materialize/css/materialize.min.css"  media="screen,projection"/>
     <!-- link to css -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -15,44 +17,52 @@
 <body class="wrapper">
     <header>
         <div>
-            <h1 class="text-center mt-4 mb-5 blue">Make your life easier!</h1>
+            <h1 class="text-center mt-4 mb-5 blue-color">Make your life easier!</h1>
         </div>
         <div class="row mb-4">
-            <h1 class="m-3 green">Today</h1>
-            <h1 id = "date" class="m-3 green"></h1>
+            <h1 class="m-2 white-color today-font">Today:</h1>
+            <h1 id = "date" class="m-2 white-color today-font"></h1>
         </div>
     </header>
 
     <main>
         <form>
         <div class="row">
-            <div class="col-7">
-                <input type="text" id="textInput" class="text" name="to-do" placeholder="Enter your todo"  required><br>
+            <div class="col-md-8">
+                <input type="text" id="textInput" class="text white-color" name="to-do" placeholder="Enter your todo"  required><br>
             </div>
-            <div class="col">
-                <label for="deadline" class="green" >Deadline: </label>
-                <input type="date" id="deadline" class="deadline" name="deadline" required>
+            <div class="col-md-4">
+                <input type="text" class="datepicker white-color" id="deadline" placeholder="deadline">
             </div>
-            <div>
-                <select class="deadline" name="priority" id="priority">
-                    <option selected>Priority 1</option>
-                    <option>Priority 2</option>
-                    <option>Priority 3</option>
-                </select>
-            </div>
+            
         </div>
-        <div>
-            <button id="button" class="btn-todo m-3" type="button" >Add Todo</button>
+        <div class="row">
+        <div class="col-md-3 text-right">
+            <button id="button" class="btn-todo m-2" type="button" >Add Todo</button>
         </div>
+        <div class="col-md-5">
+            <button id="clear" class="btn-clear m-2" type="button" >Clear All</button>
+        </div>
+        <div class="input-field col s12">
+            <select id="priority">
+              <option disabled selected></option>
+              <option>Priority 1</option>
+              <option>Priority 2</option>
+              <option>Priority 3</option>
+            </select>
+            <label>Priorities</label>
+          </div>
+          </div>
         </form>
         <div>
             <h4 class="task-color">My tasks</h4>
-            <ul id="list" class="green font-todo">
+            <ul id="list" class="white-color font-todo">
                 
             </ul>
         </div>
     </main>
-
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="./materialize/js/materialize.min.js"></script>
     <script src='script.js'></script>
 </body>
 </html>

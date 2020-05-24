@@ -3,21 +3,61 @@ const dateToday = document.getElementById('date');
 const list = document.getElementById('list');
 const input = document.getElementById('textInput');
 const button = document.getElementById('button');
-const deadlinedate = document.getElementById('deadline')
-const priorityval = document.getElementById('priority')
+const deadlinedate = document.getElementById('deadline');
+const priorityval = document.getElementById('priority');
+const clear = document.getElementById('clear');
 
 // Check unCheck
 const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle";
 const LINE_THROUGH = "lineThrough";
+
 // Variables
-let LIST = []
-    , id = 0;
-// Show date
+let LIST, id;
+
+// get items from local storage
+let data = localStorage.getItem("TODO")
+if (data){
+    LIST =JSON.parse(data)
+    id = LIST.length;
+    loadList(LIST)
+} else {
+    LIST = [];
+    id = 0;
+}
+
+// Show items to the user
+function loadList(arr){
+    arr.forEach(function(item){
+        addToDo(item.name, item.deadline, item.priority, item.id, item.done, item.trash)
+    });
+}
+// clear all items
+clear.addEventListener('click', removeAll);
+function removeAll(){
+    localStorage.clear();
+    location.reload();
+}
+
+// Show header date
 const today = new Date();
 options = {weekday : 'long', month : 'short', day : 'numeric'}
 
 dateToday.innerHTML = today.toLocaleDateString('en-US', options)
+
+// format date
+document.addEventListener('DOMContentLoaded', datepicker);
+function datepicker() {
+    var elems = document.querySelectorAll('.datepicker');
+    var instances = M.Datepicker.init(elems, {minDate : new Date()});
+}
+
+// priority selector
+document.addEventListener('DOMContentLoaded', priority);
+function priority() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+}
 
 // Add todo function
 function addToDo(toDo, deadline, priority, id, done, trash){
@@ -38,8 +78,10 @@ function addToDo(toDo, deadline, priority, id, done, trash){
 
     list.insertAdjacentHTML(position, item);
 }
+// add toDo button
+button.addEventListener('click', submit);
 
-button.addEventListener('click', function(event) {
+function submit(event) {
     const toDo = input.value
     const deadline = deadlinedate.value
     const priority = priorityval.value
@@ -56,13 +98,13 @@ button.addEventListener('click', function(event) {
             done : false,
             trash : false
         });
-
+        // add to local storage
+        localStorage.setItem("TODO", JSON.stringify(LIST))
         id++
     }
     input.value = ""
     deadlinedate.value = ""
-});
-
+}
 // Check and Uncheck toDo
 function completeToDo(element){
     element.classList.toggle(CHECK);
@@ -77,8 +119,10 @@ function removeToDo(element){
 
     LIST[element.id].trash = true;
 }
+// check if it was complete or remove
+list.addEventListener('click', check);
 
-list.addEventListener('click', function(event) {
+function check(event) {
     const element = event.target;
     const elementJob = element.attributes.job.value;
     if (elementJob == "complete"){
@@ -86,4 +130,7 @@ list.addEventListener('click', function(event) {
     } else if (elementJob == "remove"){
         removeToDo(element);
     }
-})
+
+    // add to local storage
+    localStorage.setItem("TODO", JSON.stringify(LIST))
+}
