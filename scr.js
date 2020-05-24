@@ -16,6 +16,7 @@ if (d.getDate()<10 ) {
     new_digit_day = "0" +d.getDate() ;
 } 
 let m=d.getFullYear()+'-'+new_digit_month+'-'+new_digit_day;
+
 in1.setAttribute('min',m);
 
 
@@ -23,10 +24,16 @@ let array=[];
 let drop= document.getElementById("dropdown");
 let li_element;
 let ul_element;
+let container;
 
 let icon_listener;
 let elements
+//display text when there is no tasks
+if (array.length<1){
+     container=document.getElementById("empty_task")
+     container.innerHTML=`<h3>There Are No Tasks   <i class="far fa-meh-rolling-eyes"></i></h3>`
 
+}
 //button submit listener
 document.getElementById("todo").addEventListener("click",function(){
   
@@ -34,6 +41,7 @@ document.getElementById("todo").addEventListener("click",function(){
         document.getElementById("task").required;
     }
     else{
+          container.innerHTML=``
           create_array(create_obj())
           
           console.log('array',array.length,'\n',array)
@@ -79,6 +87,9 @@ for(let i=0;i<array.length;i++){
                    <p>${array[i].priority}</p>
                       ${array[i].icon}`
 
+      //check task if expired
+      check_deadline(li_element.children[1],array[i].deadline);
+      
   ul_element.appendChild(li_element);
   
 //ul_element.children[4]
@@ -101,13 +112,15 @@ function create_li_update(){
   //clear the old ul and display the new array
   ul_element.innerHTML="";
 for(let i=0;i<array.length;i++){
-
-    li_element = document.createElement("li");li_element.innerHTML=`${array[i].checkbox}
-                           <h3>${array[i].title}</h3>
+  
+    li_element = document.createElement("li");li_element.innerHTML=`
+                              ${array[i].checkbox}
+                          <h3>${array[i].title}</h3>
                            <p>${array[i].deadline}</p>
                            <p>${array[i].priority}</p>
-                             ${array[i].icon}`
+                              ${array[i].icon}`
 
+   
   ul_element.appendChild(li_element);
   }}
 // delete task from array
@@ -154,8 +167,14 @@ function make_inline_text(){
        }
      }
 }
-
-
+// check expired task
+function check_deadline(header_tage,data_chosen){
+  console.log(data_chosen);
+  if(data_chosen<'2020-06-22'){
+    header_tage.style.color="red";
+    header_tage.style.textDecoration= "underline";
+  }
+}
 
 
 
