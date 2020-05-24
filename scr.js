@@ -1,7 +1,9 @@
 var d = new Date();
 
+let month_name=d.toLocaleString('default', { month: 'long' });
+
 let h=document.getElementById("h");
-h.innerHTML=d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear();
+h.innerHTML=month_name+'  '+d.getDate()+','+d.getFullYear();
 
 let in1=document.getElementById("input1") ;
 
@@ -20,6 +22,7 @@ let m=d.getFullYear()+'-'+new_digit_month+'-'+new_digit_day;
 in1.setAttribute('min',m);
 
 
+
 let array=[];
 let drop= document.getElementById("dropdown");
 let li_element;
@@ -28,12 +31,12 @@ let container;
 
 let icon_listener;
 let elements
-//display text when there is no tasks
-if (array.length<1){
-     container=document.getElementById("empty_task")
-     container.innerHTML=`<h3>There Are No Tasks   <i class="far fa-meh-rolling-eyes"></i></h3>`
+let new_date
 
-}
+check_empty()
+
+
+
 //button submit listener
 document.getElementById("todo").addEventListener("click",function(){
   
@@ -81,9 +84,13 @@ function create_li(){
   ul_element.innerHTML="";
 for(let i=0;i<array.length;i++){
 
+  //change date to formatte may 20,2020
+   new_date=Convert_date(array[i].deadline);
+
+ 
     li_element = document.createElement("li");li_element.innerHTML=`${array[i].checkbox}
                    <h3>${array[i].title}</h3>
-                   <p>${array[i].deadline}</p>
+                   <p>${new_date}</p>
                    <p>${array[i].priority}</p>
                       ${array[i].icon}`
 
@@ -111,6 +118,7 @@ function create_li_update(){
 
   //clear the old ul and display the new array
   ul_element.innerHTML="";
+  check_empty()
 for(let i=0;i<array.length;i++){
   
     li_element = document.createElement("li");li_element.innerHTML=`
@@ -123,6 +131,7 @@ for(let i=0;i<array.length;i++){
    
   ul_element.appendChild(li_element);
   }}
+
 // delete task from array
 
 function delete_task(i){
@@ -170,12 +179,24 @@ function make_inline_text(){
 // check expired task
 function check_deadline(header_tage,data_chosen){
   console.log(data_chosen);
-  if(data_chosen<'2020-06-22'){
+  if(data_chosen<d){
     header_tage.style.color="red";
     header_tage.style.textDecoration= "underline";
   }
 }
 
-
-
+//display text when there is no tasks
+function check_empty(){
+  if (array.length<1){
+        container=document.getElementById("empty_task")
+        container.innerHTML=`<h3>There Are No Tasks   <i class="far fa-meh-rolling-eyes"></i></h3>`
+}
+}
+//convert formatt date 
+function Convert_date(date){
+  s=new Date(date);
+  let month_name= s.toLocaleString('default', { month: 'long', day: "numeric",  year:'numeric'});
+  return month_name
+ 
+ }
 
