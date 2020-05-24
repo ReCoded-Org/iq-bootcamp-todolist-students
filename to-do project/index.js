@@ -81,7 +81,7 @@ function addToList() {
   <label class="form-check-label" for="check">
   </label>
 </div>
-        <div class="col-md-5">
+        <div class="col-md-5" id="task${listID}">
         ${nameOfTask} <br>
          ${taskDeadline}
           ${taskPriority}</div>
@@ -95,8 +95,16 @@ function addToList() {
         let form = document.getElementById('taskForm');
         form.reset();
         btn.blur();
+        let today = new Date();
+        let dDate = new Date(deadlineDate);
+        if (today.getTime() > dDate.getTime()) {
+            listItem.classList.add("changeColor");
+
+        }
+
     }
 }
+
 function remove(i) {
     $(`#listItem${i}`).remove();
 }
@@ -110,6 +118,7 @@ function markAsChecked(i) {
 
         $(`#listItem${i}`).css("text-decoration", "none");
     }
+
 }
 
 
