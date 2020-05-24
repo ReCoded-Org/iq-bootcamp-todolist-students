@@ -97,10 +97,13 @@ function addToList() {
         btn.blur();
         let today = new Date();
         let dDate = new Date(deadlineDate);
-        if (today.getTime() > dDate.getTime()) {
+       
+        if (!dDate >= today ) {
             listItem.classList.add("changeColor");
-
+           
         }
+        
+         
 
     }
 }
