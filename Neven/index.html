@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="/assets/css/material-kit.css?v=2.0.7" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <title>TODO List</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Orgnize and never forget to do things</h1>
+      </header>
+      <div class="formContent">
+        <form action="">
+          <h1 id="date"></h1>
+          <input
+            class="input"
+            type="text"
+            required
+            placeholder="Enter your task here"
+          /><br />
+
+          <input type="date" name="date2" id="date2" required />
+          <br />
+
+          <button class="btn">
+            <i class="fa fa-plus"> </i>
+          </button>
+        </form>
+      </div>
+      <div class="task-content">
+        <span class="no-Msg">There is no task </span>
+        <ul class="todo-list"></ul>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
