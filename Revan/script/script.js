@@ -12,10 +12,10 @@ const monthSmall = [
   "Nov",
   "Dec",
 ];
-// var colors = ["red","blue","green"];
-// localStorage.setItem("my_colors", JSON.stringify(colors)); //store colors
-// var storedColors = JSON.parse(localStorage.getItem("my_colors")); //get them back
-// console.log(storedColors)
+let list = document.querySelector("ul")
+let list1 = document.querySelector("ul")
+list1 = JSON.parse(localStorage.getItem("todo-list")); 
+ console.log(list1.innerHTML)
 const d = new Date();
 const header = document.getElementById("today");
 header.innerText = `${
@@ -31,6 +31,8 @@ let checkbox = document.getElementsByClassName("checkbox");
 const addBtn = document.querySelector(".addButton > button");
 const discription = document.querySelector(".discription-container");
 let priortySection = document.querySelector("#priorty");
+
+
 openModalButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const modal = document.querySelector(button.dataset.modalTarget);
@@ -110,25 +112,29 @@ addBtn.addEventListener("click", () => {
     li.appendChild(projectNameNode);
     li.appendChild(deadlineNode);
     li.appendChild(priortyCheck);
-    document.querySelector("ul").appendChild(li);
-
+    list.appendChild(li);
+    localStorage.setItem("todo-list", JSON.stringify(list));
     span.className = "close";
     checkboxDiv.className = "checkbox";
     span.appendChild(txt);
     li.appendChild(span);
     document.getElementById("form").reset();
     priortySection.style.backgroundColor = "red";
+    localStorage.setItem("my_colors", JSON.stringify(list));
   }
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function () {
+      let parentDiv = this.parentElement.parentElement;
       let div = this.parentElement;
-      div.style.display = "none";
+      div.remove();
+      localStorage.setItem("todo-list", JSON.stringify(parentDiv));
+      console.log(parentDiv)
     };
   }
 
   for (i = 0; i < checkbox.length; i++) {
     checkbox[i].onclick = function () {
-      let parentDiv = this.parentElement;
+      //let parentDiv = this.parentElement;
       let div = this.parentElement.childNodes;
       div[0].classList.toggle("checked");
       div[1].classList.toggle("checked");
@@ -141,3 +147,18 @@ function changeBackgound() {
     "#priorty"
   ).value;
 }
+// I used vazhin's code to format the date
+$(document).ready(function () {
+    var date_input = $('input[name="date"]');
+    var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+    var nowDate = new Date();
+    var today = new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate(), 0, 0, 0, 0);
+
+    date_input.datepicker({
+        startDate: today,
+        format: 'MM dd, yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+    })
+})
