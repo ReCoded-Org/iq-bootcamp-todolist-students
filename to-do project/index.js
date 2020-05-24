@@ -11,13 +11,13 @@ function TimeAndDate() {
         if (m < 10) {
             m = `0${m}`;
         }
-        today = y + '/' + m + '/' + d;
-        document.getElementById('DateOfToday').innerText = today;
+        today = y + "/" + m + "/" + d;
+        document.getElementById("DateOfToday").innerText = today;
     }
     function Time() {
         let time = new Date();
         let t = time.toLocaleTimeString();
-        document.getElementById('Time').innerText = t;
+        document.getElementById("Time").innerText = t;
         let run = setTimeout(Time, 1000);
     }
     getdate();
@@ -25,46 +25,48 @@ function TimeAndDate() {
 }
 
 document.getElementById("taskForm").addEventListener("click", function (event) {
-    event.preventDefault()
+    event.preventDefault();
 });
 $(document).ready(function () {
-    let date_input = $('input[id="date"]'); //our date input has the name "date"
+    let date_input = $('input[id="date"]'); //our date input has the id "date"
     let options = {
         startDate: "new Date()",
-        format: 'MM, dd yyyy',
+        format: "MM, dd yyyy",
         todayHighlight: true,
         autoclose: true,
-        orientation: "top right"
+        orientation: "top right",
     };
     date_input.datepicker(options);
-})
+});
 
 let listID = 0;
-let btn = document.getElementById('btn'); //get button
-btn.addEventListener('click', addToList);
+let btn = document.getElementById("btn"); //get button
+btn.addEventListener("click", addToList);
 function addToList() {
-    hiddenElemetns = document.getElementsByClassName('hide');
+    hiddenElemetns = document.getElementsByClassName("hide");
     for (let i = 0; i < hiddenElemetns.length; i++) {
         hiddenElemetns[i].style.display = "block";
     }
-    let taskName = document.getElementById('task').value;
-    let deadlineDate = document.getElementById('date').value;
+    let taskName = document.getElementById("task").value;
+    let deadlineDate = document.getElementById("date").value;
     let e = document.getElementById("exampleFormControlSelect1");
     let priority = e.options[e.selectedIndex].text;
     let listText = null;
     let inputCollection = [];
     if (taskName == "" || deadlineDate == "") {
-        if (taskName == "") { document.getElementById('task').focus(); }
-        else {
-            if (deadlineDate == "") { document.getElementById('date').focus(); }
+        if (taskName == "") {
+            document.getElementById("task").focus();
+        } else {
+            if (deadlineDate == "") {
+                document.getElementById("date").focus();
+            }
         }
-    }
-    else {
+    } else {
         listText = {
             taskName: taskName,
             deadlineDate: deadlineDate,
-            priority: priority
-        }
+            priority: priority,
+        };
     }
     inputCollection.push(listText);
     for (let i = 0; i <= inputCollection.length; i++) {
@@ -72,8 +74,8 @@ function addToList() {
         let nameOfTask = task.taskName;
         let taskDeadline = task.deadlineDate;
         let taskPriority = task.priority;
-        let listItem = document.createElement('li');
-        listItem.setAttribute('id', `listItem${listID}`);
+        let listItem = document.createElement("li");
+        listItem.setAttribute("id", `listItem${listID}`);
         //  listItem.setAttribute('class', );
         let span = `<div class=" row">
         <div class="form-check">
@@ -88,23 +90,18 @@ function addToList() {
         <div class="col-md-6 text-right"><i class="fa fa-trash-o" onclick="remove(${listID})" style="font-size:40px;"></i>
         </div> <hr></div>`;
         listItem.innerHTML = span;
-        let list = document.getElementById('list');
+        let list = document.getElementById("list");
         list.appendChild(listItem);
         listID = listID + 1;
-        document.getElementById('remove').style.display = "none";
-        let form = document.getElementById('taskForm');
+        document.getElementById("remove").style.display = "none";
+        let form = document.getElementById("taskForm");
         form.reset();
         btn.blur();
         let today = new Date();
         let dDate = new Date(deadlineDate);
-       
-        if (!dDate >= today ) {
+        if (!dDate >= today) {
             listItem.classList.add("changeColor");
-           
         }
-        
-         
-
     }
 }
 
@@ -112,26 +109,21 @@ function remove(i) {
     $(`#listItem${i}`).remove();
 }
 function markAsChecked(i) {
-    let buttons = document.getElementsByClassName('form-check-input');
+    let buttons = document.getElementsByClassName("form-check-input");
     let checkval = buttons[i].checked;
     if (checkval == true) {
         $(`#listItem${i}`).css("text-decoration", "line-through");
-    }
-    else {
-
+    } else {
         $(`#listItem${i}`).css("text-decoration", "none");
     }
-
 }
-
 
 window.addEventListener("DOMContentLoaded", hide);
 function hide() {
-    hiddenElemetns = document.getElementsByClassName('hide');
-    let form = document.getElementById('taskForm');
+    hiddenElemetns = document.getElementsByClassName("hide");
+    let form = document.getElementById("taskForm");
     form.reset();
     for (let i = 0; i < hiddenElemetns.length; i++) {
-        hiddenElemetns[i].style.display = "none"
+        hiddenElemetns[i].style.display = "none";
     }
 }
-
