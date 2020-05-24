@@ -6,35 +6,48 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- link to style.css -->
+    <!-- link to css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>ToDo list</title>
 </head>
-<body class="container">
+<body class="wrapper">
     <header>
         <div>
-            <h1 class="text-center m-5 text-white">Make your life easier!</h1>
+            <h1 class="text-center mt-4 mb-5 blue">Make your life easier!</h1>
         </div>
-        <div>
-            <h1 class="m-3 text-white text-center">Today</h1>
-            <h1 id = "ToDate" class="text-right m-3 text-white text-center"></h1>
+        <div class="row mb-4">
+            <h1 class="m-3 green">Today</h1>
+            <h1 id = "date" class="m-3 green"></h1>
         </div>
     </header>
 
     <main>
-        <form class="row">
+        <form>
+        <div class="row">
+            <div class="col-7">
+                <input type="text" id="textInput" class="text" name="to-do" placeholder="Enter your todo"  required><br>
+            </div>
             <div class="col">
-            <input type="text" id="text" class="text" name="to-do" placeholder="Enter your todo"  required><br>
-            <label for="deadline" class="text-white" >Select Deadline: </label>
-            <input type="date" id="deadline" name="deadline" required>
+                <label for="deadline" class="green" >Deadline: </label>
+                <input type="date" id="deadline" class="deadline" name="deadline" required>
             </div>
-            <div class="col text-right">
-            <button id="addTodo" class="btn-todo" type="button" >Add Todo</button>
+            <div>
+                <select class="deadline" name="priority" id="priority">
+                    <option selected>Priority 1</option>
+                    <option>Priority 2</option>
+                    <option>Priority 3</option>
+                </select>
             </div>
-        </form>
-
+        </div>
         <div>
-            <ul id="addedToDos" class="text-white text-center list-inline font-todo">
+            <button id="button" class="btn-todo m-3" type="button" >Add Todo</button>
+        </div>
+        </form>
+        <div>
+            <h4 class="task-color">My tasks</h4>
+            <ul id="list" class="green font-todo">
                 
             </ul>
         </div>
