@@ -16,7 +16,12 @@ let todayDate = new Date();
 document.getElementById('today-date').innerHTML = todayDate.getDate() + "/" + (todayDate.getMonth() + 1) + "/" + todayDate.getFullYear();
 let deadlineInput = document.getElementById('deadline');
 deadlineInput.min = todayDate.toISOString().split('T')[0]; //to split the date from time, you cant choose previos date
-console.log(todayDate.toISOString());
+console.log(todayDate.toLocaleDateString('en-US', {
+    
+    month : 'short',
+    day : 'numeric',
+    year : 'numeric'
+}));
 
 // document.getElementsByClassName('add-task')[0].addEventListener('click', function (event) {
 // event.preventDefault();
@@ -58,22 +63,44 @@ function redrawEverything() {
         const checkBox = done ? 'checked' : '';
         const myTask = document.createElement('div');
         myTask.innerHTML =
-            ` <div class="input-group-text">
-           <div class="container">
+            ` <div class="input-group-text bg-info ">
+           <div class="container ">
            <div class="row align-items-center">
              <div class="col m-0 "><input  type="checkbox" onclick="makeDone(${i})" aria-label="Checkbox for following text input" ${checkBox}></div>
-             <div class="col-md-3 text-left "> <div class="${classDone}">${task.description}</div> <div>${task.deadline},${task.priority}</div></div>
-             <div class="col offset-md-8"><i class="fas fa-trash " onclick="deleteItem(${i})"></i></div>
+             <div class="col-md-3 text-left text-white"> <div class="${classDone}">${task.description}</div> <div>${task.deadline},${task.priority}</div></div>
+             <div class="col offset-md-8 text-danger "><i class="fas fa-trash " onclick="deleteItem(${i})"></i></div>
            </div>
        </div>
        </div>`;
+           
+       
+       console.log(todayDate);
+       console.log(new Date(task.deadline));
+       
+       
+       if (new Date(task.deadline) < todayDate) {
+        myTask.innerHTML =
+            ` <div class="input-group-text bg-info ">
+           <div class="container ">
+           <div class="row align-items-center">
+             <div class="col m-0 "><input  type="checkbox" onclick="makeDone(${i})" aria-label="Checkbox for following text input" ${checkBox}></div>
+             <div class="col-md-3 text-left text-white"> <div class="${classDone} bg-danger" >${task.description}</div> <div>${task.deadline},${task.priority}</div></div>
+             <div class="col offset-md-8 text-danger "><i class="fas fa-trash " onclick="deleteItem(${i})"></i></div>
+           </div>
+       </div>
+       </div>`;
+           
+       } 
+ 
 
         document.getElementById('todo-tasks').appendChild(myTask);
 
         document.getElementById('no-task').style.display = 'none';
         document.getElementById('todo').value = '';
         document.getElementById('deadline').value = '';
-        document.getElementById('todo').placeholder = 'GO on';
+        document.getElementById('todo').placeholder = 'Add Todo';
+
+        
 
     }
 
@@ -90,5 +117,7 @@ function deleteItem(i){
 }
 
 
+
 myTasksArr.push(...JSON.parse(localStorage.getItem('myTasks')));
 redrawEverything();
+
