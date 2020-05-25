@@ -61,13 +61,14 @@ function redrawEverything() {
         const done = task.isDone;
         const classDone = done ? 'del' : '';
         const checkBox = done ? 'checked' : '';
+        const passDeadlineClass = new Date(task.deadline) < todayDate ? "bg-danger":"";
         const myTask = document.createElement('div');
         myTask.innerHTML =
             ` <div class="input-group-text bg-info ">
            <div class="container ">
            <div class="row align-items-center">
              <div class="col m-0 "><input  type="checkbox" onclick="makeDone(${i})" aria-label="Checkbox for following text input" ${checkBox}></div>
-             <div class="col-md-3 text-left text-white"> <div class="${classDone}">${task.description}</div> <div>${task.deadline},${task.priority}</div></div>
+             <div class="col-md-3 text-left text-white"> <div class="${classDone} ${passDeadlineClass}">${task.description}</div> <div>${task.deadline},${task.priority}</div></div>
              <div class="col offset-md-8 text-danger "><i class="fas fa-trash " onclick="deleteItem(${i})"></i></div>
            </div>
        </div>
@@ -77,20 +78,20 @@ function redrawEverything() {
        console.log(todayDate);
        console.log(new Date(task.deadline));
        
-       
-       if (new Date(task.deadline) < todayDate) {
-        myTask.innerHTML =
-            ` <div class="input-group-text bg-info ">
-           <div class="container ">
-           <div class="row align-items-center">
-             <div class="col m-0 "><input  type="checkbox" onclick="makeDone(${i})" aria-label="Checkbox for following text input" ${checkBox}></div>
-             <div class="col-md-3 text-left text-white"> <div class="${classDone} bg-danger" >${task.description}</div> <div>${task.deadline},${task.priority}</div></div>
-             <div class="col offset-md-8 text-danger "><i class="fas fa-trash " onclick="deleteItem(${i})"></i></div>
-           </div>
-       </div>
-       </div>`;
+    //    another  way to made passed date red
+    //    if (new Date(task.deadline) < todayDate) {
+    //     myTask.innerHTML =
+    //         ` <div class="input-group-text bg-info ">
+    //        <div class="container ">
+    //        <div class="row align-items-center">
+    //          <div class="col m-0 "><input  type="checkbox" onclick="makeDone(${i})" aria-label="Checkbox for following text input" ${checkBox}></div>
+    //          <div class="col-md-3 text-left text-white"> <div class="${classDone} bg-danger" >${task.description}</div> <div>${task.deadline},${task.priority}</div></div>
+    //          <div class="col offset-md-8 text-danger "><i class="fas fa-trash " onclick="deleteItem(${i})"></i></div>
+    //        </div>
+    //    </div>
+    //    </div>`;
            
-       } 
+    //    } 
  
 
         document.getElementById('todo-tasks').appendChild(myTask);
