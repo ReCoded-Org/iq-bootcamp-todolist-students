@@ -1,0 +1,12 @@
+/* * {
+    margin: 0em;
+    padding: 0em;
+    box-sizing: border-box;
+} */
+.del {
+    text-decoration: line-through;
+}
+#todo-tasks div .bg-danger {
+    background-color:rgb(163, 3, 3)!important;
+    ;
+}
