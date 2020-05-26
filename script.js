@@ -49,7 +49,7 @@ dateToday.innerHTML = today.toLocaleDateString('en-US', options)
 document.addEventListener('DOMContentLoaded', datepicker);
 function datepicker() {
     var elems = document.querySelectorAll('.datepicker');
-    var instances = M.Datepicker.init(elems, options);
+    var instances = M.Datepicker.init(elems, {minDate : new Date()});
 }
 
 // priority selector
