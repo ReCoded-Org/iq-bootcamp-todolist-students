@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+
+    <!-- Font Awesome Libraries -->
+    <link rel="stylesheet" href="./css/all.min.css" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/6f373bc3e0.js" crossorigin="anonymous"></script>
+
+    <!-- Normal CSS Styling -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Animate CSS library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+
+    <!-- Bootrstrap libraries -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        crossorigin="anonymous">
+
+</head>
+
+<body class="bg-light">
+    <header class="container-fluid text-center p-4 mb-5 text-warning bg-dark">
+        <h2 class="">Organize and Never Forget To Do Things!</h2>
+    </header>
+
+    <main class="container">
+        <section class="border-bottom border-warning mb-5 d-flex justify-content-between">
+            <h5><strong class="text-dark">Today: &nbsp;</strong><span id="monthDay"></span></h5>
+            <button id="clearAll" type="button" class="btn border border-warning px-3 pb-1 pt-0 mb-1 btn-warning rounded">Clear All Tasks</button>
+        </section>
+        <div class="row align-items-center">
+            <section class="col-sm-12 col-md-5 col-lg-5 my-md-2 m-lg-3">
+                <form class="form-group" id="form">
+                    <div class="p-1 my-3">
+                        <input id="inputTask" class="form-control border-warning border-top-0 border-right-0 border-left-0 bg-light" type="text"
+                            name="Description" placeholder="e.g. Build a WebApp" required>
+                    </div>
+                    <div class="p-1 my-3">
+                        <input id="inputDate" class="form-control border-warning border-top-0 border-right-0 border-left-0 bg-light" type="text"
+                            name="Deadline" onblur="this.type = 'text'" onfocus="this.type = 'date'"
+                            placeholder="Deadline" required>
+                    </div>
+                    <div class="p-1 my-3">
+                        <select id="inputList" class="form-group form-control border-warning border-top-0 border-right-0 border-left-0 bg-light">
+                            <option value="Priority 1">Priority 1</option>
+                            <option value="Priority 2">Priority 2</option>
+                            <option value="Priority 3">Priority 3</option>
+                        </select>
+                    </div>
+                    <div class="p-1 my-3">
+                        <button id="submitBtn" class="form-control btn btn-warning" type="submit" name="Add Todo">Add Tasks</button>
+                    </div>
+                    <div class="p-1 my-3">
+                        <button id="cancelBtn" class="form-control btn btn-outline-dark" type="reset" name="Cancel">Cancel</button>
+                    </div>
+                </form>
+                <div id="hideBtn" class="p-1 my-3">
+                    <button id="showHideBtn" class="form-control btn btn-warning d-block" type="button" name="Add Todo plus">Add Tasks +</button>
+                </div>
+            </section>
+
+            <section class="col-sm-12 col-md-6 col-lg-6 my-md-4 m-lg-3 d-flex flex-column justify-content-center align-items-center" >
+                <div>
+                    <h4 id="noTaskMsg" class="text-center align-middle mb-4"><strong>Your Tasks!</strong></h4>
+                </div>
+                <div class="" style="height: 60vh; overflow-y: auto;">
+                    <ul class="list-group d-flex flex-column justify-content-between" id="list" >
+                         <!-- <li class="list-group-item px-5 mx-5 border border-warning rounded text-warning bg-dark mb-5"
+                            style="border-width: 3px !important;">
+                            <div class="d-flex flex-column justify-content-between px-5 pt-4" style="border-width: 4px !important;">
+                                <h6><strong>Task: </strong>web app</h6>
+                                <h6><strong>Deadline: </strong>12 may, 2020</h6>
+                                <h6><strong>Priority: </strong>priority 1</h6>
+                                <div class="d-flex justify-content-around m-4 text-light">
+                                    <div>
+                                        <i class="far fa-check-circle" job="completed" id="0"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-trash-alt" job="deleted" id="0"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> -->
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Bootrstrap JS libraries -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
