@@ -1,5 +1,6 @@
 // Elements selection
 const dateToday = document.getElementById('date');
+const today = new Date();
 const list = document.getElementById('list');
 const input = document.getElementById('textInput');
 const button = document.getElementById('button');
@@ -40,7 +41,6 @@ function removeAll(){
 }
 
 // Show header date
-const today = new Date();
 options = {weekday : 'long', month : 'short', day : 'numeric'}
 
 dateToday.innerHTML = today.toLocaleDateString('en-US', options)
@@ -49,7 +49,7 @@ dateToday.innerHTML = today.toLocaleDateString('en-US', options)
 document.addEventListener('DOMContentLoaded', datepicker);
 function datepicker() {
     var elems = document.querySelectorAll('.datepicker');
-    var instances = M.Datepicker.init(elems, {minDate : new Date()});
+    var instances = M.Datepicker.init(elems, options);
 }
 
 // priority selector
@@ -58,6 +58,7 @@ function priority() {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, options);
 }
+// check overdue
 
 // Add todo function
 function addToDo(toDo, deadline, priority, id, done, trash){
@@ -66,17 +67,30 @@ function addToDo(toDo, deadline, priority, id, done, trash){
     
     const DONE = done ? CHECK : UNCHECK;
     const LINE = done ? LINE_THROUGH : "";
-
+    const dueDate = new Date(deadline);
+    const overDue = today >= dueDate;
+    if (overDue){
     const item = `<li class="item">
+                    <i class="fas ${DONE} com" job="complete" id="${id}"></i>
+                    <p class="text red-color ${LINE}">${toDo} ${deadline} ${priority}</p>
+                    <i class="fas fa-trash rem" job="remove" id="${id}"></i>
+                  </li>
+                  `;
+    const position = 'beforeend';
+
+    list.insertAdjacentHTML(position, item);
+    } else {
+        const item = `<li class="item">
                     <i class="fas ${DONE} com" job="complete" id="${id}"></i>
                     <p class="text ${LINE}">${toDo} ${deadline} ${priority}</p>
                     <i class="fas fa-trash rem" job="remove" id="${id}"></i>
                   </li>
                   `;
-    
     const position = 'beforeend';
 
     list.insertAdjacentHTML(position, item);
+    }
+    
 }
 // add toDo button
 button.addEventListener('click', submit);

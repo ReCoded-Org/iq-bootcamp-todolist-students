@@ -71,9 +71,6 @@
     font-size: 45px;
     text-align: center;
 }
-.checkbox {
-    text-decoration: line-through;
-}
 .item{
     width:800px;
     height: 70px;
@@ -84,6 +81,27 @@
     padding: 0;
     margin: 0 auto;
     
+}
+@media only screen and (max-width: 1120px){
+    .wrapper {
+        width:80%;
+    }
+}
+@media only screen and (max-width: 840px){
+    .wrapper {
+        width:90%;
+    }
+    .item {
+        width:550px
+    }
+}
+@media only screen and (max-width: 480px){
+    .wrapper {
+        width:95%;
+    }
+    .item {
+        width:350px;
+    }
 }
 .item i.com{
     position: absolute;
@@ -120,4 +138,7 @@
 }
 .white-background {
     background-color: white;
+}
+.red-color {
+    background-color: red;
 }
