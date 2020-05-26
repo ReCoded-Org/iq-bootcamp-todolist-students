@@ -1,3 +1,4 @@
+
 var d = new Date();
 
 let month_name=d.toLocaleString('default', { month: 'long' });
@@ -22,7 +23,6 @@ let m=d.getFullYear()+'-'+new_digit_month+'-'+new_digit_day;
 in1.setAttribute('min',m);
 
 
-
 let array=[];
 let drop= document.getElementById("dropdown");
 let li_element;
@@ -32,9 +32,8 @@ let container;
 let icon_listener;
 let elements
 let new_date
-
+let random
 check_empty()
-
 
 
 //button submit listener
@@ -56,18 +55,20 @@ document.getElementById("todo").addEventListener("click",function(){
      document.getElementById("task").value='';
 }})
 
+
 //creat object
 function create_obj(){
- 
-   x={   
-        checkbox:`<input type="checkbox" id="myCheck" value=""  onclick="make_inline_text()">`,
+
+  //generate random
+    random=uuidv4() 
+
+    return{   
         title:document.getElementById("task").value,
         deadline:document.getElementById("input1").value,
-        priority:drop[drop.selectedIndex].text  ,    
-        icon:`<i class="fa fa-trash" id="bin" aria-hidden="true"></i>`
+        priority:drop[drop.selectedIndex].text  ,   
+        id:random,// id="bin"
+        icon:`<i class="fa fa-trash bin" aria-hidden="true"></i>`
     }
-    
-  return x
 }
 
 //creat  array of object
@@ -88,7 +89,8 @@ for(let i=0;i<array.length;i++){
    new_date=Convert_date(array[i].deadline);
 
  
-    li_element = document.createElement("li");li_element.innerHTML=`${array[i].checkbox}
+    li_element = document.createElement("li");
+    li_element.innerHTML=`<input type="checkbox" id="myCheck" value=""  onclick="make_inline_text()">
                    <h3>${array[i].title}</h3>
                    <p>${new_date}</p>
                    <p>${array[i].priority}</p>
@@ -98,62 +100,32 @@ for(let i=0;i<array.length;i++){
       check_deadline(li_element.children[1],array[i].deadline);
       
   ul_element.appendChild(li_element);
-  
-//ul_element.children[4]
+
   //add listener
    {
-     console.log(" index of item in array is:",i)
+    // console.log(" index of item in array is:",i)
      icon_listener=li_element.children[4];
      icon_listener.addEventListener("click",function(){
-     console.log("***index obj in array",i)
-     delete_task(i)
+    
+   let id_object=array[i].id
+   let index_object=array.findIndex(x => x.id ===id_object)
+   delete_task(index_object)
 });
+
 }
 
 }
 }
-//update the page
-function create_li_update(){
-  ul_element = document.getElementById("list");
-
-  //clear the old ul and display the new array
-  ul_element.innerHTML="";
-  check_empty()
-for(let i=0;i<array.length;i++){
-  
-    li_element = document.createElement("li");li_element.innerHTML=`
-                              ${array[i].checkbox}
-                          <h3>${array[i].title}</h3>
-                           <p>${array[i].deadline}</p>
-                           <p>${array[i].priority}</p>
-                              ${array[i].icon}`
-
-   
-  ul_element.appendChild(li_element);
-  }}
 
 // delete task from array
 
 function delete_task(i){
+
    console.log("removed", array.splice(i,1)) ;
-    console.log(array)
-   create_li_update()
+   console.log(array)
+   create_li()
+   
 }
-
-
-
-/* //add listener fot icon depend on dom
-function add_listener(){
-  elements=document.querySelectorAll("#bin");
-          console.log("elements",elements)
-         for(let i=0;i<elements.length;i++){
-             console.log(elements[i].children[3])
-elements[i].children[3].addEventListener("click",function(){
-     console.log("***index obj in array",i)
-     delete_task(i)
-})
-}}
-*/
 
 //checkbox
 function make_inline_text(){
@@ -199,4 +171,10 @@ function Convert_date(date){
   return month_name
  
  }
+
+ function uuidv4() {
+  return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+  );
+}
 

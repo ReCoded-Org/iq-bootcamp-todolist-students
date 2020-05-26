@@ -3,7 +3,7 @@
     background:rgb(218, 215, 52) ;
 }
 select{
-    width:150px;
+    width:180px;
 }
 h3{
     font-family: "Times New Roman";
@@ -60,16 +60,19 @@ height: 200px;
 background:rgb(218, 215, 52) ;
 color:white;
 }
-#bin{
+.bin{
     position:absolute;
   right:0px;
   top:10px;
   color:gray;
 }
 
-#myCheck{
+.myCheck{
     position:absolute;
     left:0px;
     top:12px;
   
+}
+#todo{
+    width:180px;
 }
