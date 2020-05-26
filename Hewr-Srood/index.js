@@ -3,25 +3,40 @@ const dateInput = document.getElementById("date-input");
 const taskInput = document.getElementById("task-input");
 const priorityInput = document.getElementById("priority-options");
 
+
 //checkboxes
 const boldCheckbox = document.getElementById("bold-checkbox");
 const italicCheckbox = document.getElementById("italic-checkbox");
 
+const htmlLang = document.getElementsByTagName("html")[0].getAttribute("lang");
 const dateHeader = document.getElementById("current-date");
+const form = document.getElementById("form");
+const listUl = document.getElementById("list-group");
+const selectFilter = document.getElementById("filter-select");
+
+let emptyTaskHeader = document.getElementById("empty-task-header");
 let currentDate = moment().format("LL");
 
-const listUl = document.getElementById("list-group");
-const htmlLang = document.getElementsByTagName("html")[0].getAttribute("lang");
-
 let todoArray = JSON.parse(localStorage.getItem("tasks")) || [];
+
 //eventListners
-document.getElementById("form").addEventListener("submit", addList);
+form.addEventListener("submit", addList);
+selectFilter.addEventListener("click", filterTodo);
 document.addEventListener("DOMContentLoaded", init);
 // function
 function init() {
   dateInput.setAttribute("min", getCurrentDate());
   dateHeader.innerText = currentDate;
   loadPrivewsTodos();
+  emptyTaskCheck();
+}
+
+function emptyTaskCheck() {
+  if (todoArray.length === 0) {
+    emptyTaskHeader.style.display = "block";
+  } else {
+    emptyTaskHeader.style.display = "none";
+  }
 }
 
 function getCurrentDate() {
@@ -34,12 +49,42 @@ function getCurrentDate() {
   return `${year}-${month}-${day}`;
 }
 
+function filterTodo() {
+  let paragraphs = document.getElementsByTagName("p");
+
+  for (let paragraph of paragraphs) {
+    let liItem = paragraph.parentElement;
+    switch (selectFilter.value) {
+      case "all":
+        liItem.classList.add("show");
+        break;
+
+      case "completed":
+        if (paragraph.classList.contains("completed")) {
+          liItem.classList.add("show");
+        } else {
+          liItem.classList.remove("show");
+          liItem.classList.add("hide");
+        }
+        break;
+      case "uncompleted":
+        if (!paragraph.classList.contains("completed")) {
+          liItem.classList.add("show");
+        } else {
+          liItem.classList.remove("show");
+          liItem.classList.add("hide");
+        }
+    }
+  }
+}
+
 function removeList(item) {
   taskList = item.closest("li");
   let span = document.querySelector("span").innerText;
   itemIndex = getIndexOfTodoArr(span, todoArray);
   todoArray.splice(itemIndex, 1);
   localStorage.setItem("tasks", JSON.stringify(todoArray));
+  emptyTaskCheck();
   taskList.remove();
 }
 
@@ -81,6 +126,7 @@ function addList(e) {
 }
 
 function updateLocalStorage() {
+  emptyTaskCheck();
   localStorage.setItem("tasks", JSON.stringify(todoArray));
 }
 

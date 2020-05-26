@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="./css/style.css" />
     <title>Todo List</title>
-
     <script
       src="https://kit.fontawesome.com/b89d4ada17.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="icon" type="image/gif" href="./to-do-list.svg" />
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -22,6 +21,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"
     />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
@@ -34,14 +34,14 @@
     </nav>
     <main>
       <div
-        class="container todo-container d-flex flex-column align-items-center justify-content-center"
+        class="container todo-container d-flex flex-column align-items-center justify-con0tent-center"
       >
         <h1>Today Date</h1>
         <h2 id="current-date"></h2>
         <form
           id="form"
           autocomplete="off"
-          class="d-flex justify-content-around align-items-center mt-5 flex-wrap"
+          class="d-flex justify-content-around align-items-center flex-wrap"
           action=""
           onsubmit="return false"
         >
@@ -71,7 +71,7 @@
 
           <div class="btns-container">
             <select
-              class="form-control priority-options form-control-lg mt-2"
+              class="form-control priority-options form-control-lg"
               id="priority-options"
               required
             >
@@ -103,9 +103,21 @@
           </div>
         </form>
       </div>
-
-      <div class="container todo-lists mt-5">
-        <ul id="list-group" class="list-group mx-auto"></ul>
+      <div
+        class="container todo-lists mt-3 d-flex flex-column align-items-center"
+      >
+        <div class="select-container align-self-start">
+          <select name="todos" id="filter-select" class="filter-todo">
+            <option value="all">all</option>
+            <option value="completed">completed</option>
+            <option value="uncompleted">uncompleted</option>
+          </select>
+        </div>
+        <ul id="list-group" class="list-group mt-2">
+          <h2 id="empty-task-header" class="text-center">
+            There is not task to do 😔
+          </h2>
+        </ul>
       </div>
     </main>
     <script
