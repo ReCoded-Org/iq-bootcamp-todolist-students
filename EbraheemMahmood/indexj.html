@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/9490015827.js" crossorigin="anonymous"></script>
     <link href="./style.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
 </head>
 <body>
     <header>
         <h1 class="theDateOfToday"></h1>
     </header>
     <main>
-        <div calss='row'>
+            <div calss='row'>
             <!-- Button trigger modal -->
-             <button type="button" class="myButton btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+             <button type="button" class="myButton" data-toggle="modal" data-target="#exampleModalCenter">
                  +
              </button>
-             
+           
              <!-- Modal -->
              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                  <div class="modal-dialog modal-dialog-centered" role="document">
@@ -31,14 +34,24 @@
                      </button>
                      </div>
                      <div class="modal-body">
-                     ...  <input placeholder="write the title of the mission" id="theHead" type="text">
-                     <label name='thedate'>
-                     <input min="" name='thedate' id='theDate' type="date" value="" >
-                 </label>
+                       <div class="newDiv"><p>Please fill the both input field</p></div>
+                         <div class="row">
+                         <label name='thedate'>
+                            <input placeholder="write the title of the mission" id="theHead" type="text">
+                            
+                                
+                            <input min=""  name='thedate' id='theDate' type="date" value="" >
+                        </label>
+                </div>
+                <select id="Priority" name="Priority">
+                  <option value="Priority1">Priority1</option>
+                  <option value="Priority2">Priority2</option>
+                  <option value="Priority3">Priority3</option>
+                </select>
                      </div>
                      <div class="modal-footer">
                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                     <button type="button" onclick="addTask ()" class="btn btn-primary saveChanges">Save changes</button>
+                     <button type="button" data-dismiss="modal" onclick="addTask ()" class="btn btn-primary saveChanges">Save changes</button>
                      </div>
                  </div>
                  </div>
@@ -60,7 +73,6 @@
             
             
         
-        
        
     </main>
     <div class="blackScreen"></div>
@@ -68,5 +80,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
 </body>
 </html>
