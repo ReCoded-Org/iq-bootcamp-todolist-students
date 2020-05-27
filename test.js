@@ -34,9 +34,10 @@ let elements
 let new_date
 let random
 
-//when start the browser
+/*
 get_from_localstorage()
 check_empty()
+*/
 
 //button submit listener
 document.getElementById("todo").addEventListener("click",function(){
@@ -45,16 +46,16 @@ document.getElementById("todo").addEventListener("click",function(){
         document.getElementById("task").required;
     }
     else{
-      
+          container.innerHTML=``
+         
           create_array(create_obj())
+          localStorage.setItem("store2",JSON.stringify(array))
+          //local storage
+          //local_storage()
           
-          clear_storage()
-          local_storage()
-          get_from_localstorage()
-
-          create_li()
           console.log('array',array.length,'\n',array)
-          
+          create_li()
+
      document.getElementById("input1").value='';
      document.getElementById("task").value='';
 }})
@@ -66,22 +67,25 @@ function create_obj(){
   //generate random
     random=uuidv4() 
 
-    return{   
+  let x={   
         title:document.getElementById("task").value,
         deadline:document.getElementById("input1").value,
         priority:drop[drop.selectedIndex].text  ,   
         id:random,// id="bin"
         icon:`<i class="fa fa-trash bin" aria-hidden="true"></i>`
     }
+    
+    
+  return x
 }
 
 //creat  array of object
 function create_array(x){
 array.push(x)
-console.log("push")
 }
 
-//create list items & add listener for each one
+//create list items
+
 function create_li(){
   ul_element = document.getElementById("list");
 
@@ -92,9 +96,8 @@ for(let i=0;i<array.length;i++){
   //change date to formatte may 20,2020
    new_date=Convert_date(array[i].deadline);
 
- 
     li_element = document.createElement("li");
-    li_element.innerHTML=`<input type="checkbox" id="myCheck" value=""             onclick="make_inline_text()">
+    li_element.innerHTML=`<input type="checkbox" id="myCheck" value=""  onclick="make_inline_text()">
                    <h3>${array[i].title}</h3>
                    <p>${new_date}</p>
                    <p>${array[i].priority}</p>
@@ -110,11 +113,11 @@ for(let i=0;i<array.length;i++){
     // console.log(" index of item in array is:",i)
      icon_listener=li_element.children[4];
      icon_listener.addEventListener("click",function(){
-    
-   let id_object=array[i].id
-   let index_object=array.findIndex(x => x.id ===id_object)
-   delete_task(index_object)
-});
+                     // get the id of bin for each obj to a litener
+                        let id_object=array[i].id
+                        let index_object=array.findIndex(x => x.id ===id_object)
+                        delete_task(index_object)
+                });
 
 }
 
@@ -122,15 +125,13 @@ for(let i=0;i<array.length;i++){
 }
 
 // delete task from array
+
 function delete_task(i){
 
    console.log("removed", array.splice(i,1)) ;
    console.log(array)
-   
-   clear_storage()
-   local_storage()
-   get_from_localstorage()
    create_li()
+   
 }
 
 //checkbox
@@ -156,6 +157,7 @@ function make_inline_text(){
 }
 // check expired task
 function check_deadline(header_tage,data_chosen){
+  console.log(data_chosen);
   if(data_chosen<d){
     header_tage.style.color="red";
     header_tage.style.textDecoration= "underline";
@@ -164,15 +166,14 @@ function check_deadline(header_tage,data_chosen){
 
 //display text when there is no tasks
 function check_empty(){
-  console.log(array)
   if (array.length<1){
         container=document.getElementById("empty_task")
         container.innerHTML=`<h3>There Are No Tasks   <i class="far fa-meh-rolling-eyes"></i></h3>`
+        
 }
-else{
-  create_li()
+
 }
-}
+
 //convert formatt date 
 function Convert_date(date){
   s=new Date(date);
@@ -180,19 +181,19 @@ function Convert_date(date){
   return month_name
  
  }
-
+//generate random id
  function uuidv4() {
   return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
   );
 }
+
 //save to local storage
 function local_storage(){
 
   if (typeof(Storage) !== "undefined") {
     // Code for localStorage
-   localStorage.setItem("todos",JSON.stringify(array))
-   array=[];
+   localStorage.setItem("store",JSON.stringify(array))
   
     } 
     else {
@@ -203,15 +204,13 @@ function local_storage(){
 
 //get from local storage
 function get_from_localstorage(){
- 
- if ((localStorage.getItem("todos")=='')){
-  console.log('empty',array)
- }
- else{
-  array=JSON.parse(localStorage.getItem("todos"))
- }
+   array=JSON.parse(localStorage.getItem("store"))
+      console.log(array)
 }
-
+/*
+let clear_var=[]
+//clear localstorage
 function clear_storage(){
-  localStorage.setItem("todos",'')
+  localStorage.setItem("store",clear_var)
 }
+*/
