@@ -24,7 +24,7 @@
                 <h1 style="margin: auto 15px;">Todo List </h1>
             </div>
             <div>
-                <p id="date" style="margin: auto 15px;">
+                <p class="pageStyle" id="date" style="margin: auto 15px;">
                     <script>
                         let d = new Date();
                         document.getElementById("date").innerHTML =
@@ -47,10 +47,16 @@
                     <input type="text" name="todo" placeholder="Enter Your To Do Task here" class="form-control"
                         id="newTask" required><br>
                     <div>
-                        <select class="selectpicker show-tick btn btn-primary">
-                            <option>priority 1</option>
-                            <option>priority 2</option>
-                            <option>priority 3</option>
+                        <select id="priority" class="selectpicker show-tick btn btn-primary">
+                            <option>
+                                priority 1
+                            </option>
+                            <option>
+                                priority 2
+                            </option>
+                            <option>
+                                priority 3
+                            </option>
                         </select>
 
                         <button type="button" class="btn btn-primary float-right" onclick="addTask()"> Add ToDo

@@ -7,7 +7,7 @@
   background-image: url(./bg.jpg);
 }
 h1,
-p,
+.pageStyle,
 label {
   font: 2rem "Pacifico", Helvetica, sans-serif;
   color: #2b2b2b;
@@ -43,6 +43,24 @@ section {
 }
 li.selected {
   text-decoration: line-through;
+}
+.priority1 {
+  font: 1.5rem "Pacifico", Helvetica, sans-serif;
+  color: red;
+  background-color: #f5b7b1;
+}
+.priority2 {
+  font: 1.5rem "Pacifico", Helvetica, sans-serif;
+  color: blue;
+  background-color: #aed6f1;
+}
+.priority3 {
+  font: 1.5rem "Pacifico", Helvetica, sans-serif;
+  color: orange;
+  background-color: #f9e79f;
+}
+.displayLi {
+  display: inline-block;
 }
 /*.unchecked {
   visibility: hidden;
