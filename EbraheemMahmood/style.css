@@ -23,18 +23,8 @@ header{
 main{
     text-align: center;
 }
-.newTask{
-    
-    position: fixed;
-    padding-top: 50px;
-    text-align: center;
-    margin-left: -20px;
 
-}
-.myButton:active{
-    background-color: lightblue;
-    color:white;
-}
+
 .myButton:focus{
     border: none;
     outline: none;
@@ -58,38 +48,10 @@ main{
     background-color: #D18788;
 }
 
-.theMainCalender{
-    
-    position: relative;
-    margin: 0 auto;
-    display: none;
-    width: 400px;
-    height: 400px;
-    background-color: lightgray;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    z-index: 1024;
-
-}
-.dateBox{
-    width: 100%;
-    font-size: 30px;
-    height: 70px;
-    background-color: #fd5e53;
-    box-sizing: border-box;
-    padding-bottom: 20px;
-    color: white;
-}
 
 
-#myCalendar{
-    display: grid;
-    overflow: auto;
-    
-}
+
+
 
 #theHead,#theDate{
     margin: 15px;
