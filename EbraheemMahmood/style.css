@@ -1,0 +1,163 @@
+
+body{
+
+    background-color: #f9fcfb;
+   
+}
+header{
+    display: flex !important;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    padding-top:13px;
+    width: 100%;
+    height: 100px;
+    background-color: #2171A9;
+    justify-content: space-between;
+    padding: 20px 50px;
+}
+
+.theDateOfToday{
+   
+    color:white;
+}
+main{
+    text-align: center;
+}
+
+
+.myButton:focus{
+    border: none;
+    outline: none;
+   
+}
+
+.myButton {
+    text-align: center;
+    width: 60px;
+    font-size: 40px;
+    border-radius: 50%;
+    color: #21bf73;
+    background-color: white;
+    box-shadow: 0px 0px 5px lightgrey;
+    border: none;
+    transition: 0.3s;
+}
+.myButton:hover{
+    transition: 0.3s;
+    color:white;
+    background-color: #D18788;
+}
+
+
+
+
+
+
+#theHead,#theDate{
+    margin: 15px;
+    border-radius: 3rem;
+    border: 1px solid rgba(0,0,0,.2);
+    padding: 10px;
+}
+.taskContainer{
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 50%;
+    height: 50px;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(52, 114, 155, 0.2);
+    display: flex;
+    justify-content: space-between;
+    transition: 0.6s;
+
+}
+
+.taskContainer:hover{
+    margin-top: 15px;
+    margin-bottom: 25px;
+    
+    transition: 0.3s;
+}
+.taskTitle ,.taskDate {
+    list-style: none;
+    
+}
+.taskTitle p,.taskDate p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    
+    
+}
+.theNonP{
+   visibility: visible;
+   margin-top: 10px;
+   
+}
+.theMi{
+    
+    width: auto;
+    height: auto;
+    background-color: limegreen;
+}
+.theMissions{
+    display: grid;
+}
+
+.showIt{
+    position: fixed;
+    display:flex;
+    align-self: center;
+}
+
+.form-check{
+    display: inline;
+}
+
+svg{
+    cursor: pointer;
+
+}
+
+svg:hover{
+    color: blue;
+    transition: ease-in 0.3s;
+}
+
+.newDiv{
+    display: none;
+    margin: 0 auto;
+    padding: 3px;
+    background-color: rgb(255, 78, 107);
+    color: white;
+    height: 50px;
+    width: 300px;
+    border-radius: 1rem;
+}
+
+.newDiv p{
+    margin-top: 5px;
+}
+
+label {
+    margin: 0 auto;
+}
+.done{
+    text-decoration: line-through;
+}
+.iContainer{
+    display: inline-block;
+    cursor: pointer;
+}
+.iContainer:hover{
+color: blue;    
+}
+
+.myPriority{
+    list-style: none;
+}
+.fa-check-circle{
+    color: #70ff00;
+}
