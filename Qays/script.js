@@ -1,4 +1,6 @@
 
+
+
 const priority = [1, 2, 3]
 const monthsNames =
     [
@@ -80,36 +82,39 @@ function addTask(event) {
     }
 
 
-    if (tasksArray.length === 0){
-    tasksArray.push(newTask);
-    return;
-    }
 
     // Delete the old item if edit is enabled
-    if (isEditMode){
-        tasksArray.splice(editItemIndex,1);
+    if (isEditMode) {
+        tasksArray.splice(editItemIndex, 1);
     }
     // Adding the new task to its correct timeline position 
     let lastTime = -1;
     const newTask = { description: description, deadline: deadline, done: false, priority: priority }
     const newTaskTime = (new Date(deadline)).getTime();
-    for (let i = 0; i < tasksArray.length; i++) {
-        const taskObject = tasksArray[i];
-        const taskTime = (new Date(taskObject.deadline)).getTime();
 
-        if (lastTime < newTaskTime && taskTime > newTaskTime) {
+    // For the first ever task to be added
+    if (tasksArray.length === 0) {
+        tasksArray.push(newTask);
+    } else {
+        for (let i = 0; i < tasksArray.length; i++) {
+            const taskObject = tasksArray[i];
+            const taskTime = (new Date(taskObject.deadline)).getTime();
 
-            tasksArray.splice(i, 0, newTask);
-            break;
-        } else if (i === tasksArray.length - 1) {
-            tasksArray.push(newTask);
-            break;
+            if (lastTime < newTaskTime && taskTime > newTaskTime) {
+
+                tasksArray.splice(i, 0, newTask);
+                break;
+            } else if (i === tasksArray.length - 1) {
+                tasksArray.push(newTask);
+                break;
+
+            }
+
 
         }
-
-
     }
-   
+
+
     saveToStorage();
     drawArray();
 }
