@@ -1,35 +1,46 @@
+
 body {
     font-family: "UniQAIDAR_ZANA";
     overflow-x: hidden;
 }
-
-nav ul {
-    list-style: none;
-    position: absolute;
-    top: 1rem;
-    right: -.5rem;
-    left: inherit;
-    width: 80px;
-    text-align: left;
-}
-
-nav ul li:hover {
-    margin-left: -50px;
-}
-
 .arabic {
     background: rgba(255, 255, 255, 0.288);
+}
+.english {
+    font-family: sans-serif;
+}
+.list-group-item{
+    direction: rtl;
+}
+nav ul {
+    right: -1rem;
+    left: inherit;
+    text-align: left;
+    width: 90px;
+   
+}
+h1{
+    font-size: .8rem;
+}
+p{font-weight: lighter;}
+nav ul li:hover {
+
+    margin-left: -50px;
 }
 
 .task-deadline::after {
     right: -50%;
     left: inherit;
 }
-
-.checkbox-container {
-    margin-left: .5rem;
+select{
+direction: rtl;
 }
-
+.input-container{
+    order: 1;
+}
+.select-container{
+    margin-right: 8%;
+  }
 /* media query */
 @media screen and (max-width: 992px) {
     ul {
@@ -74,4 +85,8 @@ nav ul li:hover {
     to {
         transform: translateX(0);
     }
+}
+
+.checkbox-container {
+    margin-left: .5rem;
 }

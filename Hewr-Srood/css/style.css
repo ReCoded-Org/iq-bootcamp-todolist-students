@@ -281,6 +281,7 @@ option:disabled{
 .select-container {
   align-self: center !important;
   margin-left: 0;
+  margin-right: 0;
 }
   .btns-container {
     margin-top: 0.5rem;

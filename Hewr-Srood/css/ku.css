@@ -1,84 +1,98 @@
 body {
-    font-family: "UniQAIDAR_ZANA";
-    overflow-x: hidden;
+  font-family: "UniQAIDAR_ZANA";
+  overflow-x: hidden;
 }
-
+h1 {
+  font-size: 0.8rem;
+}
+.list-group-item {
+  direction: rtl;
+}
 nav ul {
-    right: -1rem;
-    left: inherit;
-    text-align: left;
-    width: 90px;
-   
+  right: -1rem;
+  left: inherit;
+  text-align: left;
+  width: 90px;
 }
-h1{
-    font-size: .8rem;
+.english {
+    font-family: sans-serif;
 }
-p{font-weight: lighter;}
+p {
+  font-weight: lighter;
+}
 nav ul li:hover {
-
-    margin-left: -50px;
+  margin-left: -50px;
 }
 
 .kurdish {
-    background: rgba(255, 255, 255, 0.288);
+  background: rgba(255, 255, 255, 0.288);
 }
 
 .task-deadline::after {
-    right: -50%;
-    left: inherit;
+  right: -50%;
+  left: inherit;
 }
-select{
-direction: rtl;
+select {
+  direction: rtl;
 }
-.input-container{
-    order: 1;
+
+.input-container {
+  order: 1;
 }
+
 /* media query */
 @media screen and (max-width: 992px) {
-    ul {
-        width: 90%;
-    }
+  ul {
+    width: 90%;
+  }
 
-    .input-container {
-        order: 1;
-    }
+  .input-container {
+    order: 1;
+  }
 
-    .btns-container {
-        order: 2;
+  .btns-container {
+    order: 2;
+  }
+}
+.select-container{
+    margin-right: 8%;
+  }
+@media screen and (max-width:420px){
+    .checkbox-container{
+        margin-top: 1.5rem;
     }
 }
-
 /* keyframes */
 @keyframes nav-li-animate {
-    from {
-        transform: translateX(6rem);
-    }
+  from {
+    transform: translateX(6rem);
+  }
 
-    to {
-        transform: translateX(0);
-    }
+  to {
+    transform: translateX(0);
+  }
 }
 
 @keyframes inputs-animate {
-    from {
-        transform: translateX(-100vw);
-    }
+  from {
+    transform: translateX(-100vw);
+  }
 
-    to {
-        transform: translateX(0);
-    }
+  to {
+    transform: translateX(0);
+  }
 }
 
 @keyframes submit-animate {
-    from {
-        transform: translateX(100vw);
-    }
+  from {
+    transform: translateX(100vw);
+  }
 
-    to {
-        transform: translateX(0);
-    }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .checkbox-container {
-    margin-left: .5rem;
+  margin-left: 0.5rem;
 }

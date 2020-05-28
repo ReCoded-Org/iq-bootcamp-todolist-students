@@ -132,7 +132,7 @@ function updateLocalStorage() {
 }
 
 function addlistToArr(description, deadline, priority, style) {
-  if(priority.value==='Priority' || priority.value=="لەپێشینەی"){
+  if(priority.value==='Priority' || priority.value=="لەپێشینەی" || priority.value==='الأولوية'){
     if(priority.value==='Priority'){ window.alert("Please choose a priority"); }
     else if(priority.value=="لەپێشینەی"){window.alert("تکایە لەپێشینەی دیاری بکە");}
     else {window.alert("الرجاء اختيار الأولوية");}
@@ -209,6 +209,8 @@ function createTodo(description, deadline, priority, style) {
       </div>
     </li>`
   );
+  let paragraph=document.querySelector('p');
+  oldTask(deadline, paragraph);
 }
 
 function loadPrivewsTodos() {
