@@ -101,7 +101,6 @@ let taskTitle1 = document.getElementById('theHead')
                     removeItem()
                     doneFun()
                     PriorityCheck()
-
                     showTheParagraph()
             }
               
@@ -149,14 +148,10 @@ for(let i=theMissions.childElementCount; i<TaskObjectsArr.length;i++){
 
                     doneFun()
                     showTheParagraph()
-
- 
     
 }
 
-//document.getElementsByClassName("myButton")[0].addEventListener('click',function(){
-    
-//})
+
 
 
 function removeItem(){
@@ -250,11 +245,17 @@ function doneFun(){
    for(i=0;i<TaskObjectsArr.length;i++){
     if(TaskObjectsArr[i].yourDate.split('-')[2]<=yourDateCompare[2]){
         if(monthsNames.indexOf(TaskObjectsArr[i].yourDate.split('-')[0])
-        <monthsNames.indexOf(yourDateCompare[0])){
+        ==monthsNames.indexOf(yourDateCompare[0])){
             if(TaskObjectsArr[i].yourDate.split('-')[1]<yourDateCompare[1]){
+                
                 taskContainer[i].style.backgroundColor = '#F0E8E0'
-                taskContainer[i].getElementsByClassName('taskDate')[0].style.color ='white'
             }
+
+        }
+        if(monthsNames.indexOf(TaskObjectsArr[i].yourDate.split('-')[0])
+        <monthsNames.indexOf(yourDateCompare[0])){
+            taskContainer[i].style.backgroundColor = '#F0E8E0'
+                
         }
     }
     
