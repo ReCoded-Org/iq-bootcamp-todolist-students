@@ -9,6 +9,11 @@ const addBtn = document.querySelector(".btn");
 const cancelBtn = document.querySelector(".cancel-btn");
 const noTasks = document.querySelector(".tasks-empty");
 let arrOfTasks = [];
+arrOfTasks = JSON.parse(localStorage.getItem('allTasks'));
+if (arrOfTasks == null) {
+    arrOfTasks = [];
+}
+
 let inEditMode = false;
 let indexOfInEditTask;
 priorityInput.value = "";
@@ -70,6 +75,8 @@ function addTodo(event) {
 }
 
 function updateTasksInList() {
+
+    localStorage.setItem('allTasks', JSON.stringify(arrOfTasks));
 
     let previousTasks = document.querySelectorAll(".todo-list div");
     for (let i = 0; i < previousTasks.length; i++) {
@@ -266,6 +273,8 @@ $(document).ready(function () {
         autoclose: true,
     })
 })
+
+updateTasksInList()
 
 
 
