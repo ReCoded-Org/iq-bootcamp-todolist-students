@@ -4,16 +4,16 @@ body {
 }
 
 nav ul {
-    list-style: none;
-    position: absolute;
-    top: 1rem;
     right: -1rem;
     left: inherit;
-    width: 80px;
     text-align: left;
-
+    width: 90px;
+   
 }
-
+h1{
+    font-size: .8rem;
+}
+p{font-weight: lighter;}
 nav ul li:hover {
 
     margin-left: -50px;
@@ -27,7 +27,12 @@ nav ul li:hover {
     right: -50%;
     left: inherit;
 }
-
+select{
+direction: rtl;
+}
+.input-container{
+    order: 1;
+}
 /* media query */
 @media screen and (max-width: 992px) {
     ul {

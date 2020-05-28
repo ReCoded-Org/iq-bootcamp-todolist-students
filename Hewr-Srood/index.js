@@ -23,6 +23,7 @@ let todoArray = JSON.parse(localStorage.getItem("tasks")) || [];
 form.addEventListener("submit", addList);
 selectFilter.addEventListener("click", filterTodo);
 document.addEventListener("DOMContentLoaded", init);
+
 // function
 function init() {
   dateInput.setAttribute("min", getCurrentDate());
@@ -58,10 +59,10 @@ function filterTodo() {
       case "all":
         liItem.classList.add("show");
         break;
-
       case "completed":
         if (paragraph.classList.contains("completed")) {
           liItem.classList.add("show");
+
         } else {
           liItem.classList.remove("show");
           liItem.classList.add("hide");
@@ -131,13 +132,21 @@ function updateLocalStorage() {
 }
 
 function addlistToArr(description, deadline, priority, style) {
+  if(priority.value==='Priority' || priority.value=="لەپێشینەی"){
+    if(priority.value==='Priority'){ window.alert("Please choose a priority"); }
+    else if(priority.value=="لەپێشینەی"){window.alert("تکایە لەپێشینەی دیاری بکە");}
+    else {window.alert("الرجاء اختيار الأولوية");}
+    throw 'ivalid priority input';
+  }
+  else{
   todoArray.push({
     description: description.value,
     deadline: moment(deadline.value).format("LL"),
     priority: priority.value,
     style: style,
     completed: false,
-  });
+  
+  });}
 }
 
 function resetInput() {
