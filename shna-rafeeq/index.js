@@ -87,8 +87,8 @@ function checkboxChanged(id){
 }
 
 function removeLi(id) {
-  // let allLi = document.getElementById("list-item-all-content-"+id);
-  // allLi.remove();
+  let allLi = document.getElementById("list-item-all-content-"+id);
+  allLi.remove();
   let arr = JSON.parse(localStorage.getItem("array"));
   arr.splice(id, 1);
   localStorage.setItem("array", JSON.stringify(arr));
