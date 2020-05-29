@@ -17,7 +17,7 @@ const selectFilter = document.getElementById("filter-select");
 let emptyTaskHeader = document.getElementById("empty-task-header");
 let currentDate = moment().format("LL");
 
-let todoArray = JSON.parse(localStorage.getItem("tasks")) || [];
+let todoArray ;
 
 //eventListners
 form.addEventListener("submit", addList);
@@ -28,6 +28,16 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
   dateInput.setAttribute("min", getCurrentDate());
   dateHeader.innerText = currentDate;
+  if(htmlLang==='en'){
+    todoArray= JSON.parse(localStorage.getItem("tasks")) || [];
+  }
+  else if(htmlLang==='ku'){
+    todoArray= JSON.parse(localStorage.getItem("kuTasks")) || [];
+  }
+  else{
+    todoArray= JSON.parse(localStorage.getItem("arTasks")) || [];
+  }
+
   loadPrivewsTodos();
   emptyTaskCheck();
 }
@@ -81,22 +91,24 @@ function filterTodo() {
 
 function removeList(item) {
   taskList = item.closest("li");
-  let span = document.querySelector("span").innerText;
-  itemIndex = getIndexOfTodoArr(span, todoArray);
-  todoArray.splice(itemIndex, 1);
-  localStorage.setItem("tasks", JSON.stringify(todoArray));
-  emptyTaskCheck();
-  taskList.remove();
+  let span=taskList.children[0].children[0].innerText;
+
+let itemIndex= getIndexOfTodoArr(span);
+   todoArray.splice(itemIndex, 1);
+   updateLocalStorage();
+   emptyTaskCheck();
+   taskList.remove();
 }
 
-function getIndexOfTodoArr(description, array) {
+function getIndexOfTodoArr(description) {
   let itemIndex;
-  for (let todo of array) {
-    if (todo.description == description.innerText) {
-      itemIndex = array.indexOf(todo);
+  for(let i=0 ;i<todoArray.length ;i++){
+    if(description===todoArray[i].description){
+      itemIndex=i;
     }
   }
   return itemIndex;
+
 }
 
 function fontStyle(boldBtn, italicBtn) {
@@ -128,7 +140,16 @@ function addList(e) {
 
 function updateLocalStorage() {
   emptyTaskCheck();
-  localStorage.setItem("tasks", JSON.stringify(todoArray));
+  if(htmlLang==='en'){
+    localStorage.setItem("tasks", JSON.stringify(todoArray));
+  }
+  else if(htmlLang==='ku'){
+    localStorage.setItem("kuTasks", JSON.stringify(todoArray));
+  }
+  else{
+    localStorage.setItem("arTasks", JSON.stringify(todoArray));
+  }
+
 }
 
 function addlistToArr(description, deadline, priority, style) {
@@ -164,8 +185,8 @@ function oldTask(todo, paragraph) {
 
 function completeTask(btn) {
   let paragraph = btn.closest("li").children[0];
-  let description = paragraph.children[0];
-  let itemIndex = getIndexOfTodoArr(description, todoArray);
+  let description = paragraph.children[0].innerText;
+  let itemIndex = getIndexOfTodoArr(description);
   if (btn.checked == true) {
     todoArray[itemIndex].completed = true;
     paragraph.classList.add("completed");
