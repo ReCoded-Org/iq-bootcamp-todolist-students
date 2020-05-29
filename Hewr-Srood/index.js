@@ -175,6 +175,7 @@ function resetInput() {
   taskInput.value = null;
   boldCheckbox.checked = false;
   italicCheckbox.checked = false;
+  priorityInput.value="Priority";
 }
 
 function oldTask(todo, paragraph) {
