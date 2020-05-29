@@ -48,7 +48,7 @@ function newLiAdded(overrideData = {}, considerEmpty = true){
     li.id=`list-item-all-content-${listItemId}`;
     li.innerHTML = `<div> <input ${ (liObject.completed)? 'checked' : '' } class="checkBox" id="list-item-checkbox-${listItemId}" type="checkbox" onChange="checkboxChanged(${listItemId})" >
      <span style="${ (liObject.completed)? ' text-decoration: line-through !important;' : '' }" id="list-item-${listItemId}">${liObject.gettingTodo} </span>
-     ${liObject.getdate} ${liObject.priorities} </div>
+     <p>${liObject.getdate}</p><p> ${liObject.priorities}</p> </div>
     <span class="recycle" id="list-item-button-${listItemId}" onclick="removeLi(${listItemId})">🗑️<span> `;
     
     let checkFilltext = document.forms["contact-form"]["select-todo"].value;
