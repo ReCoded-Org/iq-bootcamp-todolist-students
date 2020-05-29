@@ -20,12 +20,13 @@ dateElemnt.setAttribute('min', `${yyyy}-${mm}-${dd}`);
 let listUl = document.getElementById("list-ul");
 let p = document.getElementById("pul");
 
-let listItemId = 0;
+
 
 const gettingTodo = document.getElementById("get-todo"); 
 const getdate =document.getElementById("get-date");
 const priorities = document.getElementById("drop-list");
 
+let listItemId = 0;
 let arr = [];
 
 
@@ -86,8 +87,8 @@ function checkboxChanged(id){
 }
 
 function removeLi(id) {
-  let allLi = document.getElementById("list-item-all-content-"+id);
-  allLi.remove();
+  // let allLi = document.getElementById("list-item-all-content-"+id);
+  // allLi.remove();
   let arr = JSON.parse(localStorage.getItem("array"));
   arr.splice(id, 1);
   localStorage.setItem("array", JSON.stringify(arr));
