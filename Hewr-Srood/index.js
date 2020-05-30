@@ -3,7 +3,6 @@ const dateInput = document.getElementById("date-input");
 const taskInput = document.getElementById("task-input");
 const priorityInput = document.getElementById("priority-options");
 
-
 //checkboxes
 const boldCheckbox = document.getElementById("bold-checkbox");
 const italicCheckbox = document.getElementById("italic-checkbox");
@@ -17,7 +16,7 @@ const selectFilter = document.getElementById("filter-select");
 let emptyTaskHeader = document.getElementById("empty-task-header");
 let currentDate = moment().format("LL");
 
-let todoArray ;
+let todoArray;
 
 //eventListners
 form.addEventListener("submit", addList);
@@ -28,14 +27,12 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
   dateInput.setAttribute("min", getCurrentDate());
   dateHeader.innerText = currentDate;
-  if(htmlLang==='en'){
-    todoArray= JSON.parse(localStorage.getItem("tasks")) || [];
-  }
-  else if(htmlLang==='ku'){
-    todoArray= JSON.parse(localStorage.getItem("kuTasks")) || [];
-  }
-  else{
-    todoArray= JSON.parse(localStorage.getItem("arTasks")) || [];
+  if (htmlLang === "en") {
+    todoArray = JSON.parse(localStorage.getItem("tasks")) || [];
+  } else if (htmlLang === "ku") {
+    todoArray = JSON.parse(localStorage.getItem("kuTasks")) || [];
+  } else {
+    todoArray = JSON.parse(localStorage.getItem("arTasks")) || [];
   }
 
   loadPrivewsTodos();
@@ -72,7 +69,6 @@ function filterTodo() {
       case "completed":
         if (paragraph.classList.contains("completed")) {
           liItem.classList.add("show");
-
         } else {
           liItem.classList.remove("show");
           liItem.classList.add("hide");
@@ -91,24 +87,23 @@ function filterTodo() {
 
 function removeList(item) {
   taskList = item.closest("li");
-  let span=taskList.children[0].children[0].innerText;
+  let span = taskList.children[0].children[0].innerText;
 
-let itemIndex= getIndexOfTodoArr(span);
-   todoArray.splice(itemIndex, 1);
-   updateLocalStorage();
-   emptyTaskCheck();
-   taskList.remove();
+  let itemIndex = getIndexOfTodoArr(span);
+  todoArray.splice(itemIndex, 1);
+  updateLocalStorage();
+  emptyTaskCheck();
+  taskList.remove();
 }
 
 function getIndexOfTodoArr(description) {
   let itemIndex;
-  for(let i=0 ;i<todoArray.length ;i++){
-    if(description===todoArray[i].description){
-      itemIndex=i;
+  for (let i = 0; i < todoArray.length; i++) {
+    if (description === todoArray[i].description) {
+      itemIndex = i;
     }
   }
   return itemIndex;
-
 }
 
 function fontStyle(boldBtn, italicBtn) {
@@ -140,34 +135,38 @@ function addList(e) {
 
 function updateLocalStorage() {
   emptyTaskCheck();
-  if(htmlLang==='en'){
+  if (htmlLang === "en") {
     localStorage.setItem("tasks", JSON.stringify(todoArray));
-  }
-  else if(htmlLang==='ku'){
+  } else if (htmlLang === "ku") {
     localStorage.setItem("kuTasks", JSON.stringify(todoArray));
-  }
-  else{
+  } else {
     localStorage.setItem("arTasks", JSON.stringify(todoArray));
   }
-
 }
 
 function addlistToArr(description, deadline, priority, style) {
-  if(priority.value==='Priority' || priority.value=="لەپێشینەی" || priority.value==='الأولوية'){
-    if(priority.value==='Priority'){ window.alert("Please choose a priority"); }
-    else if(priority.value=="لەپێشینەی"){window.alert("تکایە لەپێشینەی دیاری بکە");}
-    else {window.alert("الرجاء اختيار الأولوية");}
-    throw 'ivalid priority input';
+  if (
+    priority.value === "Priority" ||
+    priority.value == "لەپێشینەی" ||
+    priority.value === "الأولوية"
+  ) {
+    if (priority.value === "Priority") {
+      window.alert("Please choose a priority");
+    } else if (priority.value == "لەپێشینەی") {
+      window.alert("تکایە لەپێشینەی دیاری بکە");
+    } else {
+      window.alert("الرجاء اختيار الأولوية");
+    }
+    throw "ivalid priority input";
+  } else {
+    todoArray.push({
+      description: description.value,
+      deadline: moment(deadline.value).format("LL"),
+      priority: priority.value,
+      style: style,
+      completed: false,
+    });
   }
-  else{
-  todoArray.push({
-    description: description.value,
-    deadline: moment(deadline.value).format("LL"),
-    priority: priority.value,
-    style: style,
-    completed: false,
-  
-  });}
 }
 
 function resetInput() {
@@ -175,7 +174,7 @@ function resetInput() {
   taskInput.value = null;
   boldCheckbox.checked = false;
   italicCheckbox.checked = false;
-  priorityInput.value="Priority";
+  priorityInput.value = "Priority";
 }
 
 function oldTask(todo, paragraph) {
@@ -231,7 +230,7 @@ function createTodo(description, deadline, priority, style) {
       </div>
     </li>`
   );
-  let paragraph=document.querySelector('p');
+  let paragraph = document.querySelector("p");
   oldTask(deadline, paragraph);
 }
 
