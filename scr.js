@@ -37,6 +37,7 @@ let random
 //when start the browser
 get_from_localstorage()
 check_empty()
+checkbox_value()
 
 //button submit listener
 document.getElementById("todo").addEventListener("click",function(){
@@ -59,7 +60,6 @@ document.getElementById("todo").addEventListener("click",function(){
      document.getElementById("task").value='';
 }})
 
-
 //creat object
 function create_obj(){
 
@@ -71,7 +71,8 @@ function create_obj(){
         deadline:document.getElementById("input1").value,
         priority:drop[drop.selectedIndex].text  ,   
         id:random,// id="bin"
-        icon:`<i class="fa fa-trash bin" aria-hidden="true"></i>`
+        icon:`<i class="fa fa-trash bin" aria-hidden="true"></i>`,
+        check_value:false
     }
 }
 
@@ -92,19 +93,17 @@ for(let i=0;i<array.length;i++){
   //change date to formatte may 20,2020
    new_date=Convert_date(array[i].deadline);
 
- 
     li_element = document.createElement("li");
-    li_element.innerHTML=`<input type="checkbox" id="myCheck" value=""             onclick="make_inline_text()">
+    li_element.innerHTML=`<input type="checkbox" class="myCheck"  onclick="make_inline_text()">
                    <h3>${array[i].title}</h3>
                    <p>${new_date}</p>
                    <p>${array[i].priority}</p>
                       ${array[i].icon}`
 
-      //check task if expired
-      check_deadline(li_element.children[1],array[i].deadline);
-      
-  ul_element.appendChild(li_element);
-
+             //check task if expired
+            check_deadline(li_element.children[1],array[i].deadline);
+      ul_element.appendChild(li_element);
+           
   //add listener
    {
     // console.log(" index of item in array is:",i)
@@ -134,29 +133,62 @@ function delete_task(i){
 }
 
 //checkbox
-function make_inline_text(){
-     checkbox=document.querySelectorAll("#myCheck");
-     for(let i=0;i<checkbox.length;i++){
-       if(checkbox[i].checked==true){
-           checkbox[i].value=checkbox[i].checked;
-           console.log(checkbox[i].value);
-           parent= checkbox[i].parentElement;
+function checkbox_value(){
+  checkbox=document.getElementsByClassName("myCheck");
+  
+  for(let i=0;i<array.length;i++){
+
+       if(array[i].value==true){
+          
+           parent=checkbox[i].parentElement;
            header=parent.children[1];
-           header.style.textDecoration= "line-through";
-    
-   }
-      else {
-           checkbox[i].value=checkbox[i].checked;
-           console.log(checkbox[i].value);
-           parent= checkbox[i].parentElement;
-           header=parent.children[1];
-           header.style.textDecoration= "none";
+           header.style.textDecoration="line-through";
+
        }
-     }
+      else{
+        
+        parent=checkbox[i].parentElement;
+        header=parent.children[1];
+        header.style.textDecoration="none";
+        
+      }
+    }
+
 }
+
+function make_inline_text(){
+  
+  checkbox=document.getElementsByClassName("myCheck");
+  
+     for(let i=0;i<array.length;i++){
+       console.log('\n',checkbox[i].checked)
+       if(checkbox[i].checked==true){
+         
+          array[i].value=true;
+
+           checkbox_value()
+
+           clear_storage()
+            local_storage()
+            get_from_localstorage()
+     }
+      else {
+        array[i].value=false;
+          checkbox_value()
+
+           clear_storage()
+           local_storage()
+           get_from_localstorage()
+           }
+ } 
+}
+
+
 // check expired task
 function check_deadline(header_tage,data_chosen){
-  if(data_chosen<d){
+  console.log(d)
+  console.log(data_chosen)
+  if(data_chosen<=d){
     header_tage.style.color="red";
     header_tage.style.textDecoration= "underline";
   }
