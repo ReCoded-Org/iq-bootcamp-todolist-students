@@ -1,0 +1,407 @@
+:root {
+  --primary-color: rgba(0, 0, 0, 0.329);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 120vh;
+  font-family: sans-serif;
+  font-weight: bolder;
+  padding: 1rem;
+}
+
+/* languages */
+nav ul {
+  list-style: none;
+  position: absolute;
+  top: 1rem;
+  left: -1rem;
+  width: 80px;
+  text-align: right;
+}
+
+nav ul li:nth-child(1) {
+  animation: nav-li-animate 1s ease;
+}
+
+nav ul li:nth-child(2) {
+  animation: nav-li-animate 1.5s ease;
+}
+
+nav ul li:nth-child(3) {
+  animation: nav-li-animate 2s ease;
+}
+
+nav ul li {
+  border: 1px solid var(--primary-color);
+  transition: margin 1s ease;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+nav ul li a {
+  display: block;
+  padding: 1rem;
+  width: 100%;
+  text-decoration: none !important;
+  color: black;
+}
+
+nav ul li:hover {
+  background: rgba(255, 255, 255, 0.288);
+  margin-right: -50px;
+}
+
+.todo-container {
+  margin-top: 2rem;
+}
+
+h1 {
+  font-size: 4rem !important;
+}
+
+h1,
+h2 {
+  animation: fade-top 1.3s ease;
+}
+
+form {
+  width: 100%;
+}
+
+input {
+  background: transparent;
+  padding: 0.8rem 6rem;
+  border-radius: 10px;
+  border: 1px solid var(--primary-color);
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.521);
+}
+
+label {
+  margin: 0 !important;
+}
+
+.task-input {
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 0.8 1rem;
+  animation: inputs-animate 2s ease;
+}
+
+.date-input {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  animation: inputs-animate 2s ease;
+}
+
+.priority-options {
+  background: transparent !important;
+  border: 1px solid var(--primary-color) !important;
+}
+
+.btns-container {
+  animation: submit-animate 2s ease;
+}
+
+.submit-btn {
+  border: 1px solid var(--primary-color);
+}
+
+.checkbox-container {
+  width: 50px;
+  height: 50px;
+  margin-right: 0.5rem;
+  position: relative;
+
+  border-radius: 10px;
+  transition: background 1s ease;
+}
+
+.checkbox-container:hover {
+  background: rgba(0, 0, 0, 0.521);
+}
+
+.checkbox-container input {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-container input:checked ~ label {
+  background: var(--primary-color);
+}
+
+.checkbox-container label {
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+ul {
+  width: 50%;
+}
+
+.list-group-item {
+  background: transparent !important;
+}
+
+.list-animate {
+  animation: listanimate 1s ease;
+}
+
+.btn-animate {
+  animation: btn-animate 0.5s ease;
+}
+
+.finish-checkbox {
+  background: transparent !important;
+}
+
+.list-group-item + .list-group-item {
+  border-width: 1px !important;
+}
+
+.btn {
+  transition: all 0.5s ease !important;
+  border: none !important;
+  color: red;
+}
+
+.btn:hover {
+  transform: scale(1.5);
+}
+
+.pretty {
+  transition: all 0.5s ease !important;
+  margin: 0 !important;
+  border: none !important;
+
+  background: rgba(0, 0, 0, 0.329);
+}
+
+.pretty * {
+  border: none !important;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.pretty:hover {
+  transform: scale(1.5);
+
+  color: red;
+}
+.select-container {
+  margin-left: 8%;
+  animation: selectFilter 3s ease;
+}
+select {
+  border: solid 1px rgba(0, 0, 0, 0.329);
+  border-radius: 5px;
+  background: transparent;
+  padding: 0.8rem;
+  width: 10rem;
+  cursor: pointer;
+  color: black;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+option:disabled {
+  display: none;
+}
+
+.hide {
+  display: none !important;
+}
+.show {
+  display: flex !important;
+}
+.completed {
+  transition: all ease 0.8s;
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.expired-task {
+  position: relative;
+}
+
+.expired-task::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: red;
+  opacity: 0.3;
+  animation: pluse 3s infinite;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 992px) {
+  ul {
+    width: 90%;
+  }
+  .select-container {
+    align-self: center !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .btns-container {
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 764px) {
+  p {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  nav ul {
+    right: -0.3rem;
+  }
+  nav ul li a {
+    padding: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+  h2 {
+    font-size: 1.8rem !important;
+  }
+  .checkbox-container {
+    margin-right: 0.3rem;
+  }
+
+  .submit-btn {
+    margin-top: 0.5rem;
+  }
+
+  .list-group-item span {
+    font-size: 0.6rem;
+  }
+}
+
+/* keyframes */
+@keyframes listanimate {
+  from {
+    transform: translateX(-500px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes selectFilter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes submit-animate {
+  from {
+    transform: translateX(-100vw);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes inputs-animate {
+  from {
+    transform: translateX(100vw);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes nav-li-animate {
+  from {
+    transform: translateX(-6rem);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes btn-animate {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-top {
+  from {
+    transform: translatey(-500px);
+  }
+
+  to {
+    transform: translatey(0);
+  }
+}
+
+@keyframes pluse {
+  0% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
