@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
+    <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<script src="https://kit.fontawesome.com/6f373bc3e0.js" crossorigin="anonymous"></script>
+
+<title>todo</title>
+     <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+     <body>
+        <main class="d-flex flex-column ">
+
+            <div class="header">
+            <h1>ToDay</h1>
+            <h1 id='h'></h1>
+            </div>
+
+            <form  class="d-flex flex-column justify-content-center" >
+                      <div>
+                            <input  onfocus="(this.type='date')"  id="input1" name="datemin" placeholder="select deadline"  required>
+            
+                            <input type="text"  id="task" autocomplete="off" placeholder="enter your task" name="todo" required>
+                        </div>
+            
+                 <!-- priority-->
+
+                 <select id="dropdown" name="demoSelect"> <!--onchange="showData()"> -->
+                          <option value="1">priority 1</option>
+                          <option value="2">priority 2</option>
+                          <option value="3">priority 3</option>
+                </select>
+                <!--button -->
+                <div>
+                    <input type="submit" id="todo" class="button" value="add todo">
+               </div>
+          </form>
+          <div id="empty_task" class="mx-auto "></div>
+          <div class="col-xl-5 mx-auto  md-auto col-md-6">
+            <ul id="list" class="d-flex flex-column ">
+
+            </ul>
+        </div>
+    
+
+       
+
+      <script src="scr.js" defer>
+      </script>
+       </main>
+ </body>
+  </html>
