@@ -1,5 +1,3 @@
-
-
 const clear = document.querySelector(".clear");
 const dateElement = document.getElementById("date");
 const list = document.getElementById("list");
@@ -8,13 +6,10 @@ const what = document.getElementById("dead");
 const add= document.getElementById("add");
 const cont = document.getElementsByClassName('content');
 const texthere = document.createTextNode("no to do");
-
 const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
-
 let LIST, id;
-
 
 let data = localStorage.getItem("TODO");
 
@@ -30,7 +25,7 @@ if(data){
 
 function loadList(array){
     array.forEach(function(item){
-        addToDo(item.name, item.id, item.done, item.trash);
+        addToDo(item.name, item.id, item.done, item.trash, item.date);
     });
 }
 
@@ -43,17 +38,20 @@ const options = {weekday : "long", month:"short", day:"numeric"};
 const today = new Date();
 
 dateElement.innerHTML = today.toLocaleDateString("en-US", options);
+$(what).datepicker({
+    changeMonth: true,
+    changeYear: true,
+    minDate: (today)
+});
 
-
-function addToDo(toDo, id, done, trash){
+function addToDo(toDo, id, done, trash, date){
     
     if(trash){return}
-    const DATE = what.value;
     const DONE = done ? CHECK : UNCHECK;
     const LINE = done ? LINE_THROUGH : "";
     const item = `<li class="item">
                     <i class="fa ${DONE} co" job="complete" id="${id}"></i>
-                    <p class="text ${LINE}">${toDo} ${DATE}</p>
+                    <p class="text ${LINE}">${toDo} ${date}</p>
                     <i class="fa fa-trash-o de" job="delete" id="${id}"></i>
                   </li>
                 `;
@@ -62,24 +60,19 @@ function addToDo(toDo, id, done, trash){
     
     list.insertAdjacentHTML(position, item);
 }
-$(what).datepicker({
-    changeMonth: true,
-    changeYear: true,
-    minDate: (today)
-});
 
 add.addEventListener("click",function(even){
         const toDo = input.value
        if(toDo){
-            addToDo(toDo, id, false, false);
+            addToDo(toDo, id, false, false, what.value);
             
             LIST.push({
                 name : toDo,
                 id : id,
                 done : false,
                 trash : false,
+                date: what.value
             });
-            
             localStorage.setItem("TODO", JSON.stringify(LIST));
             id++;
         }
@@ -108,21 +101,3 @@ list.addEventListener("click", function(event){
     }
     localStorage.setItem("TODO", JSON.stringify(LIST));
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
