@@ -1,3 +1,5 @@
+A html and css todolist project
+
 ## What is the todo list project?
 
 Yes, it is the list of tasks on the peice of paper that we usually use in our real life to not forget to do things and on their time, but we are basically converting the piece of paper to a website so you don't have to spend more paper 😉, also, if you still don't know what a todo list is [see wikipedia](https://en.wiktionary.org/wiki/to-do_list).
