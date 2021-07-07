@@ -1,0 +1,189 @@
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgba(226, 24, 24, 0.1);
+    max-width:100%;
+}
+
+/* ------------ container ------------ */
+.container{
+    width:100%;
+    margin:0 auto;
+}
+
+/* ------------ header ------------ */
+.header{
+    width: auto;
+    height:300px;
+    margin-top: -150px;
+    background-image: url('../img/pepe.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+}
+#date{
+    position: absolute;
+    color: #FFF;
+    bottom: 10px;
+    left: 10px;
+    font-size: 25px;
+
+}
+/* ------------ clear ------------ */
+.clear{
+    width : 30px;
+    height: 30px;
+    position: absolute;
+    right:40px;
+    top: 160px;
+}
+.clear i{
+    font-size: 30px;
+    color: #FFF;
+}
+.clear i:hover{
+    cursor: pointer;
+    text-shadow: 1px 3px 5px #000;
+    transform: rotate(45deg);}
+/* ------------ content ------------ */
+.content{
+    width:100%;
+    height: 350px;
+    max-height:350px;
+    background-color: #282828;
+    overflow: auto;
+}
+.content::-webkit-scrollbar { 
+    display: none; 
+}
+.content ul{
+    padding:0;
+    margin:0;
+}
+.item{
+    width:100%;
+    height: 45px;
+    min-height: 45px;
+    position: relative;
+    border-bottom: 1px solid rgba(2, 181, 252, 0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.item i.co{
+    position: absolute;
+    font-size: 25px;
+    padding-left:5px;
+    left:15px;
+    top:10px;
+}
+.item i.co:hover{
+    cursor: pointer;
+}
+.item i.co{
+    color: #04922e;
+}
+.fa-check-circle{
+    color:#04722e;
+}
+.item p.text{
+    position: absolute;
+    padding:0;
+    margin:0;
+    font-size: 32px;
+    left:50px;
+    top:5px;
+    background-color: #282828;
+    color: #ffffff;
+
+}
+.lineThrough{
+    text-decoration: line-through;
+    color : red !important;
+}
+.item i.de{
+    position: absolute;
+    font-size: 25px;
+    right:15px;
+    top:10px;
+    color: #ffffff
+}
+.item i.de:hover{
+    color:#af0000;
+    cursor: pointer;
+}
+/* ------------ dead-line ------------ */
+.dead-line{
+    position: relative;
+    width: 98.7%;
+    height:40px;
+    background-color: #282828;
+    padding: 10px;
+    border-top: 1px solid rgba(66, 187, 137, 0.5);
+}
+#dead{
+    width: 99%;
+    height: 100%;
+    text-align: center;
+    font-size: 26px;
+    border-radius: 10px;
+    background-color: #04722e;
+    color:white;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(44, 7, 7);
+    opacity: 0.7; /* Firefox */
+  }
+/* ------------ add item ------------ */
+.add-to-do{
+    position: relative;
+    width: 98.7%;
+    height:40px;
+    background-color: #282828;
+    padding: 10px;
+    border-top: 1px solid rgba(66, 187, 137, 0.5);
+}
+.add-to-do i{
+    position: absolute;
+    font-size: 40px;
+    color: #04722e;
+}
+
+.add-to-do input{
+    position: absolute;
+    left: 50px;
+    height: 35px;
+    width: 90%;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
