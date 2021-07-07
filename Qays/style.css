@@ -1,0 +1,63 @@
+.no-padding {
+    padding: 0;
+  }
+.padding.s1{
+  padding: 0.2rem;
+
+}
+
+input[type=text]:not(.browser-default){
+  margin: 0;
+  border-bottom: 0;
+  box-shadow: 0 0 0 0 ;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]){
+  border-bottom: 0;
+    box-shadow: 0 0 0 0 ;
+}
+.input-underline-red{
+  border-bottom:1px solid red;
+
+}
+
+
+.block-underline{
+    padding-bottom: 1rem;
+    border-bottom:1px solid #e0e0e0;
+}
+  .rounded{
+    border-radius: 9999px;
+  }
+
+  .filled-in{
+    
+  }
+
+  .rounded-corners{
+    border-radius: 5px;
+  }
+
+.datepicker-date-display{
+    background-color: red;
+}
+  .datepicker-table td.is-today{
+      color:red;
+  }
+  .datepicker-table td.is-selected{
+    background-color: red;
+}
+
+.datepicker-table td.is-today.is-selected{
+    color:white;
+}
+
+.line-through{
+
+  text-decoration: line-through;
+}
+
+[type="checkbox"].filled-in:checked+span:not(.lever):after {
+  border: red;
+    background-color: red;
+}
